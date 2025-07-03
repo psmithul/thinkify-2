@@ -1,132 +1,147 @@
-# Thinkify - Elite Engineering Talent Platform
+# Thinkify - Modern Tech Talent Platform
 
-A modern talent platform connecting companies with elite remote engineers. Built with Next.js, TypeScript, and Tailwind CSS.
+A cutting-edge Next.js website for connecting top developers with remote opportunities at leading tech companies.
 
 ## 🚀 Features
 
-### Homepage
-- **Hero Section**: Compelling value proposition with dual CTAs
-- **How It Works**: 4-step process for companies
-- **Why Choose Us**: Key differentiators with trust markers
-- **Testimonials**: Real success stories and case studies
-- **Dual CTA Block**: Separate paths for companies and developers
+### ✨ **Enhanced Design Elements**
+- **Transparent Company Carousel**: Clean logo display without capsule backgrounds
+- **Innovative Alumni Cards**: 3D stackable design with enhanced data and animations
+- **Reimagined Elite Tech Talent Section**: Modern 3-column layout with interactive cards
+- **Unified Color Scheme**: Professional white/gray theme with purple-pink gradient accents
 
-### For Companies (/companies)
-- **Problem Statement**: "Hiring is broken. We fix that."
-- **How We Help**: Individual engineers, complete pods, specialized talent
-- **Speed & Quality**: 10-day average, rigorous vetting process
-- **Case Studies**: Detailed success stories with metrics
-- **Lead Generation**: Contact form and call scheduling
+### 🎯 **Key Pages**
+- **Main Page** (`/`): Hero section, company showcase, talent profiles, and CTAs
+- **Developers Page** (`/developers`): Career opportunities, alumni success stories, and onboarding flow
+- **Companies Page** (`/companies`): Business-focused content and hiring solutions
 
-### For Developers (/developers)
-- **Who We're Looking For**: Experience, passion, remote skills
-- **Perks**: Project choice, global pay, community, growth
-- **Vetting Process**: 3-step rigorous evaluation
-- **Engineer Stories**: Testimonials from network members
-- **Application Form**: Comprehensive join process
+### 💫 **Interactive Features**
+- Smooth scroll animations with Framer Motion
+- 3D hover effects and perspective transforms
+- Responsive design for all device sizes
+- Modern glassmorphism and backdrop blur effects
 
-## 🎨 Design System
+## 🛠 Tech Stack
 
-- **Fonts**: Inter (clean, modern sans-serif)
-- **Colors**: Minimal palette with accent blue (#3B82F6) and purple (#8B5CF6)
-- **Style**: Bold typography, subtle animations, generous whitespace
-- **Framework**: Next.js 14 with App Router + Tailwind CSS
+- **Framework**: Next.js 15.3.4
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion 12.23.0
+- **Icons**: Heroicons
+- **Language**: TypeScript
+- **Deployment**: Optimized for Vercel/Netlify
 
-## 🛠️ Tech Stack
+## 📦 Installation
 
-- **Frontend**: Next.js 14, TypeScript, Tailwind CSS
-- **Styling**: Custom design system with Inter font
-- **Icons**: Heroicons via SVG
-- **Animations**: Custom CSS animations for enhanced UX
+```bash
+# Clone the repository
+git clone https://github.com/psmithul/thinkify-2.git
 
-## 📁 Project Structure
+# Navigate to project directory
+cd thinkify-2
 
-```
-src/
-├── app/
-│   ├── companies/
-│   │   └── page.tsx         # Companies landing page
-│   ├── developers/
-│   │   └── page.tsx         # Developers landing page
-│   ├── globals.css          # Global styles and fonts
-│   ├── layout.tsx           # Root layout
-│   └── page.tsx             # Homepage
-├── components/
-│   └── Navigation.tsx       # Responsive navigation component
-└── ...
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-## 🚀 Getting Started
+## 🚀 Available Scripts
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+```bash
+# Development server
+npm run dev
 
-2. **Run development server**:
-   ```bash
-   npm run dev
-   ```
+# Production build
+npm run build
 
-3. **Open your browser**:
-   Navigate to [http://localhost:3000](http://localhost:3000)
+# Start production server
+npm start
 
-## 📱 Pages Overview
+# Lint code
+npm run lint
+```
 
-### Homepage (/)
-- Hero with value proposition and CTAs
-- 4-step "How It Works" process
-- Trust markers and differentiators
-- Client testimonials and case studies
-- Dual CTA for companies and developers
+## 🌐 Live Development
 
-### Companies Page (/companies)
-- Problem/solution positioning
-- Service offerings (individuals, pods, specialists)
-- Vetting process and quality metrics
-- Detailed case studies with ROI
-- Lead capture form
+The application runs on:
+- **Local**: http://localhost:3000
+- **Network**: http://192.168.0.110:3000
 
-### Developers Page (/developers)
-- Target audience definition
-- Benefits and perks of joining
-- Application process explanation
-- Engineer success stories
-- Application form
+## 📱 Responsive Design
 
-## 🎯 Key Features
+- **Desktop**: Full-featured experience with 3D animations
+- **Tablet**: Optimized layouts with touch-friendly interactions
+- **Mobile**: Streamlined design with essential features
 
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Modern UI/UX**: Clean, professional design with subtle animations
-- **SEO Optimized**: Semantic HTML and Next.js optimization
-- **Fast Performance**: Next.js 14 with optimized loading
-- **Type Safety**: Full TypeScript implementation
+## 🎨 Design Highlights
 
-## 🔧 Customization
+### Alumni Cards
+- **Stackable Design**: Multiple shadow layers for depth
+- **Enhanced Data**: Salary, location, company information
+- **3D Animations**: Rotation and scaling on hover
+- **Stats Display**: Salary increase and training metrics
 
-The design system is easily customizable through:
+### Elite Tech Talent Section
+- **Modern Layout**: 3-column grid with featured profiles
+- **Interactive Cards**: Hover effects with gradient backgrounds
+- **Feature Sidebar**: Key benefits with emoji icons
+- **Professional Styling**: Clean typography and spacing
 
-- **Colors**: Update `tailwind.config.ts` accent colors
-- **Typography**: Modify font imports in `globals.css`
-- **Content**: Edit page content in respective component files
-- **Animations**: Customize animations in Tailwind config
+### Company Showcase
+- **Transparent Design**: Logo-focused without distracting backgrounds
+- **Smooth Animations**: Infinite scroll with hover effects
+- **Brand Recognition**: Grayscale to color transitions
 
-## 📈 Next Steps
+## 🔧 Configuration
 
-1. **Content**: Replace placeholder content with real data
-2. **Forms**: Integrate with backend/email service
-3. **Analytics**: Add tracking for conversions
-4. **SEO**: Add meta tags and structured data
-5. **Deployment**: Deploy to Vercel or preferred platform
+### Environment Variables
+Create a `.env.local` file for any required environment variables:
+
+```bash
+# Add your environment variables here
+NEXT_PUBLIC_API_URL=your_api_url
+```
+
+### Tailwind Configuration
+The project uses a custom Tailwind configuration with:
+- Extended color palette
+- Custom animations
+- Responsive breakpoints
+- Typography enhancements
+
+## 📈 Performance
+
+- **Build Size**: Optimized for production
+- **First Load JS**: ~154 kB shared bundle
+- **Static Generation**: Pre-rendered pages for optimal performance
+- **Image Optimization**: Next.js automatic image optimization
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Design inspiration from modern SaaS platforms
+- Framer Motion for smooth animations
+- Tailwind CSS for rapid styling
+- Next.js team for the excellent framework
+
+## 📞 Contact
+
+For any questions or support, please reach out:
+- **GitHub**: [@psmithul](https://github.com/psmithul)
+- **Repository**: [thinkify-2](https://github.com/psmithul/thinkify-2)
 
 ---
 
-Built with ❤️ for connecting elite engineers with great companies.
+**Built with ❤️ using Next.js and modern web technologies**
