@@ -113,7 +113,7 @@ export default function DevelopersPage() {
       {/* Revolutionary Alumni Showcase */}
       <motion.section
         ref={alumnisRef}
-        className="py-32 bg-gradient-to-br from-slate-50 via-white to-purple-50 relative overflow-hidden"
+        className="py-32 bg-gradient-to-br from-slate-50 via-white to-gray-50 relative overflow-hidden"
       >
         {/* Floating Elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -130,11 +130,11 @@ export default function DevelopersPage() {
             transition={{ duration: 1 }}
             className="text-center mb-20"
           >
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border border-purple-200 shadow-lg mb-8">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="dm-serif-text-regular text-purple-800 font-medium">Success Stories</span>
-              <TrophyIcon className="w-5 h-5 text-purple-600" />
-            </div>
+                         <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
+               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+               <span className="dm-serif-text-regular theme-text-primary font-medium">Success Stories</span>
+               <TrophyIcon className="w-5 h-5 theme-text-primary" />
+             </div>
             
             <h2 className="dm-serif-text-regular text-5xl md:text-7xl text-gray-900 mb-8 leading-tight">
               Where Dreams Become{' '}
@@ -155,38 +155,7 @@ export default function DevelopersPage() {
             </p>
           </motion.div>
 
-          {/* Interactive Stats Dashboard */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mb-20"
-          >
-            <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-8 border border-white/40 shadow-2xl">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                {[
-                  { metric: '847', label: 'Lives Transformed', icon: '🚀', color: 'from-blue-500 to-purple-500' },
-                  { metric: '$168K', label: 'Average Salary', icon: '💎', color: 'from-green-500 to-teal-500' },
-                  { metric: '98.5%', label: 'Success Rate', icon: '⭐', color: 'from-orange-500 to-red-500' },
-                  { metric: '72hrs', label: 'Avg. Job Offer', icon: '⚡', color: 'from-purple-500 to-pink-500' }
-                ].map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={alumnisInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                    className="text-center group cursor-pointer"
-                  >
-                    <div className={`w-16 h-16 bg-gradient-to-r ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                      <span className="text-2xl">{stat.icon}</span>
-                    </div>
-                    <div className="dm-serif-text-regular text-4xl text-gray-900 mb-2 group-hover:scale-105 transition-transform duration-300">{stat.metric}</div>
-                    <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+
 
           {/* Alumni Spotlight Grid */}
           <div className="grid lg:grid-cols-3 gap-8 mb-20">
@@ -197,7 +166,7 @@ export default function DevelopersPage() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="lg:col-span-2"
             >
-              <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl p-8 text-white relative overflow-hidden h-full">
+                             <div className="theme-gradient-primary rounded-3xl p-8 text-white relative overflow-hidden h-full">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32"></div>
                 <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-24 -translate-x-24"></div>
                 
@@ -239,9 +208,9 @@ export default function DevelopersPage() {
                         <div className="font-bold">4 months</div>
                       </div>
                     </div>
-                    <button className="bg-white text-purple-600 px-6 py-3 rounded-xl font-semibold hover:bg-white/90 transition-colors">
-                      Read Full Story →
-                    </button>
+                                         <button className="bg-white theme-text-primary px-6 py-3 rounded-xl font-semibold hover:bg-white/90 transition-colors">
+                       Read Full Story →
+                     </button>
                   </div>
                 </div>
               </div>
@@ -267,7 +236,7 @@ export default function DevelopersPage() {
                   className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white/40 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-xl overflow-hidden ring-2 ring-purple-100 group-hover:ring-purple-200 transition-all">
+                                         <div className="w-14 h-14 rounded-xl overflow-hidden ring-2 ring-gray-100 group-hover:ring-gray-200 transition-all">
                       <img src={alumni.image} alt={alumni.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <div className="flex-1">
@@ -301,7 +270,7 @@ export default function DevelopersPage() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-center"
           >
-            <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-12 text-white relative overflow-hidden max-w-4xl mx-auto">
+                         <div className="theme-gradient-primary rounded-3xl p-12 text-white relative overflow-hidden max-w-4xl mx-auto">
               <div className="absolute top-0 left-0 w-full h-full opacity-10">
                 <div className="absolute top-8 left-8 w-24 h-24 border-2 border-white rounded-full"></div>
                 <div className="absolute bottom-8 right-8 w-32 h-32 border-2 border-white rounded-full"></div>
@@ -316,20 +285,20 @@ export default function DevelopersPage() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    Start Your Journey Today
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300"
-                  >
-                    Schedule a Call
-                  </motion.button>
+                                     <motion.button
+                     whileHover={{ scale: 1.05 }}
+                     whileTap={{ scale: 0.95 }}
+                     className="bg-white theme-text-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                   >
+                     Start Your Journey Today
+                   </motion.button>
+                   <motion.button
+                     whileHover={{ scale: 1.05 }}
+                     whileTap={{ scale: 0.95 }}
+                     className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:theme-text-primary transition-all duration-300"
+                   >
+                     Schedule a Call
+                   </motion.button>
                 </div>
               </div>
             </div>

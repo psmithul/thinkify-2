@@ -229,7 +229,7 @@ export default function HomePage() {
                     {/* Profile Content */}
                     <div className="relative z-10">
                       <div className="flex items-center space-x-4 mb-6">
-                        <div className="w-16 h-16 rounded-2xl overflow-hidden ring-4 ring-purple-100 group-hover:ring-purple-200 transition-all duration-300">
+                        <div className="w-16 h-16 rounded-2xl overflow-hidden ring-4 ring-gray-100 group-hover:ring-gray-200 transition-all duration-300">
                       <img
                         src={profile.image}
                         alt={profile.name}
@@ -451,7 +451,7 @@ export default function HomePage() {
             <a href="mailto:hello@thinkify.com" className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               Start Your Search Today
             </a>
-            <a href="tel:+1-555-THINKIFY" className="bg-white text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-purple-300">
+            <a href="tel:+1-555-THINKIFY" className="bg-white text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:theme-border-primary">
               Schedule a Call
             </a>
           </motion.div>
@@ -558,11 +558,11 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">For Companies</h3>
                 <ul className="space-y-3 text-cosmic-text">
                                       <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 theme-bg-primary rounded-full mr-2"></span>Hire AI/ML Engineers</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>DevOps Specialists</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>Backend Engineers</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>Frontend Engineers</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>Data Scientists</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>Mobile Engineers</a></li>
+                                            <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 theme-bg-primary rounded-full mr-2"></span>DevOps Specialists</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 theme-bg-primary rounded-full mr-2"></span>Backend Engineers</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 theme-bg-primary rounded-full mr-2"></span>Frontend Engineers</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 theme-bg-primary rounded-full mr-2"></span>Data Scientists</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 theme-bg-primary rounded-full mr-2"></span>Mobile Engineers</a></li>
                 </ul>
               </motion.div>
             </div>
@@ -577,12 +577,12 @@ export default function HomePage() {
               >
                 <h3 className="text-lg font-semibold text-white mb-4 cosmic-glow">For Developers</h3>
                 <ul className="space-y-3 text-cosmic-text">
-                  <li><a href="/developers" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Join Our Network</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Remote Opportunities</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Career Growth</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Skill Assessment</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Interview Prep</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Success Stories</a></li>
+                                            <li><a href="/developers" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Join Our Network</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Remote Opportunities</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Career Growth</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Skill Assessment</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Interview Prep</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Success Stories</a></li>
                 </ul>
               </motion.div>
             </div>
@@ -597,12 +597,12 @@ export default function HomePage() {
               >
                 <h3 className="text-lg font-semibold text-white mb-4 cosmic-glow">Resources</h3>
                 <ul className="space-y-3 text-cosmic-text">
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Tech Salary Guide</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Hiring Playbook</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Engineering Blog</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Industry Reports</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Case Studies</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Webinars</a></li>
+                                            <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Tech Salary Guide</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Hiring Playbook</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Engineering Blog</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Industry Reports</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Case Studies</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></span>Webinars</a></li>
               </ul>
               </motion.div>
             </div>
@@ -617,12 +617,12 @@ export default function HomePage() {
               >
                 <h3 className="text-lg font-semibold text-white mb-4 cosmic-glow">Company</h3>
                 <ul className="space-y-3 text-cosmic-text">
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></span>About Thinkify</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></span>How It Works</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></span>Pricing</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></span>Contact Us</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></span>Careers</a></li>
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></span>Press Kit</a></li>
+                                            <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></span>About Thinkify</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></span>How It Works</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></span>Pricing</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></span>Contact Us</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></span>Careers</a></li>
+                          <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></span>Press Kit</a></li>
               </ul>
               </motion.div>
             </div>
@@ -637,7 +637,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="cosmic-card text-center"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 theme-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-3">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
@@ -653,7 +653,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="cosmic-card text-center"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 theme-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-3">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                 </svg>
@@ -669,7 +669,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="cosmic-card text-center"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 theme-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-3">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -700,9 +700,9 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="flex space-x-6 text-sm text-cosmic-text"
               >
-                <a href="#" className="hover:text-purple-400 transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-purple-400 transition-colors">Terms of Service</a>
-                <a href="#" className="hover:text-purple-400 transition-colors">Cookie Policy</a>
+                <a href="#" className="hover:theme-text-primary transition-colors">Privacy Policy</a>
+                <a href="#" className="hover:theme-text-primary transition-colors">Terms of Service</a>
+                <a href="#" className="hover:theme-text-primary transition-colors">Cookie Policy</a>
               </motion.div>
             </div>
           </div>
