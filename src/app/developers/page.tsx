@@ -4,6 +4,10 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
+import CompanyCarousel from '@/components/CompanyCarousel';
+import CompanyCarouselMini from '@/components/CompanyCarouselMini';
+import { useTheme } from '@/contexts/ThemeContext';
 import { CheckIcon, StarIcon, ArrowRightIcon, PlayIcon, SparklesIcon, RocketLaunchIcon, BoltIcon, TrophyIcon, UserGroupIcon, CurrencyDollarIcon, ChartBarIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 
 export default function DevelopersPage() {
@@ -28,6 +32,7 @@ export default function DevelopersPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
+      <ThemeSwitcher />
       
       {/* Hero Section */}
       <motion.section
@@ -42,57 +47,48 @@ export default function DevelopersPage() {
               transition={{ duration: 1, delay: 0.2 }}
               className="text-5xl md:text-7xl font-bold text-black leading-tight mb-8"
             >
-              Find remote jobs with companies{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                that care
+              <span className="theme-gradient-text">
+                Elevate
               </span>
-              <br />
-              <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                about your work
+              {' '}your career.{' '}
+              <span className="theme-gradient-text">
+                Transform
               </span>
-              {' '}more than your resume.
+              {' '}your future.{' '}
+              <span className="theme-gradient-text">
+                Unlock
+              </span>
+              {' '}your potential.
             </motion.h1>
 
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.4 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto mb-12"
+              className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
             >
               Break into a successful remote tech career with Thinkify. Get flexible jobs with direct access to top companies.
             </motion.p>
 
+            {/* Mini Company Carousel */}
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="flex flex-wrap items-center justify-center gap-8 mb-12"
+              transition={{ duration: 1, delay: 0.5 }}
+              className="mb-12"
             >
-              <div className="flex items-center space-x-3">
-                <CurrencyDollarIcon className="w-6 h-6 text-purple-600" />
-                <span className="text-lg font-medium text-gray-700">Average salaries of $80k+</span>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                <UserGroupIcon className="w-6 h-6 text-purple-600" />
-                <span className="text-lg font-medium text-gray-700">For developers in</span>
-                <div className="flex space-x-1">
-                  <img src="https://flagcdn.com/w20/in.png" alt="India" className="w-5 h-3 rounded" />
-                  <img src="https://flagcdn.com/w20/us.png" alt="USA" className="w-5 h-3 rounded" />
-                  <img src="https://flagcdn.com/w20/gb.png" alt="UK" className="w-5 h-3 rounded" />
-                  <span className="text-sm text-gray-500">and more</span>
-                </div>
-              </div>
+              <p className="text-sm text-gray-500 mb-4">Join developers working at</p>
+              <CompanyCarouselMini />
             </motion.div>
 
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 1, delay: 0.8 }}
+              transition={{ duration: 1, delay: 0.6 }}
             >
               <Link href="#contact">
                 <motion.button
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -103,60 +99,7 @@ export default function DevelopersPage() {
             </motion.div>
           </div>
 
-          {/* Hero Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={heroInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 1, delay: 1 }}
-            className="mt-16 relative max-w-4xl mx-auto"
-          >
-            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 relative z-10">
-              <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">L</span>
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Frontend Developer</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Senior Software Developer</h3>
-                  <div className="flex items-center space-x-4 mb-4">
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Full time</span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Senior level</span>
-                  </div>
-                  <div className="text-3xl font-bold text-gray-900 mb-2">$80-120k</div>
-                  <div className="flex items-center text-gray-500">
-                    <GlobeAltIcon className="w-4 h-4 mr-1" />
-                    <span className="text-sm">Remote</span>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div className="absolute top-4 right-4 bg-white rounded-2xl shadow-xl p-6 border border-gray-100 transform rotate-3 z-0 opacity-60">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-purple-600 rounded-lg mb-4"></div>
-              <div className="text-lg font-bold text-gray-900">Technical Lead Developer</div>
-              <div className="text-2xl font-bold text-gray-900 mt-2">$90-130k</div>
-            </div>
-
-            <div className="absolute -top-4 -left-4 bg-white rounded-2xl shadow-xl p-6 border border-gray-100 transform -rotate-2 z-0 opacity-40">
-              <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-green-600 rounded-lg mb-4"></div>
-              <div className="text-lg font-bold text-gray-900">Fullstack Developer</div>
-              <div className="text-2xl font-bold text-gray-900 mt-2">$70-100k</div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={heroInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 1, delay: 1.4 }}
-              className="absolute -top-8 right-0 bg-gradient-to-r from-orange-400 to-orange-600 text-white px-4 py-2 rounded-lg shadow-lg"
-            >
-              <div className="flex items-center space-x-2">
-                <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-                <span className="text-sm font-medium">You've got 3 Job offers</span>
-              </div>
-            </motion.div>
-          </motion.div>
         </div>
       </motion.section>
 
@@ -174,7 +117,7 @@ export default function DevelopersPage() {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Check out{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="theme-gradient-text">
                 our Thinkify alumni.
               </span>
             </h2>
@@ -255,13 +198,19 @@ export default function DevelopersPage() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-center mt-12"
             >
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <button className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 View All 500+ Success Stories
               </button>
             </motion.div>
           </div>
         </div>
       </motion.section>
+
+      {/* Company Carousel Section */}
+      <CompanyCarousel 
+        title="Work with Top Companies"
+        subtitle="Join a platform that connects you with leading companies actively hiring remote developers"
+      />
 
       {/* Problem Section */}
       <motion.section
@@ -296,7 +245,7 @@ export default function DevelopersPage() {
                     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                     className="flex items-center space-x-4"
                   >
-                    <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 theme-bg-primary rounded-full flex items-center justify-center flex-shrink-0">
                       <CheckIcon className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-lg text-gray-700">{item}</span>
@@ -327,9 +276,9 @@ export default function DevelopersPage() {
                     <div className="text-yellow-600 mb-2">⚠️</div>
                     <div className="text-sm font-medium text-yellow-800">Limited infrastructure and resources</div>
                   </div>
-                  <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-center">
-                    <div className="text-purple-600 mb-2">📈</div>
-                    <div className="text-sm font-medium text-purple-800">Stagnating career growth</div>
+                  <div className="theme-bg-surface border theme-border-primary rounded-lg p-4 text-center">
+                    <div className="theme-text-primary mb-2">📈</div>
+                    <div className="text-sm font-medium theme-text-primary">Stagnating career growth</div>
                   </div>
                 </div>
               </div>
@@ -378,7 +327,7 @@ export default function DevelopersPage() {
                 icon: '🚀',
                 title: 'Get hired faster',
                 description: 'Our proven process helps you land offers 3x faster than traditional job searching.',
-                color: 'bg-purple-50 border-purple-200'
+                color: 'theme-bg-surface theme-border-primary'
               },
               {
                 icon: '💰',
@@ -422,22 +371,22 @@ export default function DevelopersPage() {
               {
                 icon: '⭐',
                 title: 'Have a minimum of 4 years of experience working on full-stack, MERN stack, frontend, or backend.',
-                gradient: 'from-purple-600 to-pink-600'
+                gradient: 'theme-bg-primary'
               },
               {
                 icon: '🔍',
                 title: 'Are in search of a 100% free platform that charges hiring partners, not developers.',
-                gradient: 'from-blue-600 to-purple-600'
+                gradient: 'theme-bg-secondary'
               },
               {
                 icon: '⏰',
                 title: 'Don\'t want to waste time negotiating the salary you deserve with recruiters.',
-                gradient: 'from-green-600 to-blue-600'
+                gradient: 'bg-gradient-to-r from-green-600 to-blue-600'
               },
               {
                 icon: '🤝',
                 title: 'Want a lifelong career partner invested in making you a top marketable talent.',
-                gradient: 'from-orange-600 to-red-600'
+                gradient: 'bg-gradient-to-r from-orange-600 to-red-600'
               }
             ].map((item, index) => (
               <motion.div
@@ -448,7 +397,7 @@ export default function DevelopersPage() {
                 className="relative"
               >
                 <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 h-full hover:bg-gray-800 transition-colors duration-300">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center text-2xl mb-6`}>
+                  <div className={`w-16 h-16 ${item.gradient} rounded-2xl flex items-center justify-center text-2xl mb-6`}>
                     {item.icon}
                   </div>
                   <p className="text-lg text-gray-200">{item.title}</p>
@@ -485,7 +434,7 @@ export default function DevelopersPage() {
                 title: 'Guarantee job security with a platform that looks out for you.',
                 description: 'Thinkify offers full term health insurance and assists you with all contractual paperwork during hiring. We keep your employers accountable every step of the way.',
                 image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&h=300&fit=crop',
-                color: 'bg-purple-100'
+                color: 'theme-bg-surface'
               },
               {
                 title: 'Join a global dev aggregate.',
@@ -529,7 +478,7 @@ export default function DevelopersPage() {
       </motion.section>
 
       {/* Final CTA Section */}
-      <motion.section className="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white relative overflow-hidden">
+      <motion.section className="py-20 theme-bg-primary text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
@@ -547,7 +496,7 @@ export default function DevelopersPage() {
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-8">
               Join the most sought-out{' '}
-              <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="theme-gradient-text">
                 developer collective.
               </span>
             </h2>
@@ -563,7 +512,7 @@ export default function DevelopersPage() {
             >
               <Link href="#contact">
                 <motion.button
-                  className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-pink-500/25 transition-all duration-300"
+                  className="btn-cosmic-primary px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -588,7 +537,7 @@ export default function DevelopersPage() {
                   </div>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4">
-                      <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                      <div className="w-10 h-10 theme-bg-primary rounded-full"></div>
                       <div>
                         <div className="text-white font-medium">All Jobs</div>
                         <div className="text-gray-400 text-sm">Remote opportunities</div>

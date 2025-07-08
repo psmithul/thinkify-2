@@ -6,6 +6,9 @@ import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
+import CompanyCarousel from '@/components/CompanyCarousel';
+import { useTheme } from '@/contexts/ThemeContext';
 
 interface AnimatedCounterProps {
   end: number;
@@ -39,6 +42,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ end, duration = 2000,
 };
 
 export default function HomePage() {
+  const { currentTheme } = useTheme();
   const [expandedSection, setExpandedSection] = useState<string | null>('fast');
   const statsRef = useRef(null);
   const isInView = useInView(statsRef, { once: true });
@@ -47,17 +51,7 @@ export default function HomePage() {
     setExpandedSection(expandedSection === section ? null : section);
   };
 
-  const companyLogos = [
-    { name: 'Flipkart', src: '/companies/Flipkart_Symbol_0.svg' },
-    { name: 'Swiggy', src: '/companies/swiggy.svg' },
-    { name: 'Meesho', src: '/companies/meesho.png' },
-    { name: 'Netomi', src: '/companies/netomi.png' },
-    { name: 'Acko', src: '/companies/Acko_id4WtbwSds_0.svg' },
-    { name: 'ThoughtSpot', src: '/companies/ThoughtSpot_idEiE5Z1Gr_0.svg' },
-    { name: 'Netskope', src: '/companies/Netskope_idPk6JKSHR_0.svg' },
-    { name: 'Whatfix', src: '/companies/Whatfix_idc18D79RQ_0.svg' },
-    { name: 'Ethos', src: '/companies/Ethos_idILGnoxOt_0.svg' }
-  ];
+
 
   const profiles = [
     {
@@ -100,6 +94,9 @@ export default function HomePage() {
       {/* Navigation */}
       <Navigation />
 
+      {/* Theme Switcher */}
+      <ThemeSwitcher />
+
       {/* Hero Section */}
       <section className="pt-28 pb-20 relative overflow-hidden bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -110,7 +107,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
           >
             Elite{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="theme-gradient-text">
               Tech Talent
             </span>
             ,{' '}
@@ -130,75 +127,39 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Link href="#contact" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Link href="#contact" className="btn-cosmic-primary">
               Hire Elite Talent
             </Link>
-            <Link href="/developers" className="bg-white text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-purple-300">
+            <Link 
+              href="/developers" 
+              className="bg-white border-2 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              style={{ 
+                borderColor: `var(--color-primary)`, 
+                color: `var(--color-primary)` 
+              }}
+            >
               Join as Developer →
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Company Flash News Section */}
-      <section className="py-16 relative bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Trusted by <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Industry Leaders</span>
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Join companies like these who've scaled their engineering teams with Thinkify's elite talent
-            </p>
-          </motion.div>
-          
-          <div className="company-flash-container">
-            <div className="company-flash-track">
-              {/* First set */}
-              <div className="company-flash-set">
-                {companyLogos.map((logo, index) => (
-                  <div key={`first-${index}`} className="company-flash-card">
-                    <img 
-                      src={logo.src} 
-                      alt={logo.name}
-                      className="company-flash-logo"
-                    />
-                  </div>
-                ))}
-              </div>
-              {/* Duplicate set for seamless loop */}
-              <div className="company-flash-set">
-                {companyLogos.map((logo, index) => (
-                  <div key={`second-${index}`} className="company-flash-card">
-                    <img 
-                      src={logo.src} 
-                      alt={logo.name}
-                      className="company-flash-logo"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Company Carousel Section */}
+      <CompanyCarousel 
+        title="Trusted by Industry Leaders"
+        subtitle="Join companies like these who've scaled their engineering teams with Thinkify's elite talent"
+      />
 
       {/* How It Works Section - Symmetric grid */}
       <section id="how-it-works" className="py-20 relative bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              How We <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Deliver</span>
+              How We <span className="theme-gradient-text">Deliver</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our streamlined process combines AI-powered search with senior engineer vetting for fast, quality placements
-            </p>
+                          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Experience the future of engineering recruitment with our streamlined, expert-driven process
+              </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -227,7 +188,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-6">{item.step}</div>
+                <div className="w-16 h-16 theme-bg-primary rounded-xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-6">{item.step}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
               </motion.div>
@@ -241,10 +202,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Elite <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Tech Talent</span>
+              Elite <span className="theme-gradient-text">Tech Talent</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Revenue-impact professionals from top tech companies, ready to scale your engineering teams
+              Scale your team dynamically with elastic hiring - add or reduce engineers as needed
             </p>
           </div>
 
@@ -263,20 +224,20 @@ export default function HomePage() {
                     className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
                   >
                     {/* Background Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 theme-bg-surface opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Profile Content */}
                     <div className="relative z-10">
                       <div className="flex items-center space-x-4 mb-6">
                         <div className="w-16 h-16 rounded-2xl overflow-hidden ring-4 ring-purple-100 group-hover:ring-purple-200 transition-all duration-300">
-                          <img
-                            src={profile.image}
-                            alt={profile.name}
+                      <img
+                        src={profile.image}
+                        alt={profile.name}
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                           />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold text-gray-900 group-hover:text-purple-900 transition-colors">{profile.name}</h3>
+                          <h3 className="text-xl font-bold text-gray-900 group-hover:theme-text-primary transition-colors">{profile.name}</h3>
                           <p className="text-gray-600 font-medium">{profile.role}</p>
                         </div>
                       </div>
@@ -288,12 +249,12 @@ export default function HomePage() {
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-sm font-medium text-gray-500">Company</span>
-                          <span className="text-sm font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{profile.company}</span>
+                          <span className="text-sm font-semibold theme-gradient-text">{profile.company}</span>
                         </div>
                       </div>
                       
                       <div className="mt-6 pt-6 border-t border-gray-100">
-                        <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 px-6 rounded-xl font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                        <button className="w-full btn-cosmic-primary py-3 px-6 rounded-xl font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                           View Profile
                         </button>
                       </div>
@@ -312,14 +273,14 @@ export default function HomePage() {
                   description: '15-day average delivery vs 45+ days industry standard'
                 },
                 {
-                  icon: '⭐',
-                  title: 'Top 1% Talent',
-                  description: 'Senior engineers from FAANG and unicorn companies'
+                  icon: '📈',
+                  title: 'Elastic Scaling',
+                  description: 'Scale your team up or down instantly based on project needs'
                 },
                 {
-                  icon: '🎯',
-                  title: 'Perfect Match',
-                  description: 'AI-powered matching with 95% success rate'
+                  icon: '⚡',
+                  title: 'Elastic Hiring',
+                  description: 'Pay only for what you need - flexible team sizing with zero contracts'
                 },
                 {
                   icon: '💎',
@@ -348,7 +309,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="pt-4"
               >
-                <a href="#contact" className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-4 rounded-xl font-semibold text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <a href="#contact" className="block w-full btn-cosmic-primary px-6 py-4 rounded-xl font-semibold text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                   Hire Elite Talent Now
                 </a>
               </motion.div>
@@ -362,7 +323,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Success <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Stories</span>
+              Success <span className="theme-gradient-text">Stories</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Real results from companies who chose Thinkify for their critical engineering hires
@@ -398,10 +359,10 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
-                <h3 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">{story.company}</h3>
+                <h3 className="text-xl font-bold theme-gradient-text mb-2">{story.company}</h3>
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">{story.result}</h4>
                 <p className="text-gray-600 mb-3 text-sm">{story.description}</p>
-                <div className="text-xs font-medium text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-full px-3 py-1 inline-block">
+                <div className="text-xs font-medium text-white theme-bg-primary rounded-full px-3 py-1 inline-block">
                   {story.metric}
                 </div>
               </motion.div>
@@ -421,7 +382,7 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Proven <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Results</span>
+              Proven <span className="theme-gradient-text">Results</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Our track record speaks for itself - delivering quality engineering talent faster than anyone else
@@ -442,7 +403,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+                <div className="text-3xl md:text-4xl font-bold theme-gradient-text mb-2">
                   <AnimatedCounter 
                     end={stat.number} 
                     suffix={stat.suffix}
@@ -466,7 +427,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
           >
-            Ready to Scale Your <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Engineering Team?</span>
+            Ready to Scale Your <span className="theme-gradient-text">Engineering Team?</span>
           </motion.h2>
           
           <motion.p 
@@ -487,7 +448,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="flex flex-col sm:flex-row gap-3 justify-center"
           >
-            <a href="mailto:hello@thinkify.com" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <a href="mailto:hello@thinkify.com" className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               Start Your Search Today
             </a>
             <a href="tel:+1-555-THINKIFY" className="bg-white text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-purple-300">
@@ -500,12 +461,12 @@ export default function HomePage() {
       {/* Enhanced Footer */}
       <footer className="bg-gray-50 relative overflow-hidden border-t border-gray-200">
         {/* Background Elements */}
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-1/4 w-64 h-64 theme-bg-surface opacity-20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Newsletter Section */}
-          <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-8 mb-12">
+          <div className="theme-bg-surface backdrop-blur-sm theme-border-primary rounded-2xl p-8 mb-12">
             <div className="text-center max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
                 Stay Ahead in Tech Hiring
@@ -517,9 +478,9 @@ export default function HomePage() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
+                  className="flex-1 px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none theme-border-focus transition-colors"
                 />
-                <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 whitespace-nowrap">
+                <button className="btn-cosmic-primary px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 whitespace-nowrap">
                   Subscribe Now
                 </button>
               </div>
@@ -537,24 +498,24 @@ export default function HomePage() {
                 viewport={{ once: true }}
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center mr-3 shadow-xl">
+                  <div className="w-10 h-10 theme-bg-primary rounded-lg flex items-center justify-center mr-3 shadow-xl">
                     <span className="text-white font-bold text-xl">T</span>
                   </div>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Thinkify</div>
+                  <div className="text-3xl font-bold theme-gradient-text">Thinkify</div>
                 </div>
                 <p className="text-gray-600 mb-6 max-w-sm leading-relaxed">
                   India's premier tech talent platform connecting elite engineers with unicorn startups and industry leaders. 
-                  <span className="text-purple-600 font-semibold"> 5000+ successful placements.</span>
+                                      <span className="theme-text-primary font-semibold"> 5000+ successful placements.</span>
                 </p>
                 
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="text-center p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
-                    <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">15</div>
+                    <div className="text-2xl font-bold theme-gradient-text">15</div>
                     <div className="text-xs text-gray-600">Avg. Days to Hire</div>
                   </div>
                   <div className="text-center p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
-                    <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">95%</div>
+                    <div className="text-2xl font-bold theme-gradient-text">95%</div>
                     <div className="text-xs text-gray-600">Success Rate</div>
                   </div>
                 </div>
@@ -596,7 +557,7 @@ export default function HomePage() {
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">For Companies</h3>
                 <ul className="space-y-3 text-cosmic-text">
-                  <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>Hire AI/ML Engineers</a></li>
+                                      <li><a href="#" className="hover:theme-text-primary transition-colors flex items-center"><span className="w-1.5 h-1.5 theme-bg-primary rounded-full mr-2"></span>Hire AI/ML Engineers</a></li>
                   <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>DevOps Specialists</a></li>
                   <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>Backend Engineers</a></li>
                   <li><a href="#" className="hover:text-purple-400 transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>Frontend Engineers</a></li>

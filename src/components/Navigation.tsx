@@ -22,7 +22,7 @@ export default function Navigation() {
             transition={{ duration: 0.2 }}
           >
             <Link href="/" className="flex items-center group">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+              <div className="w-8 h-8 theme-bg-primary rounded-lg flex items-center justify-center mr-3 shadow-lg">
                 <span className="text-white font-bold text-lg">T</span>
               </div>
               <span className="text-2xl font-bold text-white group-hover:text-cosmic-text transition-colors">
