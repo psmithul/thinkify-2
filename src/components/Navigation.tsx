@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ThinkifyLogo from './ThinkifyLogo';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,12 +23,7 @@ export default function Navigation() {
             transition={{ duration: 0.2 }}
           >
             <Link href="/" className="flex items-center group">
-              <div className="w-8 h-8 theme-bg-primary rounded-lg flex items-center justify-center mr-3 shadow-lg">
-                <span className="text-white font-bold text-lg">T</span>
-              </div>
-              <span className="text-2xl font-bold text-white group-hover:text-cosmic-text transition-colors">
-                Thinkify
-              </span>
+              <ThinkifyLogo size="md" className="hover:scale-105 transition-transform duration-200" />
             </Link>
           </motion.div>
 

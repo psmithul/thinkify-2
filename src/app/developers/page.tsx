@@ -45,7 +45,7 @@ export default function DevelopersPage() {
               initial={{ opacity: 0, y: 50 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold text-black leading-tight mb-8"
+              className="font-display text-5xl md:text-7xl text-black leading-tight mb-8 text-balance"
             >
               <span className="theme-gradient-text">
                 Elevate
@@ -65,7 +65,7 @@ export default function DevelopersPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.4 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
+              className="font-body text-xl text-gray-600 max-w-3xl mx-auto mb-8 text-balance"
             >
               Break into a successful remote tech career with Thinkify. Get flexible jobs with direct access to top companies.
             </motion.p>
@@ -110,170 +110,199 @@ export default function DevelopersPage() {
         </div>
       </motion.section>
 
-      {/* Modern Alumni Success Stories */}
+      {/* Revolutionary Alumni Showcase */}
       <motion.section
         ref={alumnisRef}
-        className="py-20 bg-white relative overflow-hidden"
+        className="py-32 bg-gradient-to-br from-slate-50 via-white to-gray-50 relative overflow-hidden"
       >
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, var(--color-primary) 0%, transparent 50%), 
-                             radial-gradient(circle at 75% 75%, var(--color-secondary) 0%, transparent 50%)`,
-            backgroundSize: '100px 100px'
-          }}></div>
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-72 h-72 theme-bg-primary opacity-5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 theme-bg-secondary opacity-5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 theme-bg-accent opacity-3 rounded-full blur-3xl animate-pulse delay-2000"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Header Section */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 1 }}
+            className="text-center mb-20"
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 text-sm font-medium mb-6">
-              <TrophyIcon className="w-4 h-4 mr-2" />
-              Success Stories
-            </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Meet our{' '}
-              <span className="theme-gradient-text relative">
-                Elite Alumni
-                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-30"></div>
+                         <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
+               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+               <span className="dm-serif-text-regular theme-text-primary font-medium">Success Stories</span>
+               <TrophyIcon className="w-5 h-5 theme-text-primary" />
+             </div>
+            
+            <h2 className="dm-serif-text-regular text-5xl md:text-7xl text-gray-900 mb-8 leading-tight">
+              Where Dreams Become{' '}
+              <span className="theme-gradient-text relative inline-block">
+                Reality
+                <motion.div 
+                  className="absolute -bottom-3 left-0 w-full h-2 theme-bg-primary opacity-20 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  animate={alumnisInView ? { scaleX: 1 } : {}}
+                  transition={{ duration: 1, delay: 0.5 }}
+                ></motion.div>
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From bootcamp graduates to industry leaders. See how Thinkify transforms careers and unlocks potential.
+            
+            <p className="font-body text-xl text-gray-600 max-w-4xl mx-auto text-balance leading-relaxed">
+              Witness the extraordinary transformation of ambitious individuals into industry leaders. 
+              Each story represents not just a career change, but a life transformed.
             </p>
           </motion.div>
 
-          {/* Success Metrics */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-          >
-            {[
-              { metric: '500+', label: 'Alumni Placed', icon: '🎓' },
-              { metric: '$150K', label: 'Avg. Starting Salary', icon: '💰' },
-              { metric: '95%', label: 'Job Placement Rate', icon: '📈' },
-              { metric: '12 Weeks', label: 'Training Duration', icon: '⏱️' }
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={alumnisInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-all duration-300"
-              >
-                <div className="text-3xl mb-3">{stat.icon}</div>
-                <div className="text-3xl font-bold theme-text-primary mb-2">{stat.metric}</div>
-                <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
 
-          {/* Modern Alumni Cards */}
-          <div className="relative max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          {/* Alumni Spotlight Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-20">
+            {/* Featured Story */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={alumnisInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="lg:col-span-2"
+            >
+                             <div className="theme-gradient-primary rounded-3xl p-8 text-white relative overflow-hidden h-full">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32"></div>
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-24 -translate-x-24"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-8">
+                    <div className="flex items-center gap-4">
+                      <div className="w-20 h-20 rounded-2xl overflow-hidden ring-4 ring-white/30">
+                        <img 
+                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" 
+                          alt="Yash Pandit"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="dm-serif-text-regular text-2xl mb-1">Yash Pandit</h3>
+                        <p className="text-white/80">Senior Research Engineer</p>
+                        <p className="text-white/60 text-sm">@ Google</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-3xl font-bold mb-1">$160K</div>
+                      <div className="text-white/80 text-sm">Annual Salary</div>
+                    </div>
+                  </div>
+                  
+                  <blockquote className="dm-serif-text-regular-italic text-xl mb-6 leading-relaxed">
+                    "Thinkify didn't just change my career—it transformed my entire perspective on what's possible. 
+                    From struggling freelancer to Google engineer in 6 months."
+                  </blockquote>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex gap-4">
+                      <div className="bg-white/20 rounded-xl px-4 py-2">
+                        <div className="text-sm text-white/80">Salary Increase</div>
+                        <div className="font-bold">+350%</div>
+                      </div>
+                      <div className="bg-white/20 rounded-xl px-4 py-2">
+                        <div className="text-sm text-white/80">Time to Hire</div>
+                        <div className="font-bold">4 months</div>
+                      </div>
+                    </div>
+                                         <button className="bg-white theme-text-primary px-6 py-3 rounded-xl font-semibold hover:bg-white/90 transition-colors">
+                       Read Full Story →
+                     </button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Success Metrics */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={alumnisInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="space-y-6"
+            >
               {[
-                { name: 'Yash Pandit', role: 'Senior Research Engineer', company: 'Google', salary: '$160k', location: 'Remote', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face', increase: '250%', time: '6 months' },
-                { name: 'Jyotendra Sharma', role: 'Senior Software Engineer', company: 'Microsoft', salary: '$155k', location: 'Seattle', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face', increase: '180%', time: '4 months' },
-                { name: 'Rushikesh Akhare', role: 'Solutions Engineer', company: 'Stripe', salary: '$145k', location: 'San Francisco', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face', increase: '200%', time: '5 months' },
-                { name: 'Sumit Dhanania', role: 'Fullstack Product Engineer', company: 'Netflix', salary: '$170k', location: 'Remote', image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop&crop=face', increase: '300%', time: '3 months' },
-                { name: 'Vikalp P.', role: 'Solutions Engineer', company: 'Salesforce', salary: '$140k', location: 'New York', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face', increase: '220%', time: '7 months' },
-                { name: 'Sourabh Modi', role: 'CTO Thinkify', company: 'Thinkify', salary: '$200k', location: 'Remote', image: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=400&h=400&fit=crop&crop=face', increase: '400%', time: '2 months' }
+                { name: 'Jyotendra S.', company: 'Microsoft', salary: '$155K', increase: '+280%', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face' },
+                { name: 'Rushikesh A.', company: 'Stripe', salary: '$145K', increase: '+200%', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face' },
+                { name: 'Sumit D.', company: 'Netflix', salary: '$170K', increase: '+300%', image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop&crop=face' }
               ].map((alumni, index) => (
                 <motion.div
                   key={alumni.name}
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="group"
+                  transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+                  className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white/40 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
                 >
-                  <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
-                    {/* Background Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    {/* Success Badge */}
-                    <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white text-xs font-bold">+{alumni.increase}</span>
+                  <div className="flex items-center gap-4">
+                                         <div className="w-14 h-14 rounded-xl overflow-hidden ring-2 ring-gray-100 group-hover:ring-gray-200 transition-all">
+                      <img src={alumni.image} alt={alumni.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                     </div>
-
-                    <div className="relative z-10">
-                      {/* Profile Section */}
-                      <div className="flex items-center space-x-4 mb-6">
-                        <div className="relative">
-                          <div className="w-16 h-16 rounded-2xl overflow-hidden ring-4 ring-purple-100 group-hover:ring-purple-200 transition-all duration-300">
-                            <img 
-                              src={alumni.image} 
-                              alt={alumni.name}
-                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            />
-                          </div>
-                          <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
-                            <CheckIcon className="w-3 h-3 text-white" />
-                          </div>
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-bold text-gray-900 mb-1">{alumni.name}</h3>
-                          <p className="text-sm text-gray-600">{alumni.role}</p>
-                          <p className="text-sm font-semibold theme-text-primary">@ {alumni.company}</p>
-                        </div>
-                      </div>
-
-                      {/* Salary & Location */}
-                      <div className="mb-6">
-                        <div className="text-3xl font-bold theme-text-primary mb-1">{alumni.salary}</div>
-                        <div className="text-sm text-gray-600 flex items-center">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                          {alumni.location}
-                        </div>
-                      </div>
-
-                      {/* Stats */}
-                      <div className="grid grid-cols-2 gap-4 mb-6">
-                        <div className="bg-gray-50 rounded-xl p-3 text-center group-hover:bg-white transition-colors duration-300">
-                          <div className="text-lg font-bold text-gray-900">{alumni.increase}</div>
-                          <div className="text-xs text-gray-600">Salary Increase</div>
-                        </div>
-                        <div className="bg-gray-50 rounded-xl p-3 text-center group-hover:bg-white transition-colors duration-300">
-                          <div className="text-lg font-bold text-gray-900">{alumni.time}</div>
-                          <div className="text-xs text-gray-600">Time to Hire</div>
-                        </div>
-                      </div>
-
-                      {/* CTA */}
-                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 px-6 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:shadow-lg">
-                        View Success Story
-                      </button>
+                    <div className="flex-1">
+                      <h4 className="dm-serif-text-regular text-lg text-gray-900 mb-1">{alumni.name}</h4>
+                      <p className="text-sm text-gray-600">@ {alumni.company}</p>
+                    </div>
+                    <div className="text-right">
+                      <div className="font-bold text-gray-900">{alumni.salary}</div>
+                      <div className="text-green-600 text-sm font-medium">{alumni.increase}</div>
                     </div>
                   </div>
                 </motion.div>
               ))}
-            </div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-center mt-16"
-            >
-              <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-3xl p-8 max-w-2xl mx-auto">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Join Them?</h3>
-                <p className="text-gray-600 mb-6">Start your journey to a high-paying tech career with personalized mentorship and guaranteed job placement.</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    View All Success Stories
-                  </button>
-                  <button className="btn-cosmic-secondary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    Start Your Journey
-                  </button>
-                </div>
-              </div>
+              
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 1 }}
+                className="w-full bg-gradient-to-r from-gray-800 to-gray-900 text-white py-4 px-6 rounded-2xl font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              >
+                View All Success Stories
+                <ArrowRightIcon className="w-5 h-5 ml-2 inline-block" />
+              </motion.button>
             </motion.div>
           </div>
+
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-center"
+          >
+                         <div className="theme-gradient-primary rounded-3xl p-12 text-white relative overflow-hidden max-w-4xl mx-auto">
+              <div className="absolute top-0 left-0 w-full h-full opacity-10">
+                <div className="absolute top-8 left-8 w-24 h-24 border-2 border-white rounded-full"></div>
+                <div className="absolute bottom-8 right-8 w-32 h-32 border-2 border-white rounded-full"></div>
+                <div className="absolute top-1/2 left-1/4 w-16 h-16 border-2 border-white rounded-full"></div>
+              </div>
+              
+              <div className="relative z-10">
+                <h3 className="dm-serif-text-regular text-4xl mb-6">Your Success Story Starts Here</h3>
+                <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                  Join 800+ professionals who've transformed their careers with Thinkify. 
+                  Your dream job is just one application away.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                     <motion.button
+                     whileHover={{ scale: 1.05 }}
+                     whileTap={{ scale: 0.95 }}
+                     className="bg-white theme-text-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                   >
+                     Start Your Journey Today
+                   </motion.button>
+                   <motion.button
+                     whileHover={{ scale: 1.05 }}
+                     whileTap={{ scale: 0.95 }}
+                     className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:theme-text-primary transition-all duration-300"
+                   >
+                     Schedule a Call
+                   </motion.button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </motion.section>
 
