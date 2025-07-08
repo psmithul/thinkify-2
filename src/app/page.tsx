@@ -101,7 +101,7 @@ export default function HomePage() {
       <section className="pt-28 pb-20 relative overflow-hidden bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-8 text-gray-900"
+            className="font-display text-5xl md:text-7xl mb-8 text-gray-900 text-balance"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -114,7 +114,7 @@ export default function HomePage() {
             <span className="text-gray-900">Delivered Fast</span>
           </motion.h1>
           <motion.p 
-            className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto"
+            className="font-body text-xl text-gray-600 mb-12 max-w-3xl mx-auto text-balance"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -154,12 +154,12 @@ export default function HomePage() {
       <section id="how-it-works" className="py-20 relative bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="font-display text-4xl md:text-5xl text-gray-900 mb-4">
               How We <span className="theme-gradient-text">Deliver</span>
             </h2>
-                          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Experience the future of engineering recruitment with our streamlined, expert-driven process
-              </p>
+            <p className="font-body text-xl text-gray-600 max-w-3xl mx-auto text-balance">
+              Experience the future of engineering recruitment with our streamlined, expert-driven process
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -201,10 +201,10 @@ export default function HomePage() {
       <section id="talent" className="py-20 relative bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="font-display text-4xl md:text-5xl text-gray-900 mb-4">
               Elite <span className="theme-gradient-text">Tech Talent</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="font-body text-xl text-gray-600 max-w-3xl mx-auto text-balance">
               Scale your team dynamically with elastic hiring - add or reduce engineers as needed
             </p>
           </div>
