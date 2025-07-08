@@ -70,14 +70,21 @@ export default function DevelopersPage() {
               Break into a successful remote tech career with Thinkify. Get flexible jobs with direct access to top companies.
             </motion.p>
 
-            {/* Mini Company Carousel */}
+            {/* Work with Top Companies */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.5 }}
               className="mb-12"
             >
-              <p className="text-sm text-gray-500 mb-4">Join developers working at</p>
+              <div className="text-center mb-8">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  Work with <span className="theme-gradient-text">Top Companies</span>
+                </h3>
+                <p className="text-sm text-gray-600 max-w-2xl mx-auto">
+                  Join a platform that connects you with leading companies actively hiring remote developers
+                </p>
+              </div>
               <CompanyCarouselMini />
             </motion.div>
 
@@ -103,89 +110,144 @@ export default function DevelopersPage() {
         </div>
       </motion.section>
 
-      {/* Alumni Section */}
+      {/* Modern Alumni Success Stories */}
       <motion.section
         ref={alumnisRef}
-        className="py-20 bg-gray-50"
+        className="py-20 bg-white relative overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 25% 25%, var(--color-primary) 0%, transparent 50%), 
+                             radial-gradient(circle at 75% 75%, var(--color-secondary) 0%, transparent 50%)`,
+            backgroundSize: '100px 100px'
+          }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Check out{' '}
-              <span className="theme-gradient-text">
-                our Thinkify alumni.
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 text-sm font-medium mb-6">
+              <TrophyIcon className="w-4 h-4 mr-2" />
+              Success Stories
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              Meet our{' '}
+              <span className="theme-gradient-text relative">
+                Elite Alumni
+                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-30"></div>
               </span>
             </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From bootcamp graduates to industry leaders. See how Thinkify transforms careers and unlocks potential.
+            </p>
           </motion.div>
 
+          {/* Success Metrics */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+          >
+            {[
+              { metric: '500+', label: 'Alumni Placed', icon: '🎓' },
+              { metric: '$150K', label: 'Avg. Starting Salary', icon: '💰' },
+              { metric: '95%', label: 'Job Placement Rate', icon: '📈' },
+              { metric: '12 Weeks', label: 'Training Duration', icon: '⏱️' }
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={alumnisInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-all duration-300"
+              >
+                <div className="text-3xl mb-3">{stat.icon}</div>
+                <div className="text-3xl font-bold theme-text-primary mb-2">{stat.metric}</div>
+                <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Modern Alumni Cards */}
           <div className="relative max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { name: 'Yash Pandit', role: 'Senior Research Engineer', company: 'Google', salary: '$160k', location: 'Remote', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face', bg: 'from-pink-400 to-purple-600' },
-                { name: 'Jyotendra Sharma', role: 'Senior Software Engineer', company: 'Microsoft', salary: '$155k', location: 'Seattle', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face', bg: 'from-purple-400 to-blue-600' },
-                { name: 'Rushikesh Akhare', role: 'Solutions Engineer', company: 'Stripe', salary: '$145k', location: 'San Francisco', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face', bg: 'from-orange-400 to-red-600' },
-                { name: 'Sumit Dhanania', role: 'Fullstack Product Engineer', company: 'Netflix', salary: '$170k', location: 'Remote', image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop&crop=face', bg: 'from-orange-400 to-yellow-600' },
-                { name: 'Vikalp P.', role: 'Solutions Engineer', company: 'Salesforce', salary: '$140k', location: 'New York', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face', bg: 'from-blue-400 to-purple-600' },
-                { name: 'Sourabh Modi', role: 'CTO Thinkify', company: 'Thinkify', salary: '$200k', location: 'Remote', image: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=400&h=400&fit=crop&crop=face', bg: 'from-red-400 to-pink-600' }
+                { name: 'Yash Pandit', role: 'Senior Research Engineer', company: 'Google', salary: '$160k', location: 'Remote', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face', increase: '250%', time: '6 months' },
+                { name: 'Jyotendra Sharma', role: 'Senior Software Engineer', company: 'Microsoft', salary: '$155k', location: 'Seattle', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face', increase: '180%', time: '4 months' },
+                { name: 'Rushikesh Akhare', role: 'Solutions Engineer', company: 'Stripe', salary: '$145k', location: 'San Francisco', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face', increase: '200%', time: '5 months' },
+                { name: 'Sumit Dhanania', role: 'Fullstack Product Engineer', company: 'Netflix', salary: '$170k', location: 'Remote', image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop&crop=face', increase: '300%', time: '3 months' },
+                { name: 'Vikalp P.', role: 'Solutions Engineer', company: 'Salesforce', salary: '$140k', location: 'New York', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face', increase: '220%', time: '7 months' },
+                { name: 'Sourabh Modi', role: 'CTO Thinkify', company: 'Thinkify', salary: '$200k', location: 'Remote', image: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=400&h=400&fit=crop&crop=face', increase: '400%', time: '2 months' }
               ].map((alumni, index) => (
                 <motion.div
                   key={alumni.name}
-                  initial={{ opacity: 0, y: 50, rotateY: -20 }}
-                  animate={alumnisInView ? { opacity: 1, y: 0, rotateY: 0 } : {}}
-                  transition={{ duration: 0.8, delay: index * 0.15 }}
-                  className="group cursor-pointer perspective-1000"
-                  whileHover={{ y: -15, rotateY: 8, rotateX: 5, scale: 1.02 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="group"
                 >
-                  <div className="relative">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${alumni.bg} rounded-3xl transform rotate-2 translate-x-2 translate-y-2 opacity-20`}></div>
-                    <div className={`absolute inset-0 bg-gradient-to-br ${alumni.bg} rounded-3xl transform rotate-1 translate-x-1 translate-y-1 opacity-40`}></div>
+                  <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+                    {/* Background Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
-                    <div className={`relative bg-gradient-to-br ${alumni.bg} rounded-3xl p-8 h-96 text-white overflow-hidden transform transition-all duration-500 group-hover:shadow-2xl`}>
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
-                      <div className="absolute top-4 right-4 w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm"></div>
-                      <div className="absolute bottom-4 left-4 w-16 h-16 rounded-full bg-white/5 backdrop-blur-sm"></div>
-                      
-                      <div className="relative z-10 h-full flex flex-col">
-                        <div className="flex items-center justify-between mb-6">
-                          <div className="w-16 h-16 rounded-2xl overflow-hidden ring-4 ring-white/30">
+                    {/* Success Badge */}
+                    <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg">
+                      <span className="text-white text-xs font-bold">+{alumni.increase}</span>
+                    </div>
+
+                    <div className="relative z-10">
+                      {/* Profile Section */}
+                      <div className="flex items-center space-x-4 mb-6">
+                        <div className="relative">
+                          <div className="w-16 h-16 rounded-2xl overflow-hidden ring-4 ring-purple-100 group-hover:ring-purple-200 transition-all duration-300">
                             <img 
                               src={alumni.image} 
                               alt={alumni.name}
                               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             />
                           </div>
-                          <div className="text-right">
-                            <div className="text-2xl font-bold opacity-90">{alumni.salary}</div>
-                            <div className="text-sm opacity-70">{alumni.location}</div>
+                          <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
+                            <CheckIcon className="w-3 h-3 text-white" />
                           </div>
                         </div>
-                        
-                        <div className="flex-grow">
-                          <div className="text-2xl font-bold mb-2">{alumni.name}</div>
-                          <div className="text-lg opacity-90 mb-4">{alumni.role}</div>
-                          <div className="text-base opacity-80 mb-6">at {alumni.company}</div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-gray-900 mb-1">{alumni.name}</h3>
+                          <p className="text-sm text-gray-600">{alumni.role}</p>
+                          <p className="text-sm font-semibold theme-text-primary">@ {alumni.company}</p>
                         </div>
-                        
-                        <div className="grid grid-cols-2 gap-4 mb-6">
-                          <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 text-center">
-                            <div className="text-lg font-bold">2.5x</div>
-                            <div className="text-xs opacity-80">Salary Increase</div>
-                          </div>
-                          <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 text-center">
-                            <div className="text-lg font-bold">12</div>
-                            <div className="text-xs opacity-80">Weeks Training</div>
-                          </div>
-                        </div>
-                        
-                        <button className="w-full bg-white/20 backdrop-blur-sm text-white py-3 px-6 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-white/30">
-                          Read Success Story
-                        </button>
                       </div>
+
+                      {/* Salary & Location */}
+                      <div className="mb-6">
+                        <div className="text-3xl font-bold theme-text-primary mb-1">{alumni.salary}</div>
+                        <div className="text-sm text-gray-600 flex items-center">
+                          <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                          {alumni.location}
+                        </div>
+                      </div>
+
+                      {/* Stats */}
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        <div className="bg-gray-50 rounded-xl p-3 text-center group-hover:bg-white transition-colors duration-300">
+                          <div className="text-lg font-bold text-gray-900">{alumni.increase}</div>
+                          <div className="text-xs text-gray-600">Salary Increase</div>
+                        </div>
+                        <div className="bg-gray-50 rounded-xl p-3 text-center group-hover:bg-white transition-colors duration-300">
+                          <div className="text-lg font-bold text-gray-900">{alumni.time}</div>
+                          <div className="text-xs text-gray-600">Time to Hire</div>
+                        </div>
+                      </div>
+
+                      {/* CTA */}
+                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 px-6 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:shadow-lg">
+                        View Success Story
+                      </button>
                     </div>
                   </div>
                 </motion.div>
@@ -196,21 +258,26 @@ export default function DevelopersPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-center mt-12"
+              className="text-center mt-16"
             >
-              <button className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                View All 500+ Success Stories
-              </button>
+              <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-3xl p-8 max-w-2xl mx-auto">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Join Them?</h3>
+                <p className="text-gray-600 mb-6">Start your journey to a high-paying tech career with personalized mentorship and guaranteed job placement.</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    View All Success Stories
+                  </button>
+                  <button className="btn-cosmic-secondary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    Start Your Journey
+                  </button>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
       </motion.section>
 
-      {/* Company Carousel Section */}
-      <CompanyCarousel 
-        title="Work with Top Companies"
-        subtitle="Join a platform that connects you with leading companies actively hiring remote developers"
-      />
+
 
       {/* Problem Section */}
       <motion.section
