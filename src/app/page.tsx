@@ -1283,7 +1283,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="flex flex-col md:flex-row gap-6 justify-center mb-12"
             >
-              <a href="mailto:hello@thinkify.com" className="group relative">
+                              <a href="mailto:kulkarni.karthik@thinkify.io" className="group relative">
                 <motion.button 
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
@@ -1293,7 +1293,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 theme-gradient-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </motion.button>
               </a>
-              <a href="tel:+1-555-THINKIFY" className="group relative">
+              <a href="tel:+919876543210" className="group relative">
                 <motion.button 
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
@@ -1806,7 +1806,7 @@ export default function HomePage() {
                 icon: "M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
                 title: "Elite Communication",
                 subtitle: "Direct access to our leadership team",
-                value: "hello@thinkify.com",
+                value: "kulkarni.karthik@thinkify.io",
                 gradient: "from-blue-500 to-cyan-500",
                 delay: 0.1
               },
