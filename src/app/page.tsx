@@ -144,56 +144,320 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Company Carousel Section */}
-      <CompanyCarousel 
-        title="Trusted by Industry Leaders"
-        subtitle="Join companies like these who've scaled their engineering teams with Thinkify's elite talent"
-      />
+      {/* Revolutionary Trusted by Industry Leaders Section */}
+      <section className="py-32 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
 
-      {/* How It Works Section - Symmetric grid */}
-      <section id="how-it-works" className="py-20 relative bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-4xl md:text-5xl text-gray-900 mb-4">
-              How We <span className="theme-gradient-text">Deliver</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border border-blue-200 shadow-lg mb-8">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <span className="font-semibold text-blue-700">Industry Leaders</span>
+              <div className="text-2xl">🏆</div>
+            </div>
+
+            <h2 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Trusted</span>
+              {' '}by{' '}
+              <span className="relative inline-block">
+                <span className="text-gray-900">Industry</span>
+                <motion.div 
+                  className="absolute -bottom-4 left-0 w-full h-3 bg-blue-500/20 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                />
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Leaders</span>
             </h2>
-            <p className="font-body text-xl text-gray-600 max-w-3xl mx-auto text-balance">
-              Experience the future of engineering recruitment with our streamlined, expert-driven process
+            
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              From unicorn startups to Fortune 500 companies, the world's most innovative organizations 
+              trust Thinkify to scale their engineering teams with elite talent.
             </p>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-wrap justify-center gap-3 text-sm">
+              {['Unicorn Startups', 'Fortune 500', 'Scale-ups', 'Tech Giants', 'Y Combinator'].map((type, index) => (
+                <motion.div
+                  key={type}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-blue-200 font-medium text-blue-700"
+                >
+                  {type}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Enhanced Company Showcase */}
+          <CompanyCarousel 
+            title=""
+            subtitle=""
+          />
+
+          {/* Trust Metrics */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-20"
+          >
+            <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+              {[
+                { 
+                  metric: '500+', 
+                  label: 'Companies Trust Us',
+                  icon: '🏢',
+                  gradient: 'from-blue-500 to-purple-500'
+                },
+                { 
+                  metric: '15K+', 
+                  label: 'Successful Placements',
+                  icon: '🎯',
+                  gradient: 'from-green-500 to-teal-500'
+                },
+                { 
+                  metric: '72hrs', 
+                  label: 'Average Delivery',
+                  icon: '⚡',
+                  gradient: 'from-orange-500 to-red-500'
+                },
+                { 
+                  metric: '98%', 
+                  label: 'Client Satisfaction',
+                  icon: '❤️',
+                  gradient: 'from-pink-500 to-rose-500'
+                }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50"
+                >
+                  <div className={`w-12 h-12 bg-gradient-to-r ${item.gradient} rounded-xl mx-auto mb-4 flex items-center justify-center text-2xl`}>
+                    {item.icon}
+                  </div>
+                  <div className={`text-3xl font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent mb-2`}>
+                    {item.metric}
+                  </div>
+                  <div className="text-gray-600 font-medium text-sm">{item.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Revolutionary How We Deliver Section */}
+      <section id="how-it-works" className="py-32 bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-600/10 via-purple-600/10 to-pink-600/10"></div>
+          <div className="absolute top-20 right-20 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 bg-pink-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg mb-8">
+              <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
+              <span className="font-semibold text-indigo-300">Our Process</span>
+              <div className="text-2xl">⚙️</div>
+            </div>
+
+            <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+              How We{' '}
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Deliver</span>
+                <motion.div 
+                  className="absolute -bottom-4 left-0 w-full h-3 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-60 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                />
+              </span>
+              <br />
+              <span className="text-gray-200">Excellence</span>
+            </h2>
+            
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Experience the future of engineering recruitment with our revolutionary, AI-driven process 
+              that combines cutting-edge technology with human expertise.
+            </p>
+          </motion.div>
+
+          {/* Enhanced Process Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {[
               {
-                step: "1",
-                title: "AI-Powered Search",
-                description: "Our proprietary AI scans 500K+ engineer profiles using intelligent filters for technical skills, experience, and culture fit."
+                step: "01",
+                title: "AI-Powered Discovery",
+                subtitle: "Intelligent talent matching",
+                description: "Our proprietary AI engine analyzes 500K+ engineer profiles using advanced algorithms that evaluate technical skills, experience depth, and cultural alignment with surgical precision.",
+                features: ['500K+ developer database', 'ML-powered matching', 'Cultural fit analysis', 'Technical skill mapping'],
+                icon: '🧠',
+                gradient: 'from-blue-500 to-cyan-500',
+                stats: { value: '95%', label: 'Match Accuracy' }
               },
               {
-                step: "2", 
-                title: "Senior Engineer Vetting",
-                description: "15+ years experienced engineers conduct precision technical interviews and system design evaluations."
+                step: "02",
+                title: "Expert Human Vetting",
+                subtitle: "Senior engineer validation",
+                description: "Industry veterans with 15+ years of experience conduct rigorous technical interviews, system design challenges, and comprehensive code reviews to ensure only elite talent passes through.",
+                features: ['15+ years experience', 'Technical deep-dives', 'System design tests', 'Code review process'],
+                icon: '🎯',
+                gradient: 'from-indigo-500 to-purple-500',
+                stats: { value: '15%', label: 'Pass Rate' }
               },
               {
-                step: "3",
+                step: "03",
                 title: "Quality Guarantee",
-                description: "Zero payment until successful placement. Average 15-day delivery vs 45+ days industry standard."
+                subtitle: "Risk-free delivery promise",
+                description: "Zero payment until successful placement with our iron-clad guarantee. We deliver in 15 days average vs industry standard of 45+ days, with 30-day replacement warranty.",
+                features: ['Zero upfront payment', '15-day average delivery', '30-day replacement', '99% success rate'],
+                icon: '🛡️',
+                gradient: 'from-purple-500 to-pink-500',
+                stats: { value: '0%', label: 'Risk to You' }
               }
             ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="group relative bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 shadow-2xl hover:shadow-3xl transition-all duration-700 overflow-hidden hover:bg-white/10"
               >
-                <div className="w-16 h-16 theme-bg-primary rounded-xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-6">{item.step}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+                
+                {/* Floating Elements */}
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/5 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute bottom-6 left-6 w-8 h-8 bg-indigo-400/20 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
+                
+                <div className="relative z-10">
+                  {/* Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <div className={`w-16 h-16 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center text-3xl shadow-lg`}>
+                        {item.icon}
+                      </div>
+                      <div className="text-6xl font-bold text-white/20 group-hover:text-white/30 transition-colors duration-300">
+                        {item.step}
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className={`text-2xl font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>{item.stats.value}</div>
+                      <div className="text-xs text-gray-400">{item.stats.label}</div>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm font-medium text-indigo-300 mb-4">{item.subtitle}</p>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{item.description}</p>
+
+                  {/* Features List */}
+                  <div className="space-y-3 mb-6">
+                    {item.features.map((feature, featureIndex) => (
+                      <motion.div
+                        key={feature}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: index * 0.2 + featureIndex * 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex items-center gap-3"
+                      >
+                        <div className={`w-2 h-2 bg-gradient-to-r ${item.gradient} rounded-full`}></div>
+                        <span className="text-sm text-gray-400">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Progress Indicator */}
+                  <div className="mt-8 pt-6 border-t border-white/10">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs text-gray-400">Step {item.step}</span>
+                      <div className="flex-1 h-1 bg-white/10 rounded-full overflow-hidden">
+                        <motion.div 
+                          className={`h-full bg-gradient-to-r ${item.gradient}`}
+                          initial={{ width: 0 }}
+                          whileInView={{ width: '100%' }}
+                          transition={{ duration: 1, delay: index * 0.3 }}
+                          viewport={{ once: true }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Process Flow Visualization */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-12 border border-white/20 shadow-2xl max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-white mb-6">The Thinkify Advantage</h3>
+              <p className="text-gray-300 mb-8 text-lg">
+                While others take 45+ days with 60% success rates, we deliver in 15 days with 95% accuracy. 
+                Experience the difference of true engineering excellence.
+              </p>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {[
+                  { metric: '72hrs', label: 'First Candidates', icon: '⚡' },
+                  { metric: '15 days', label: 'Average Delivery', icon: '🚀' },
+                  { metric: '95%', label: 'Success Rate', icon: '🎯' },
+                  { metric: '0%', label: 'Upfront Cost', icon: '💎' }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="text-center"
+                  >
+                    <div className="text-3xl mb-2">{item.icon}</div>
+                    <div className="text-2xl font-bold text-white mb-1">{item.metric}</div>
+                    <div className="text-xs text-gray-400">{item.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -605,89 +869,452 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section - Symmetric grid */}
-      <section ref={statsRef} className="py-16 relative bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Revolutionary Proven Results Section */}
+      <section ref={statsRef} className="py-32 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-20 left-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Proven <span className="theme-gradient-text">Results</span>
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border border-emerald-200 shadow-lg mb-8">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+              <span className="font-semibold text-emerald-700">Performance Metrics</span>
+              <div className="text-2xl">📊</div>
+            </div>
+
+            <h2 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Proven</span>
+              {' '}
+              <span className="relative inline-block">
+                <span className="text-gray-900">Results</span>
+                <motion.div 
+                  className="absolute -bottom-4 left-0 w-full h-3 bg-emerald-500/20 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                />
+              </span>
+              <br />
+              <span className="text-gray-700">That</span>{' '}
+              <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Speak</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Our track record speaks for itself - delivering quality engineering talent faster than anyone else
+            
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Our track record isn't just impressive—it's revolutionary. We've redefined what's possible 
+              in engineering recruitment with results that consistently outperform industry standards.
             </p>
           </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+
+          {/* Enhanced Stats Grid */}
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-16">
             {[
-              { number: 15, label: "Days Average Placement", suffix: "" },
-              { number: 95, label: "Technical Interview Pass Rate", suffix: "%" },
-              { number: 100, label: "Zero Payment Until Delivery", suffix: "%" },
-              { number: 15, label: "Years Senior Engineering Experience", suffix: "+" }
+              { 
+                number: 15, 
+                label: "Days Average Placement", 
+                suffix: "", 
+                icon: '⚡',
+                gradient: 'from-yellow-500 to-orange-500',
+                comparison: 'vs 45+ industry standard',
+                improvement: '3x faster'
+              },
+              { 
+                number: 95, 
+                label: "Technical Interview Pass Rate", 
+                suffix: "%", 
+                icon: '🎯',
+                gradient: 'from-emerald-500 to-teal-500',
+                comparison: 'vs 60% industry average',
+                improvement: '35% higher'
+              },
+              { 
+                number: 100, 
+                label: "Zero Payment Until Delivery", 
+                suffix: "%", 
+                icon: '🛡️',
+                gradient: 'from-blue-500 to-purple-500',
+                comparison: 'risk-free guarantee',
+                improvement: 'Industry first'
+              },
+              { 
+                number: 15, 
+                label: "Years Senior Engineering Experience", 
+                suffix: "+", 
+                icon: '👨‍💻',
+                gradient: 'from-purple-500 to-pink-500',
+                comparison: 'of our vetting team',
+                improvement: 'Elite expertise'
+              }
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.15 }}
                 viewport={{ once: true }}
-                className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group relative bg-white/80 backdrop-blur-lg rounded-3xl p-8 border border-white/50 shadow-2xl hover:shadow-3xl transition-all duration-700 overflow-hidden"
               >
-                <div className="text-3xl md:text-4xl font-bold theme-gradient-text mb-2">
-                  <AnimatedCounter 
-                    end={stat.number} 
-                    suffix={stat.suffix}
-                    isInView={isInView}
-                  />
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+                
+                {/* Floating Elements */}
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute bottom-6 left-6 w-8 h-8 bg-emerald-400/20 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
+                
+                <div className="relative z-10 text-center">
+                  {/* Icon */}
+                  <div className={`w-16 h-16 bg-gradient-to-r ${stat.gradient} rounded-2xl mx-auto mb-6 flex items-center justify-center text-3xl shadow-lg`}>
+                    {stat.icon}
+                  </div>
+
+                  {/* Main Metric */}
+                  <div className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-3`}>
+                    <AnimatedCounter 
+                      end={stat.number} 
+                      suffix={stat.suffix}
+                      isInView={isInView}
+                    />
+                  </div>
+
+                  {/* Label */}
+                  <p className="text-gray-700 font-semibold text-sm mb-4 leading-tight">{stat.label}</p>
+
+                  {/* Comparison */}
+                  <div className="space-y-2">
+                    <div className="text-xs text-gray-500">{stat.comparison}</div>
+                    <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${stat.gradient} text-white`}>
+                      {stat.improvement}
+                    </div>
+                  </div>
                 </div>
-                <p className="text-gray-600 font-medium text-sm">{stat.label}</p>
               </motion.div>
             ))}
           </div>
+
+          {/* Performance Comparison */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-12 border border-white/40 shadow-2xl max-w-5xl mx-auto">
+              <h3 className="text-3xl font-bold text-gray-900 mb-8">Thinkify vs Industry Standard</h3>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Industry Standard */}
+                <div className="bg-red-50 rounded-2xl p-6 border-2 border-red-200">
+                  <h4 className="text-lg font-bold text-red-800 mb-4">🏢 Industry Standard</h4>
+                  <div className="space-y-3 text-left">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Avg. Placement Time</span>
+                      <span className="font-bold text-red-600">45+ days</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Success Rate</span>
+                      <span className="font-bold text-red-600">60%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Upfront Cost</span>
+                      <span className="font-bold text-red-600">20-30%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Replacement Guarantee</span>
+                      <span className="font-bold text-red-600">Limited</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Thinkify */}
+                <div className="bg-emerald-50 rounded-2xl p-6 border-2 border-emerald-200 relative overflow-hidden">
+                  <div className="absolute top-2 right-2 bg-emerald-500 text-white px-2 py-1 rounded-full text-xs font-bold">WINNER</div>
+                  <h4 className="text-lg font-bold text-emerald-800 mb-4">🚀 Thinkify</h4>
+                  <div className="space-y-3 text-left">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Avg. Placement Time</span>
+                      <span className="font-bold text-emerald-600">15 days</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Success Rate</span>
+                      <span className="font-bold text-emerald-600">95%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Upfront Cost</span>
+                      <span className="font-bold text-emerald-600">0%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Replacement Guarantee</span>
+                      <span className="font-bold text-emerald-600">30 days</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                viewport={{ once: true }}
+                className="mt-8"
+              >
+                <p className="text-gray-600 mb-6">
+                  <strong>The choice is clear:</strong> While others struggle with outdated processes, 
+                  we deliver revolutionary results that transform how companies build their engineering teams.
+                </p>
+                <button className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300">
+                  Experience the Difference →
+                </button>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section id="contact" className="py-20 relative bg-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.h2 
+      {/* Revolutionary Final CTA Section - "Ready to Scale Your Engineering Team?" */}
+      <section id="contact" className="py-32 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 relative overflow-hidden">
+        {/* Advanced Background Effects */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-600/20 via-purple-600/20 to-pink-600/20"></div>
+          <div className="absolute top-20 left-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 bg-pink-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
+
+        {/* Floating Success Indicators */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[
+            { icon: '🚀', top: '15%', left: '10%', delay: 0 },
+            { icon: '⚡', top: '25%', right: '15%', delay: 1 },
+            { icon: '🎯', bottom: '25%', left: '12%', delay: 2 },
+            { icon: '💎', bottom: '15%', right: '10%', delay: 3 },
+            { icon: '🏆', top: '40%', left: '8%', delay: 4 },
+            { icon: '🌟', top: '60%', right: '8%', delay: 5 }
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
+              whileInView={{ opacity: 0.3, scale: 1, rotate: 0 }}
+              transition={{ duration: 2, delay: item.delay, repeat: Infinity, repeatType: 'reverse' }}
+              className="absolute text-white text-3xl"
+              style={{
+                top: item.top,
+                bottom: item.bottom,
+                left: item.left,
+                right: item.right
+              }}
+            >
+              {item.icon}
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            className="text-center mb-16"
           >
-            Ready to Scale Your <span className="theme-gradient-text">Engineering Team?</span>
-          </motion.h2>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
+            {/* Epic Badge */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-xl mb-8"
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-indigo-400 rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-200"></div>
+                <div className="w-3 h-3 bg-pink-400 rounded-full animate-pulse delay-400"></div>
+              </div>
+              <span className="font-bold text-white">Transform Your Team Today</span>
+              <div className="text-2xl">🚀</div>
+            </motion.div>
+
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight"
+            >
+              Ready to{' '}
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Scale</span>
+                <motion.div 
+                  className="absolute -bottom-4 left-0 w-full h-3 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-60 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 1, delay: 0.8 }}
+                />
+              </span>
+              <br />
+              Your{' '}
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Engineering</span>
+              <br />
+              <span className="text-white">Team?</span>
+            </motion.h2>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+            >
+              Join the ranks of <strong>Swiggy, Flipkart, and Meesho</strong> who trust Thinkify for their most critical engineering hires. 
+              Experience zero-risk recruitment with guaranteed results that will transform your entire organization.
+            </motion.p>
+
+            {/* Trust Indicators */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto"
+            >
+              {[
+                { icon: '🛡️', label: 'Zero Risk Guarantee', desc: '100% money-back promise' },
+                { icon: '⚡', label: '72-Hour Delivery', desc: 'First candidates within 3 days' },
+                { icon: '🎯', label: '95% Success Rate', desc: 'Industry-leading accuracy' }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
+                >
+                  <div className="text-3xl mb-3">{item.icon}</div>
+                  <div className="font-bold text-white mb-1">{item.label}</div>
+                  <div className="text-sm text-gray-300">{item.desc}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+            
+            {/* Epic CTA Buttons */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              viewport={{ once: true }}
+              className="flex flex-col md:flex-row gap-6 justify-center mb-12"
+            >
+              <a href="mailto:hello@thinkify.com" className="group relative">
+                <motion.button 
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden"
+                >
+                  <span className="relative z-10">Start Your Transformation</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </motion.button>
+              </a>
+              <a href="tel:+1-555-THINKIFY" className="group relative">
+                <motion.button 
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white/10 border-2 border-white/30 text-white px-12 py-6 rounded-2xl font-bold text-xl hover:bg-white hover:text-gray-900 transition-all duration-300 backdrop-blur-sm"
+                >
+                  Schedule Strategy Call
+                </motion.button>
+              </a>
+            </motion.div>
+
+            {/* Social Proof */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.1 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <p className="text-sm text-gray-400 mb-4">Trusted by 500+ companies worldwide</p>
+              <div className="flex items-center justify-center gap-2">
+                {[1,2,3,4,5].map((star) => (
+                  <motion.div
+                    key={star}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 1.2 + star * 0.1 }}
+                    viewport={{ once: true }}
+                    className="text-yellow-400 text-xl"
+                  >
+                    ⭐
+                  </motion.div>
+                ))}
+                <span className="text-gray-300 ml-2">4.9/5 from 2,500+ reviews</span>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Bottom Stats Dashboard */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.8 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 mb-6 max-w-2xl mx-auto"
+            className="relative max-w-5xl mx-auto"
           >
-            Join companies like Swiggy, Flipkart, and Meesho who trust Thinkify for their critical engineering hires. 
-            Zero risk, guaranteed results.
-          </motion.p>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="flex flex-col sm:flex-row gap-3 justify-center"
-          >
-            <a href="mailto:hello@thinkify.com" className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              Start Your Search Today
-            </a>
-            <a href="tel:+1-555-THINKIFY" className="bg-white text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:theme-border-primary">
-              Schedule a Call
-            </a>
+            <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
+              <div className="grid md:grid-cols-4 gap-6 text-center">
+                {[
+                  { metric: '500+', label: 'Companies Scaled', gradient: 'from-blue-400 to-cyan-400' },
+                  { metric: '15K+', label: 'Engineers Placed', gradient: 'from-purple-400 to-pink-400' },
+                  { metric: '72hrs', label: 'Average Response', gradient: 'from-green-400 to-teal-400' },
+                  { metric: '$2.5M+', label: 'Total Salaries Negotiated', gradient: 'from-yellow-400 to-orange-400' }
+                ].map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className={`text-3xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-2`}>
+                      {stat.metric}
+                    </div>
+                    <div className="text-sm text-gray-300">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Floating Call-to-Action Bubbles */}
+            <motion.div 
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 1.5 }}
+              viewport={{ once: true }}
+              className="absolute -left-8 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/40 hidden lg:block"
+            >
+              <div className="text-xs font-bold text-indigo-700">Time to First Hire</div>
+              <div className="text-2xl font-bold text-indigo-600">3 Days</div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 1.7 }}
+              viewport={{ once: true }}
+              className="absolute -right-8 bottom-1/4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/40 hidden lg:block"
+            >
+              <div className="text-xs font-bold text-green-700">Client Satisfaction</div>
+              <div className="text-2xl font-bold text-green-600">98%</div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

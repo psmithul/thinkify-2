@@ -308,43 +308,77 @@ export default function DevelopersPage() {
 
 
 
-      {/* Problem Section */}
+      {/* Revolutionary Problem Section - "Finding it impossible to stand out" */}
       <motion.section
         ref={problemRef}
-        className="py-20 bg-white"
+        className="py-32 bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50 relative overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-20 left-20 w-64 h-64 bg-red-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Header */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={problemInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border border-red-200 shadow-lg mb-8">
+              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+              <span className="font-semibold text-red-700">Developer Pain Points</span>
+              <div className="text-2xl">😤</div>
+            </div>
+          </motion.div>
+
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               animate={problemInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-                Finding it impossible to stand out to recruiters for top remote jobs?
+              <h2 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+                Finding it{' '}
+                <span className="relative inline-block">
+                  <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">impossible</span>
+                  <motion.div 
+                    className="absolute -bottom-4 left-0 w-full h-3 bg-red-500/20 rounded-full"
+                    initial={{ scaleX: 0 }}
+                    animate={problemInView ? { scaleX: 1 } : {}}
+                    transition={{ duration: 1, delay: 0.5 }}
+                  />
+                </span>
+                {' '}to stand out to recruiters for top remote jobs?
               </h2>
               
-              <p className="text-xl text-gray-600 mb-8">
-                What if a platform could get you:
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                You're trapped in a cycle of mediocrity. What if a platform could break you free and get you:
               </p>
 
               <div className="space-y-6">
                 {[
-                  'Global opportunities, excellent pay',
-                  'The flexibility of remote work',
-                  'Exciting problems to work on, with interesting people.'
+                  { text: 'Global opportunities with excellent pay', icon: '🌍', color: 'from-blue-500 to-purple-500' },
+                  { text: 'True flexibility of remote work', icon: '🏠', color: 'from-green-500 to-teal-500' },
+                  { text: 'Exciting problems with brilliant minds', icon: '🧠', color: 'from-purple-500 to-pink-500' }
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -30 }}
                     animate={problemInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                    className="flex items-center space-x-4"
+                    transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
+                    className="group relative bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-xl transition-all duration-500"
                   >
-                    <div className="w-6 h-6 theme-bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                      <CheckIcon className="w-4 h-4 text-white" />
+                    <div className={`absolute inset-0 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl`}></div>
+                    <div className="relative z-10 flex items-center space-x-4">
+                      <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-xl flex items-center justify-center text-2xl shadow-lg`}>
+                        {item.icon}
+                      </div>
+                      <span className="text-lg text-gray-800 font-semibold">{item.text}</span>
                     </div>
-                    <span className="text-lg text-gray-700">{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -356,151 +390,454 @@ export default function DevelopersPage() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="relative"
             >
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
-                    <div className="text-red-600 mb-2">👑</div>
-                    <div className="text-sm font-medium text-red-800">No autonomy</div>
+              {/* Pain Points Grid */}
+              <div className="relative">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-6">
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={problemInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.6, delay: 0.5 }}
+                      className="bg-red-100 border-2 border-red-300 rounded-2xl p-6 text-center relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-red-200/50 to-red-300/30"></div>
+                      <div className="relative z-10">
+                        <div className="text-3xl mb-3">🔒</div>
+                        <div className="text-sm font-bold text-red-800">No Autonomy</div>
+                        <div className="text-xs text-red-600 mt-2">Micromanaged daily</div>
+                      </div>
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={problemInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.6, delay: 0.7 }}
+                      className="bg-orange-100 border-2 border-orange-300 rounded-2xl p-6 text-center relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-orange-200/50 to-orange-300/30"></div>
+                      <div className="relative z-10">
+                        <div className="text-3xl mb-3">⏰</div>
+                        <div className="text-sm font-bold text-orange-800">No Flexibility</div>
+                        <div className="text-xs text-orange-600 mt-2">9-5 prison</div>
+                      </div>
+                    </motion.div>
                   </div>
-                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 text-center">
-                    <div className="text-orange-600 mb-2">🔄</div>
-                    <div className="text-sm font-medium text-orange-800">No flexibility</div>
+                  <div className="space-y-6 mt-8">
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={problemInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.6, delay: 0.9 }}
+                      className="bg-yellow-100 border-2 border-yellow-300 rounded-2xl p-6 text-center relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-yellow-200/50 to-yellow-300/30"></div>
+                      <div className="relative z-10">
+                        <div className="text-3xl mb-3">🏗️</div>
+                        <div className="text-sm font-bold text-yellow-800">Limited Resources</div>
+                        <div className="text-xs text-yellow-600 mt-2">Outdated tech stack</div>
+                      </div>
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={problemInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.6, delay: 1.1 }}
+                      className="bg-gray-100 border-2 border-gray-300 rounded-2xl p-6 text-center relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-200/50 to-gray-300/30"></div>
+                      <div className="relative z-10">
+                        <div className="text-3xl mb-3">📉</div>
+                        <div className="text-sm font-bold text-gray-800">Career Stagnation</div>
+                        <div className="text-xs text-gray-600 mt-2">No growth path</div>
+                      </div>
+                    </motion.div>
                   </div>
                 </div>
-                <div className="space-y-4 mt-8">
-                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-center">
-                    <div className="text-yellow-600 mb-2">⚠️</div>
-                    <div className="text-sm font-medium text-yellow-800">Limited infrastructure and resources</div>
-                  </div>
-                  <div className="theme-bg-surface border theme-border-primary rounded-lg p-4 text-center">
-                    <div className="theme-text-primary mb-2">📈</div>
-                    <div className="text-sm font-medium theme-text-primary">Stagnating career growth</div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="absolute -top-4 -right-4 w-32 h-32 bg-gray-100 rounded-2xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=200&h=200&fit=crop&crop=face" 
-                  alt="Frustrated developer"
-                  className="w-full h-full object-cover"
-                />
+
+                {/* Frustrated Developer Image */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                  animate={problemInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="absolute -top-8 -right-8 w-40 h-40 rounded-3xl overflow-hidden shadow-2xl border-4 border-white"
+                >
+                  <img 
+                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=200&h=200&fit=crop&crop=face" 
+                    alt="Frustrated developer"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </motion.div>
+
+                {/* Floating Pain Indicators */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={problemInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 1.3 }}
+                  className="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-red-200"
+                >
+                  <div className="text-xs font-bold text-red-700">Rejection Rate</div>
+                  <div className="text-2xl font-bold text-red-600">89%</div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
         </div>
       </motion.section>
 
-      {/* Solution Section */}
+      {/* Revolutionary Solution Section - "What if such a platform exists?" */}
       <motion.section
         ref={solutionRef}
-        className="py-20 bg-gray-50"
+        className="py-32 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-50">
+          <div className="absolute top-20 right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-1/3 left-1/3 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={solutionInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              What if such a platform exists?
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border border-emerald-200 shadow-lg mb-8">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+              <span className="font-semibold text-emerald-700">The Solution</span>
+              <div className="text-2xl">💡</div>
+            </div>
+
+            <h2 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+              What if such a{' '}
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">platform</span>
+                <motion.div 
+                  className="absolute -bottom-4 left-0 w-full h-3 bg-emerald-500/20 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  animate={solutionInView ? { scaleX: 1 } : {}}
+                  transition={{ duration: 1, delay: 0.5 }}
+                />
+              </span>
+              {' '}exists?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We find you jobs. You get hired. We coach you in everything, from interview preparation to negotiations. Plus, we are free.
+            
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              We don't just find you jobs. We architect your entire career transformation. From interview mastery to salary negotiations - and it's completely free.
             </p>
+
+            <div className="flex flex-wrap justify-center gap-3 text-sm">
+              {['100% Free Platform', 'Career Coaching', 'Salary Negotiation', 'Interview Prep', 'Job Matching'].map((feature, index) => (
+                <motion.div
+                  key={feature}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={solutionInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-emerald-200 font-medium text-emerald-700"
+                >
+                  {feature}
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* Enhanced Solution Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {[
               {
                 icon: '🎯',
-                title: 'Find your perfect job match',
-                description: 'We match you with companies that align with your skills, values, and career goals.',
-                color: 'bg-blue-50 border-blue-200'
+                title: 'Perfect Job Matching',
+                subtitle: 'AI-powered precision',
+                description: 'Our advanced algorithms analyze 500+ data points to match you with companies that align perfectly with your skills, values, and career aspirations.',
+                color: 'from-blue-500 to-purple-500',
+                features: ['Skills alignment', 'Culture fit analysis', 'Career path mapping', 'Salary benchmarking'],
+                stats: { value: '95%', label: 'Match Accuracy' }
               },
               {
                 icon: '🚀',
-                title: 'Get hired faster',
-                description: 'Our proven process helps you land offers 3x faster than traditional job searching.',
-                color: 'theme-bg-surface theme-border-primary'
+                title: 'Accelerated Hiring',
+                subtitle: '3x faster than traditional methods',
+                description: 'Skip the endless applications and waiting. Our proven process connects you directly with hiring managers actively seeking your expertise.',
+                color: 'from-emerald-500 to-teal-500',
+                features: ['Direct hiring manager access', 'Fast-track interviews', 'Skip initial screenings', 'Priority consideration'],
+                stats: { value: '21', label: 'Days Average' }
               },
               {
                 icon: '💰',
-                title: 'Negotiate better packages',
-                description: 'We help you negotiate salaries and benefits that reflect your true market value.',
-                color: 'bg-green-50 border-green-200'
+                title: 'Elite Negotiation Support',
+                subtitle: 'Maximize your market value',
+                description: 'Our expert negotiators have secured millions in additional compensation. We fight for packages that reflect your true worth.',
+                color: 'from-green-500 to-emerald-500',
+                features: ['Salary benchmarking', 'Package optimization', 'Expert negotiators', 'Market value analysis'],
+                stats: { value: '40%', label: 'Salary Increase' }
               }
             ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 animate={solutionInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className={`${item.color} border rounded-2xl p-8 text-center`}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="group relative bg-white/80 backdrop-blur-lg rounded-3xl p-8 border border-white/50 shadow-2xl hover:shadow-3xl transition-all duration-700 overflow-hidden"
               >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Target Audience Section */}
-      <motion.section className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Thinkify is for developers who:
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                icon: '⭐',
-                title: 'Have a minimum of 4 years of experience working on full-stack, MERN stack, frontend, or backend.',
-                gradient: 'theme-bg-primary'
-              },
-              {
-                icon: '🔍',
-                title: 'Are in search of a 100% free platform that charges hiring partners, not developers.',
-                gradient: 'theme-bg-secondary'
-              },
-              {
-                icon: '⏰',
-                title: 'Don\'t want to waste time negotiating the salary you deserve with recruiters.',
-                gradient: 'bg-gradient-to-r from-green-600 to-blue-600'
-              },
-              {
-                icon: '🤝',
-                title: 'Want a lifelong career partner invested in making you a top marketable talent.',
-                gradient: 'bg-gradient-to-r from-orange-600 to-red-600'
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative"
-              >
-                <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 h-full hover:bg-gray-800 transition-colors duration-300">
-                  <div className={`w-16 h-16 ${item.gradient} rounded-2xl flex items-center justify-center text-2xl mb-6`}>
-                    {item.icon}
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+                
+                {/* Floating Elements */}
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute bottom-6 left-6 w-8 h-8 bg-emerald-400/20 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
+                
+                <div className="relative z-10">
+                  {/* Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${item.color} rounded-2xl flex items-center justify-center text-3xl shadow-lg`}>
+                      {item.icon}
+                    </div>
+                    <div className="text-right">
+                      <div className={`text-2xl font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>{item.stats.value}</div>
+                      <div className="text-xs text-gray-500">{item.stats.label}</div>
+                    </div>
                   </div>
-                  <p className="text-lg text-gray-200">{item.title}</p>
+
+                  {/* Content */}
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-sm font-medium text-emerald-600 mb-4">{item.subtitle}</p>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{item.description}</p>
+
+                  {/* Features List */}
+                  <div className="space-y-3 mb-6">
+                    {item.features.map((feature, featureIndex) => (
+                      <motion.div
+                        key={feature}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={solutionInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.4, delay: index * 0.2 + featureIndex * 0.1 }}
+                        className="flex items-center gap-3"
+                      >
+                        <div className={`w-2 h-2 bg-gradient-to-r ${item.color} rounded-full`}></div>
+                        <span className="text-sm text-gray-700">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* CTA Button */}
+                  <button className="w-full py-3 px-6 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl font-semibold text-gray-700 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 hover:from-emerald-100 hover:to-teal-100 hover:text-emerald-700">
+                    Learn More →
+                  </button>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={solutionInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-center"
+          >
+            <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-12 border border-white/40 shadow-2xl max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">Ready to Experience the Transformation?</h3>
+              <p className="text-gray-600 mb-8 text-lg">Join 10,000+ developers who've already unlocked their career potential with Thinkify.</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl"
+                >
+                  Start Your Journey Free
+                </motion.button>
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white/80 text-gray-700 border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white transition-all duration-300"
+                >
+                  Schedule Demo Call
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Revolutionary Target Audience Section - "Thinkify is for developers who:" */}
+      <motion.section className="py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-pink-600/10"></div>
+          <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg mb-8">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+              <span className="font-semibold text-blue-300">Elite Developer Criteria</span>
+              <div className="text-2xl">🎯</div>
+            </div>
+
+            <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Thinkify</span>
+              {' '}is for{' '}
+              <span className="relative inline-block">
+                <span className="text-white">developers</span>
+                <motion.div 
+                  className="absolute -bottom-4 left-0 w-full h-3 bg-gradient-to-r from-blue-500 to-purple-500 opacity-60 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                />
+              </span>
+              {' '}who:
+            </h2>
+            
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              We're extremely selective. Only the top-tier developers who meet our rigorous standards 
+              gain access to our exclusive network of premium opportunities.
+            </p>
+          </motion.div>
+
+          {/* Enhanced Criteria Grid */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            {[
+              {
+                icon: '⭐',
+                title: 'Proven Technical Excellence',
+                subtitle: 'Minimum 4+ years of hands-on experience',
+                description: 'You have deep expertise in full-stack development, MERN stack, frontend, or backend technologies. Your code speaks for itself.',
+                requirements: ['4+ years experience', 'Full-stack or specialized expertise', 'Strong portfolio/GitHub', 'Production-level projects'],
+                gradient: 'from-yellow-500 to-orange-500',
+                stats: { value: '4+', label: 'Years Required' }
+              },
+              {
+                icon: '🎯',
+                title: 'Value-Driven Partnership',
+                subtitle: '100% free platform for developers',
+                description: 'You understand that the best platforms invest in talent, not exploit it. We charge hiring partners, never developers.',
+                requirements: ['Zero platform fees', 'No hidden costs', 'Revenue from companies', 'Developer-first approach'],
+                gradient: 'from-emerald-500 to-teal-500',
+                stats: { value: '0%', label: 'Developer Fees' }
+              },
+              {
+                icon: '⚡',
+                title: 'Time-Conscious Professional',
+                subtitle: 'Skip the negotiation hassles',
+                description: 'You value your time and want expert negotiators fighting for your worth, not wasting months in back-and-forth discussions.',
+                requirements: ['Expert negotiation support', 'Market-rate salaries', 'Time-efficient process', 'Professional representation'],
+                gradient: 'from-blue-500 to-purple-500',
+                stats: { value: '40%', label: 'Avg. Salary Boost' }
+              },
+              {
+                icon: '🚀',
+                title: 'Career-Focused Mindset',
+                subtitle: 'Lifelong growth partner',
+                description: 'You\'re not just looking for a job - you want a career transformation partner invested in making you a top-tier, marketable talent.',
+                requirements: ['Long-term career planning', 'Skill development support', 'Market positioning', 'Growth mentorship'],
+                gradient: 'from-purple-500 to-pink-500',
+                stats: { value: '5x', label: 'Career Growth' }
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="group relative bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 shadow-2xl hover:shadow-3xl transition-all duration-700 overflow-hidden hover:bg-white/10"
+              >
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+                
+                {/* Floating Elements */}
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/5 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute bottom-6 left-6 w-8 h-8 bg-blue-400/20 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
+                
+                <div className="relative z-10">
+                  {/* Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center text-3xl shadow-lg`}>
+                      {item.icon}
+                    </div>
+                    <div className="text-right">
+                      <div className={`text-2xl font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>{item.stats.value}</div>
+                      <div className="text-xs text-gray-400">{item.stats.label}</div>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm font-medium text-blue-300 mb-4">{item.subtitle}</p>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{item.description}</p>
+
+                  {/* Requirements List */}
+                  <div className="space-y-3">
+                    {item.requirements.map((req, reqIndex) => (
+                      <motion.div
+                        key={req}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: index * 0.2 + reqIndex * 0.1 }}
+                        className="flex items-center gap-3"
+                      >
+                        <div className={`w-2 h-2 bg-gradient-to-r ${item.gradient} rounded-full`}></div>
+                        <span className="text-sm text-gray-400">{req}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-center"
+          >
+            <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-12 border border-white/20 shadow-2xl max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-white mb-6">Think You're Elite Material?</h3>
+              <p className="text-gray-300 mb-8 text-lg">
+                Only 15% of applicants make it through our vetting process. Join the exclusive network of 
+                top-tier developers who command premium salaries and work on cutting-edge projects.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                >
+                  Apply for Elite Status
+                </motion.button>
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white/10 text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all duration-300"
+                >
+                  Learn About Vetting
+                </motion.button>
+              </div>
+              
+              {/* Stats Footer */}
+              <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t border-white/20">
+                {[
+                  { stat: '15%', label: 'Acceptance Rate' },
+                  { stat: '$120K+', label: 'Average Salary' },
+                  { stat: '95%', label: 'Satisfaction Rate' }
+                ].map((item, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-2xl font-bold text-blue-400">{item.stat}</div>
+                    <div className="text-xs text-gray-400">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </motion.section>
 
@@ -786,13 +1123,41 @@ export default function DevelopersPage() {
       </motion.section>
 
       {/* Final CTA Section */}
-      <motion.section className="py-20 theme-bg-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                             radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-                             radial-gradient(circle at 40% 40%, rgba(120, 200, 255, 0.3) 0%, transparent 50%)`
-          }} />
+      {/* Revolutionary "Join the most sought-out developer collective" Section */}
+      <motion.section className="py-32 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white relative overflow-hidden">
+        {/* Advanced Background Effects */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 bg-pink-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
+
+        {/* Floating Code Elements */}
+        <div className="absolute inset-0 opacity-10 overflow-hidden">
+          {[
+            { text: 'const elite = await findDevelopers()', top: '10%', left: '10%', delay: 0 },
+            { text: '{ skill: "exceptional" }', top: '20%', right: '15%', delay: 1 },
+            { text: 'if (developer.isElite())', top: '60%', left: '8%', delay: 2 },
+            { text: 'return premium.opportunities', bottom: '20%', right: '10%', delay: 3 },
+            { text: '// Join the collective', top: '40%', right: '20%', delay: 4 }
+          ].map((code, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2, delay: code.delay, repeat: Infinity, repeatType: 'reverse' }}
+              className="absolute text-white/20 font-mono text-sm"
+              style={{
+                top: code.top,
+                bottom: code.bottom,
+                left: code.left,
+                right: code.right
+              }}
+            >
+              {code.text}
+            </motion.div>
+          ))}
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -800,69 +1165,211 @@ export default function DevelopersPage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-8">
-              Join the most sought-out{' '}
-              <span className="theme-gradient-text">
-                developer collective.
+            {/* Elite Badge */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-xl mb-8"
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-200"></div>
+                <div className="w-3 h-3 bg-pink-400 rounded-full animate-pulse delay-400"></div>
+              </div>
+              <span className="font-bold text-white">Elite Developer Collective</span>
+              <div className="text-2xl">👑</div>
+            </motion.div>
+
+            <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+              Join the most{' '}
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">sought-out</span>
+                <motion.div 
+                  className="absolute -bottom-4 left-0 w-full h-3 bg-gradient-to-r from-blue-500 to-pink-500 opacity-60 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                />
               </span>
+              <br />
+              <span className="text-white">developer</span>{' '}
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">collective.</span>
             </h2>
             
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
-              We'll take care of the boring hiring bits, so you can enjoy the flexibility and freedom you deserve as a top developer.
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+              We handle the tedious recruitment process, negotiations, and career logistics. 
+              You focus on what you do best - creating exceptional software that changes the world.
             </p>
 
+            {/* Enhanced CTA Section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
+              className="mb-16"
             >
-              <Link href="#contact">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <Link href="#contact">
+                  <motion.button
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl transition-all duration-300"
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Join Elite Collective
+                    <ArrowRightIcon className="w-6 h-6 ml-3 inline-block" />
+                  </motion.button>
+                </Link>
                 <motion.button
-                  className="btn-cosmic-primary px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl transition-all duration-300"
+                  className="bg-white/10 border-2 border-white/30 text-white px-12 py-6 rounded-2xl font-bold text-xl hover:bg-white/20 transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Build your profile
-                  <ArrowRightIcon className="w-6 h-6 ml-3 inline-block" />
+                  View Member Benefits
                 </motion.button>
-              </Link>
+              </div>
+
+              {/* Member Benefits Preview */}
+              <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                {[
+                  { icon: '💼', text: 'Premium Job Access', desc: 'Exclusive opportunities' },
+                  { icon: '🚀', text: 'Career Acceleration', desc: '3x faster growth' },
+                  { icon: '💰', text: 'Salary Optimization', desc: '40% higher packages' }
+                ].map((benefit, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20"
+                  >
+                    <div className="text-2xl mb-2">{benefit.icon}</div>
+                    <div className="font-semibold text-white">{benefit.text}</div>
+                    <div className="text-xs text-gray-300">{benefit.desc}</div>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
 
+            {/* Enhanced Developer Dashboard Preview */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="mt-16 relative max-w-4xl mx-auto"
+              className="relative max-w-6xl mx-auto"
             >
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-                <div className="bg-gray-900 rounded-xl p-6">
-                  <div className="flex items-center space-x-2 mb-4">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
+                {/* Terminal Header */}
+                <div className="bg-gray-900/80 rounded-2xl p-6 backdrop-blur-sm">
+                  <div className="flex items-center space-x-2 mb-6">
                     <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span className="text-gray-400 text-sm ml-4">Thinkify Developer Portal</span>
                   </div>
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-10 h-10 theme-bg-primary rounded-full"></div>
+                  
+                  {/* Dashboard Content */}
+                  <div className="space-y-6">
+                    {/* Profile Section */}
+                    <div className="flex items-center space-x-4 mb-8">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                       <div>
-                        <div className="text-white font-medium">All Jobs</div>
-                        <div className="text-gray-400 text-sm">Remote opportunities</div>
+                        <div className="text-white font-medium">Elite Developer Portal</div>
+                        <div className="text-green-400 text-sm">● Active - 847 opportunities available</div>
+                      </div>
+                      <div className="ml-auto bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 rounded-lg">
+                        <span className="text-white text-sm font-medium">Verified Elite</span>
                       </div>
                     </div>
-                    <div className="grid grid-cols-3 gap-4">
-                      {['Technical Lead Developer', 'Senior Software Developer', 'PHP Developer'].map((job, i) => (
-                        <div key={i} className="bg-gray-800 rounded-lg p-4">
-                          <div className="text-white font-medium text-sm mb-2">{job}</div>
-                          <div className="text-green-400 font-bold">$80-110k</div>
-                          <div className="text-gray-400 text-xs">Remote</div>
+
+                    {/* Job Opportunities Grid */}
+                    <div className="grid md:grid-cols-3 gap-4">
+                      {[
+                        { 
+                          title: 'Senior Full-Stack Engineer', 
+                          company: 'Unicorn Startup', 
+                          salary: '$140-180k', 
+                          remote: 'Remote',
+                          urgency: 'Hot',
+                          gradient: 'from-red-500 to-orange-500'
+                        },
+                        { 
+                          title: 'AI/ML Engineering Lead', 
+                          company: 'Fortune 500', 
+                          salary: '$160-220k', 
+                          remote: 'Remote',
+                          urgency: 'Featured',
+                          gradient: 'from-blue-500 to-purple-500'
+                        },
+                        { 
+                          title: 'DevOps Architect', 
+                          company: 'Scale-up', 
+                          salary: '$120-160k', 
+                          remote: 'Remote',
+                          urgency: 'New',
+                          gradient: 'from-green-500 to-teal-500'
+                        }
+                      ].map((job, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.4, delay: i * 0.1 }}
+                          className="bg-gray-800/80 rounded-xl p-4 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105"
+                        >
+                          <div className="flex items-center justify-between mb-3">
+                            <div className={`px-2 py-1 rounded text-xs font-medium bg-gradient-to-r ${job.gradient} text-white`}>
+                              {job.urgency}
+                            </div>
+                            <div className="text-gray-400 text-xs">{job.remote}</div>
+                          </div>
+                          <div className="text-white font-medium text-sm mb-1">{job.title}</div>
+                          <div className="text-gray-400 text-xs mb-2">{job.company}</div>
+                          <div className="text-green-400 font-bold text-lg">{job.salary}</div>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    {/* Stats Bar */}
+                    <div className="grid grid-cols-4 gap-4 pt-6 border-t border-gray-700">
+                      {[
+                        { label: 'Active Applications', value: '12' },
+                        { label: 'Interview Requests', value: '5' },
+                        { label: 'Offers Received', value: '3' },
+                        { label: 'Avg. Response Time', value: '2h' }
+                      ].map((stat, index) => (
+                        <div key={index} className="text-center">
+                          <div className="text-white font-bold text-lg">{stat.value}</div>
+                          <div className="text-gray-400 text-xs">{stat.label}</div>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
               </div>
+
+              {/* Floating Elements */}
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 1 }}
+                className="absolute -left-8 top-1/4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/40"
+              >
+                <div className="text-xs font-bold text-green-700">Success Rate</div>
+                <div className="text-2xl font-bold text-green-600">95%</div>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                className="absolute -right-8 bottom-1/4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/40"
+              >
+                <div className="text-xs font-bold text-blue-700">Avg. Salary</div>
+                <div className="text-2xl font-bold text-blue-600">$140K+</div>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
