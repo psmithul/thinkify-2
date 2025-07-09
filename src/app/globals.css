@@ -520,6 +520,44 @@ h3 {
   filter: grayscale(0%);
 }
 
+/* Static company carousel */
+.company-static-container {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.company-static-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.company-static-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.company-logo-uniform {
+  height: 3rem;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  filter: grayscale(20%);
+  transition: all 0.3s ease;
+}
+
+.company-static-item:hover .company-logo-uniform {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
 
 
 @keyframes scroll-left {
@@ -600,6 +638,16 @@ h3 {
     max-width: 95px;
   }
   
+  .company-static-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .company-logo-uniform {
+    height: 2.5rem;
+    max-width: 120px;
+  }
+  
   .theme-switcher {
     right: 0.5rem;
     padding: 0.5rem;
@@ -640,6 +688,16 @@ h3 {
   .company-logo-mini {
     height: 1.5rem;
     max-width: 80px;
+  }
+  
+  .company-static-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+  
+  .company-logo-uniform {
+    height: 2rem;
+    max-width: 100px;
   }
 }
 

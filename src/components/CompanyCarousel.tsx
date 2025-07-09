@@ -48,32 +48,24 @@ const CompanyCarousel: React.FC<CompanyCarouselProps> = ({
           </p>
         </motion.div>
         
-        <div className="company-flash-container">
-          <div className="company-flash-track">
-            {/* First set */}
-            <div className="company-flash-set">
-              {companyLogos.map((logo, index) => (
-                <div key={`first-${index}`} className="company-flash-item">
-                  <img 
-                    src={logo.src} 
-                    alt={logo.name}
-                    className="company-logo-big"
-                  />
-                </div>
-              ))}
-            </div>
-            {/* Duplicate set for seamless loop */}
-            <div className="company-flash-set">
-              {companyLogos.map((logo, index) => (
-                <div key={`second-${index}`} className="company-flash-item">
-                  <img 
-                    src={logo.src} 
-                    alt={logo.name}
-                    className="company-logo-big"
-                  />
-                </div>
-              ))}
-            </div>
+        <div className="company-static-container">
+          <div className="company-static-grid">
+            {companyLogos.map((logo, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="company-static-item"
+              >
+                <img 
+                  src={logo.src} 
+                  alt={logo.name}
+                  className="company-logo-uniform"
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

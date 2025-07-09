@@ -197,120 +197,225 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Elite Tech Talent Section - Perfect Symmetry */}
-      <section id="talent" className="py-20 relative bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-4xl md:text-5xl text-gray-900 mb-4">
-              Elite <span className="theme-gradient-text">Tech Talent</span>
-            </h2>
-            <p className="font-body text-xl text-gray-600 max-w-3xl mx-auto text-balance">
-              Scale your team dynamically with elastic hiring - add or reduce engineers as needed
-            </p>
-          </div>
+            {/* Revolutionary Elite Tech Talent Section */}
+      <section id="talent" className="py-32 relative bg-gradient-to-br from-slate-50 via-white to-gray-50 overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-60">
+          <div className="absolute top-20 left-10 w-72 h-72 theme-bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
 
-          {/* Revolutionary Talent Showcase */}
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Featured Talent Cards */}
-            <div className="lg:col-span-2">
-              <div className="grid md:grid-cols-2 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Header */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="font-semibold theme-text-primary">Elite Network Active</span>
+              <div className="flex -space-x-2">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-green-500 to-blue-500"></div>
+                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500"></div>
+              </div>
+            </div>
+            
+            <h2 className="font-display text-5xl md:text-7xl text-gray-900 mb-8 leading-tight">
+              <span className="theme-gradient-text">Elite Tech Talent</span>
+              <br />
+              <span className="text-gray-800">Ready in</span>{' '}
+              <span className="relative inline-block">
+                <span className="theme-gradient-text">72 Hours</span>
+                <motion.div 
+                  className="absolute -bottom-4 left-0 w-full h-3 theme-bg-primary/20 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                />
+              </span>
+            </h2>
+            
+            <p className="font-body text-xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
+              Access our curated network of 50,000+ pre-vetted engineers. From AI/ML specialists to DevOps architects, 
+              scale your team instantly with guaranteed quality.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-3 text-sm">
+              {['AI/ML Engineers', 'DevOps Specialists', 'Full-Stack Developers', 'Data Scientists', 'Mobile Engineers'].map((skill, index) => (
+                <motion.div
+                  key={skill}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border theme-border-primary font-medium theme-text-primary"
+                >
+                  {skill}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Interactive Talent Showcase Grid */}
+          <div className="grid lg:grid-cols-12 gap-8 mb-16">
+            {/* Featured Talent Cards - Enhanced */}
+            <div className="lg:col-span-8">
+              <div className="grid md:grid-cols-2 gap-8">
                 {profiles.map((profile, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    transition={{ duration: 0.8, delay: index * 0.15 }}
                     viewport={{ once: true }}
-                    className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                    className="group relative bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-700 overflow-hidden border border-white/50"
                   >
-                    {/* Background Gradient */}
-                    <div className="absolute inset-0 theme-bg-surface opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    {/* Dynamic Background Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-pink-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    
+                    {/* Floating Animation Elements */}
+                    <div className="absolute top-4 right-4 w-8 h-8 theme-bg-primary/10 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '0.5s' }}></div>
+                    <div className="absolute bottom-4 left-4 w-6 h-6 bg-green-500/10 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
                     
                     {/* Profile Content */}
                     <div className="relative z-10">
-                      <div className="flex items-center space-x-4 mb-6">
-                        <div className="w-16 h-16 rounded-2xl overflow-hidden ring-4 ring-gray-100 group-hover:ring-gray-200 transition-all duration-300">
-                      <img
-                        src={profile.image}
-                        alt={profile.name}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                          />
+                      <div className="flex items-center space-x-5 mb-8">
+                        <div className="relative">
+                          <div className="w-20 h-20 rounded-2xl overflow-hidden ring-4 ring-white shadow-xl group-hover:ring-theme-primary/20 transition-all duration-500">
+                            <img
+                              src={profile.image}
+                              alt={profile.name}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                          </div>
+                          <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+                            <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                          </div>
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold text-gray-900 group-hover:theme-text-primary transition-colors">{profile.name}</h3>
-                          <p className="text-gray-600 font-medium">{profile.role}</p>
+                          <h3 className="text-2xl font-bold text-gray-900 group-hover:theme-text-primary transition-colors duration-300">{profile.name}</h3>
+                          <p className="text-gray-600 font-semibold text-lg">{profile.role}</p>
+                          <div className="flex items-center gap-2 mt-2">
+                            <span className="text-sm font-medium text-gray-500">Currently at</span>
+                            <span className="text-sm font-bold theme-gradient-text">{profile.company}</span>
+                          </div>
                         </div>
                       </div>
                       
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-gray-500">Experience</span>
-                          <span className="text-sm font-semibold text-gray-900">{profile.experience}</span>
+                      {/* Enhanced Stats Grid */}
+                      <div className="grid grid-cols-2 gap-4 mb-8">
+                        <div className="bg-white/60 rounded-xl p-4 text-center border border-gray-100">
+                          <div className="text-2xl font-bold theme-gradient-text mb-1">{profile.experience.split(' ')[0]}+</div>
+                          <div className="text-xs text-gray-600 font-medium">Years Experience</div>
                         </div>
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-gray-500">Company</span>
-                          <span className="text-sm font-semibold theme-gradient-text">{profile.company}</span>
+                        <div className="bg-white/60 rounded-xl p-4 text-center border border-gray-100">
+                          <div className="text-2xl font-bold text-green-600 mb-1">95%</div>
+                          <div className="text-xs text-gray-600 font-medium">Success Rate</div>
                         </div>
                       </div>
                       
-                      <div className="mt-6 pt-6 border-t border-gray-100">
-                        <button className="w-full btn-cosmic-primary py-3 px-6 rounded-xl font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                          View Profile
-                        </button>
+                      {/* Skills Tags */}
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {['React', 'Node.js', 'Python', 'AWS'].map((skill, skillIndex) => (
+                          <span 
+                            key={skill} 
+                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-xs font-medium"
+                          >
+                            {skill}
+                          </span>
+                        ))}
                       </div>
+                      
+                      {/* Action Button */}
+                      <button className="w-full btn-cosmic-primary py-4 px-6 rounded-xl font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-y-6 group-hover:translate-y-0 transition-all duration-500 shadow-lg hover:shadow-xl">
+                        View Full Profile & Hire →
+                      </button>
                     </div>
                   </motion.div>
                 ))}
               </div>
             </div>
 
-            {/* Key Features Sidebar */}
-            <div className="space-y-6">
+            {/* Enhanced Feature Sidebar */}
+            <div className="lg:col-span-4 space-y-6">
               {[
                 {
-                  icon: '🚀',
-                  title: 'Fast Placement',
-                  description: '15-day average delivery vs 45+ days industry standard'
-                },
-                {
-                  icon: '📈',
-                  title: 'Elastic Scaling',
-                  description: 'Scale your team up or down instantly based on project needs'
-                },
-                {
                   icon: '⚡',
-                  title: 'Elastic Hiring',
-                  description: 'Pay only for what you need - flexible team sizing with zero contracts'
+                  title: 'Lightning Fast',
+                  description: '72-hour delivery guarantee vs 45+ days industry standard',
+                  color: 'from-yellow-500 to-orange-500',
+                  metric: '15x'
                 },
                 {
-                  icon: '💎',
+                  icon: '🎯',
+                  title: 'Perfect Match',
+                  description: 'AI-powered matching with 95% technical interview pass rate',
+                  color: 'from-blue-500 to-purple-500',
+                  metric: '95%'
+                },
+                {
+                  icon: '🔒',
                   title: 'Zero Risk',
-                  description: 'No payment until successful placement'
+                  description: 'No payment until successful placement and 30-day guarantee',
+                  color: 'from-green-500 to-teal-500',
+                  metric: '0%'
+                },
+                {
+                  icon: '🌍',
+                  title: 'Global Network',
+                  description: 'Access to 50K+ vetted engineers across 40+ countries',
+                  color: 'from-purple-500 to-pink-500',
+                  metric: '50K+'
                 }
               ].map((feature, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: 30 }}
+                  initial={{ opacity: 0, x: 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+                  className="group relative bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/50 overflow-hidden"
                 >
-                  <div className="text-3xl mb-3">{feature.icon}</div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+                  {/* Background Gradient */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className={`w-12 h-12 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center text-2xl shadow-lg`}>
+                        {feature.icon}
+                      </div>
+                      <div className="text-right">
+                        <div className="text-2xl font-bold theme-gradient-text">{feature.metric}</div>
+                        <div className="text-xs text-gray-500 font-medium">Success Rate</div>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:theme-text-primary transition-colors">{feature.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+                  </div>
                 </motion.div>
               ))}
               
+              {/* Enhanced CTA */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
                 viewport={{ once: true }}
-                className="pt-4"
+                className="relative pt-4"
               >
-                <a href="#contact" className="block w-full btn-cosmic-primary px-6 py-4 rounded-xl font-semibold text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  Hire Elite Talent Now
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-20"></div>
+                <a href="#contact" className="relative block w-full btn-cosmic-primary px-8 py-5 rounded-2xl font-bold text-lg text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600">
+                  <span className="flex items-center justify-center gap-2">
+                    Start Hiring Elite Talent
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
                 </a>
               </motion.div>
             </div>
@@ -318,56 +423,185 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Success Stories Section - Symmetric grid */}
-      <section id="success" className="py-20 relative bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Success <span className="theme-gradient-text">Stories</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real results from companies who chose Thinkify for their critical engineering hires
-            </p>
-          </div>
+      {/* Revolutionary Success Stories Section */}
+      <section id="success" className="py-32 relative bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-green-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Header */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg mb-8">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="font-semibold text-white">Proven Track Record</span>
+              <div className="text-2xl">🏆</div>
+            </div>
+            
+            <h2 className="font-display text-5xl md:text-7xl text-white mb-8 leading-tight">
+              <span className="text-white">Success</span>{' '}
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Stories</span>
+              <br />
+              <span className="text-gray-300 text-4xl md:text-5xl">that Speak Volumes</span>
+            </h2>
+            
+            <p className="font-body text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Real results from unicorn startups and industry leaders who transformed their engineering teams with Thinkify's elite talent.
+            </p>
+          </motion.div>
+
+          {/* Interactive Success Stories Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {[
               {
                 company: "Swiggy",
+                logo: "/companies/swiggy.svg",
                 result: "15 Engineers in 20 Days",
-                description: "Scaled their ML platform team to handle 10M+ daily orders during peak season",
-                metric: "3x faster than traditional hiring"
+                description: "Scaled their ML platform team to handle 10M+ daily orders during peak season rush",
+                metric: "3x Faster",
+                metricDesc: "than traditional hiring",
+                challenge: "Peak season scaling crisis",
+                solution: "ML Platform Team",
+                impact: "10M+ daily orders handled",
+                timeline: "20 days",
+                gradient: "from-orange-500 to-red-500",
+                testimonial: "Thinkify delivered exactly what we needed when we needed it most. Their engineers are exceptional.",
+                role: "Head of Engineering"
               },
               {
                 company: "Flipkart", 
+                logo: "/companies/Flipkart_Symbol_0.svg",
                 result: "Critical DevOps Role Filled",
-                description: "Senior infrastructure engineer onboarded in 10 days for marketplace scaling",
-                metric: "Zero deployment issues since hire"
+                description: "Senior infrastructure engineer onboarded in 10 days for marketplace platform scaling",
+                metric: "Zero Issues",
+                metricDesc: "since deployment",
+                challenge: "Infrastructure bottlenecks",
+                solution: "DevOps Architecture",
+                impact: "99.9% uptime achieved",
+                timeline: "10 days",
+                gradient: "from-blue-500 to-purple-500",
+                testimonial: "The level of expertise and speed was unprecedented. Our systems have never been more stable.",
+                role: "CTO"
               },
               {
                 company: "Meesho",
+                logo: "/companies/meesho.png",
                 result: "Backend Team Expansion",
-                description: "Added 5 senior engineers to optimize their social commerce platform",
-                metric: "40% improvement in API response times"
+                description: "Added 5 senior engineers to optimize their social commerce platform architecture",
+                metric: "40% Faster",
+                metricDesc: "API response times",
+                challenge: "Performance optimization",
+                solution: "Backend Architecture",
+                impact: "2x user engagement",
+                timeline: "15 days",
+                gradient: "from-green-500 to-teal-500",
+                testimonial: "Outstanding talent that understood our tech stack immediately and delivered results fast.",
+                role: "Engineering Manager"
               }
             ].map((story, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="group relative bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 shadow-2xl hover:shadow-3xl transition-all duration-700 overflow-hidden hover:bg-white/10"
               >
-                <h3 className="text-xl font-bold theme-gradient-text mb-2">{story.company}</h3>
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">{story.result}</h4>
-                <p className="text-gray-600 mb-3 text-sm">{story.description}</p>
-                <div className="text-xs font-medium text-white theme-bg-primary rounded-full px-3 py-1 inline-block">
-                  {story.metric}
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${story.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+                
+                {/* Floating Elements */}
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/5 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute bottom-6 left-6 w-8 h-8 bg-green-400/20 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
+                
+                <div className="relative z-10">
+                  {/* Company Header */}
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                        <img src={story.logo} alt={story.company} className="h-8 w-auto" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">{story.company}</h3>
+                        <p className="text-gray-400 text-sm">{story.challenge}</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className={`text-2xl font-bold bg-gradient-to-r ${story.gradient} bg-clip-text text-transparent`}>{story.metric}</div>
+                      <div className="text-xs text-gray-400">{story.metricDesc}</div>
+                    </div>
+                  </div>
+                  
+                  {/* Result */}
+                  <div className="mb-6">
+                    <h4 className="text-xl font-semibold text-white mb-3">{story.result}</h4>
+                    <p className="text-gray-300 leading-relaxed text-sm">{story.description}</p>
+                  </div>
+                  
+                  {/* Stats Grid */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-white/5 rounded-xl p-4 text-center border border-white/10">
+                      <div className="text-lg font-bold text-white mb-1">{story.timeline}</div>
+                      <div className="text-xs text-gray-400">Delivery Time</div>
+                    </div>
+                    <div className="bg-white/5 rounded-xl p-4 text-center border border-white/10">
+                      <div className="text-lg font-bold text-green-400 mb-1">{story.impact.split(' ')[0]}</div>
+                      <div className="text-xs text-gray-400">{story.impact.split(' ').slice(1).join(' ')}</div>
+                    </div>
+                  </div>
+                  
+                  {/* Testimonial */}
+                  <div className="bg-white/5 rounded-xl p-4 border border-white/10 mb-6">
+                    <p className="text-gray-300 text-sm italic mb-3">"{story.testimonial}"</p>
+                    <div className="text-xs text-gray-400">— {story.role}, {story.company}</div>
+                  </div>
+                  
+                  {/* Solution Badge */}
+                  <div className="flex items-center justify-between">
+                    <div className={`px-4 py-2 bg-gradient-to-r ${story.gradient} rounded-full text-white text-xs font-semibold`}>
+                      {story.solution}
+                    </div>
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <div className="bg-white/5 backdrop-blur-lg rounded-3xl p-12 border border-white/10 max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-white mb-6">Ready to Write Your Success Story?</h3>
+              <p className="text-gray-300 mb-8 text-lg">Join 500+ companies who've scaled their teams with Thinkify's elite engineering talent.</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                  Start Your Transformation
+                </a>
+                <a href="#" className="bg-white/10 text-white border-2 border-white/20 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all duration-300">
+                  View All Case Studies
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -718,3 +952,4 @@ export default function HomePage() {
     </div>
   );
 }
+
