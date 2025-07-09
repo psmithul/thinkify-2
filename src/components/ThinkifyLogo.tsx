@@ -42,24 +42,34 @@ export default function ThinkifyLogo({
     switch (currentTheme.name) {
       case 'Ocean':
         return {
-          primary: '#0ea5e9',
-          secondary: '#06b6d4'
+          primary: '#d97706', // Gold
+          secondary: '#b45309' // Darker gold
         };
       case 'Sunset':
         return {
-          primary: '#f97316',
-          secondary: '#ef4444'
+          primary: '#d97706', // Gold
+          secondary: '#b45309' // Darker gold
         };
       case 'Forest':
       case 'Green':
         return {
-          primary: '#22c55e',
-          secondary: '#3b82f6'
+          primary: '#d97706', // Gold
+          secondary: '#b45309' // Darker gold
         };
-      default: // purple theme
+      case 'Gold':
         return {
-          primary: '#8b5cf6',
-          secondary: '#ec4899'
+          primary: '#d97706', // Gold
+          secondary: '#b45309' // Darker gold
+        };
+      case 'Champagne':
+        return {
+          primary: '#eab308', // Champagne gold
+          secondary: '#ca8a04' // Darker champagne
+        };
+      default: // Use gold as default instead of purple
+        return {
+          primary: '#d97706', // Gold
+          secondary: '#b45309' // Darker gold
         };
     }
   };

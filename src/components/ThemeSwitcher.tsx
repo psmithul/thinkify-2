@@ -34,15 +34,15 @@ export default function ThemeSwitcher() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200/50 p-4 min-w-[380px] max-h-[80vh] overflow-y-auto"
+              className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border theme-border-surface/50 p-4 min-w-[380px] max-h-[80vh] overflow-y-auto"
               initial={{ opacity: 0, x: 20, scale: 0.9 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, x: 20, scale: 0.9 }}
               transition={{ duration: 0.2 }}
             >
               <div className="text-center mb-4">
-                <h3 className="text-lg font-bold text-gray-900 mb-1">Choose Theme</h3>
-                <p className="text-sm text-gray-600">Pick your favorite color scheme</p>
+                <h3 className="text-lg font-bold theme-text-body mb-1">Choose Theme</h3>
+                <p className="text-sm theme-text-muted">Pick your favorite color scheme</p>
               </div>
 
               <div className="grid grid-cols-3 gap-2">
@@ -55,8 +55,8 @@ export default function ThemeSwitcher() {
                     }}
                     className={`relative p-3 rounded-lg border-2 transition-all duration-300 group ${
                       currentTheme.name === theme.name 
-                        ? 'border-gray-400 shadow-lg' 
-                        : 'border-gray-200 hover:border-gray-300'
+                        ? 'theme-border-surface shadow-lg' 
+                        : 'theme-border-surface hover:theme-border-surface'
                     }`}
                     whileHover={{ scale: 1.02, y: -1 }}
                     whileTap={{ scale: 0.98 }}
@@ -82,8 +82,8 @@ export default function ThemeSwitcher() {
 
                     {/* Theme Info */}
                     <div className="text-left">
-                      <h4 className="font-bold text-gray-900 mb-1 text-xs">{theme.name}</h4>
-                      <p className="text-xs text-gray-600 truncate">{theme.description}</p>
+                      <h4 className="font-bold theme-text-body mb-1 text-xs">{theme.name}</h4>
+                      <p className="text-xs theme-text-muted truncate">{theme.description}</p>
                     </div>
 
                     {/* Active Indicator */}
@@ -103,9 +103,9 @@ export default function ThemeSwitcher() {
                 ))}
               </div>
 
-              <div className="mt-4 pt-4 border-t border-gray-200/50">
+              <div className="mt-4 pt-4 border-t theme-border-surface/50">
                 <motion.p 
-                  className="text-xs text-gray-500 text-center"
+                  className="text-xs theme-text-muted text-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
