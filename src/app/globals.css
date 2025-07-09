@@ -558,7 +558,68 @@ h3 {
   transform: scale(1.05);
 }
 
+/* Infinite Loop Company Carousel */
+.company-infinite-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 2rem 0;
+  mask: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+  -webkit-mask: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+}
 
+.company-infinite-track {
+  display: flex;
+  animation: scroll-infinite 40s linear infinite;
+  width: fit-content;
+}
+
+.company-infinite-set {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 0 2rem;
+}
+
+.company-infinite-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.company-logo-infinite {
+  height: 4rem;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  filter: grayscale(10%);
+  opacity: 0.9;
+  transition: none;
+  pointer-events: none;
+}
+
+@keyframes scroll-infinite {
+  0% { 
+    transform: translateX(0); 
+  }
+  100% { 
+    transform: translateX(-50%); 
+  }
+}
 
 @keyframes scroll-left {
   0% { transform: translateX(0); }

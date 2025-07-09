@@ -98,7 +98,7 @@ export default function HomePage() {
       <ThemeSwitcher />
 
       {/* Hero Section */}
-      <section className="pt-28 pb-20 relative overflow-hidden bg-white">
+      <section className="pt-28 pb-8 relative overflow-hidden bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.h1 
             className="font-display text-5xl md:text-7xl mb-8 text-gray-900 text-balance"
@@ -145,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* Company Carousel Section - Now above Trusted by Industry Leaders */}
-      <section className="py-20 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CompanyCarousel 
             title="Trusted by Industry Leaders"

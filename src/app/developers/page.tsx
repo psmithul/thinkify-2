@@ -37,7 +37,7 @@ export default function DevelopersPage() {
       {/* Hero Section */}
       <motion.section
         ref={heroRef}
-        className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden pt-20 pb-16"
+        className="relative flex items-center justify-center bg-white overflow-hidden pt-20 pb-8"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
