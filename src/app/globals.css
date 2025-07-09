@@ -39,7 +39,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-/* Theme-aware utility classes */
+/* Enhanced Theme-aware utility classes */
 .theme-gradient-text {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
@@ -64,6 +64,14 @@
   border-color: var(--color-primary);
 }
 
+.theme-border-secondary {
+  border-color: var(--color-secondary);
+}
+
+.theme-border-surface {
+  border-color: rgba(var(--theme-primary-rgb), 0.2);
+}
+
 .theme-border-focus:focus {
   border-color: var(--color-primary);
 }
@@ -74,6 +82,14 @@
 
 .theme-text-secondary {
   color: var(--color-secondary);
+}
+
+.theme-text-muted {
+  color: var(--color-text-secondary);
+}
+
+.theme-text-body {
+  color: var(--color-text);
 }
 
 .theme-bg-primary {
@@ -88,8 +104,198 @@
   background: var(--color-surface);
 }
 
-.theme-text-primary {
+.theme-bg-accent {
+  background-color: var(--color-accent);
+}
+
+/* Theme-aware hover states */
+.theme-hover-primary:hover {
   color: var(--color-primary);
+}
+
+.theme-hover-secondary:hover {
+  color: var(--color-secondary);
+}
+
+.theme-hover-bg-primary:hover {
+  background-color: var(--color-primary);
+}
+
+.theme-hover-border-primary:hover {
+  border-color: var(--color-primary);
+}
+
+/* Theme-aware opacity variations */
+.theme-bg-primary-10 {
+  background-color: rgba(var(--theme-primary-rgb), 0.1);
+}
+
+.theme-bg-primary-20 {
+  background-color: rgba(var(--theme-primary-rgb), 0.2);
+}
+
+.theme-bg-secondary-10 {
+  background-color: rgba(var(--theme-secondary-rgb), 0.1);
+}
+
+.theme-bg-secondary-20 {
+  background-color: rgba(var(--theme-secondary-rgb), 0.2);
+}
+
+.theme-text-primary-80 {
+  color: rgba(var(--theme-primary-rgb), 0.8);
+}
+
+.theme-border-primary-30 {
+  border-color: rgba(var(--theme-primary-rgb), 0.3);
+}
+
+/* Theme-aware gradient utilities */
+.theme-gradient-text-secondary {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.theme-gradient-accent {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+}
+
+.theme-gradient-primary-blur {
+  background: linear-gradient(135deg, rgba(var(--theme-primary-rgb), 0.2) 0%, rgba(var(--theme-secondary-rgb), 0.2) 100%);
+}
+
+.theme-gradient-secondary-blur {
+  background: linear-gradient(135deg, rgba(var(--theme-secondary-rgb), 0.2) 0%, rgba(var(--theme-accent-rgb), 0.2) 100%);
+}
+
+/* Override common hardcoded gradients */
+.bg-gradient-to-r.from-blue-400.to-purple-400 {
+  background: var(--gradient-primary) !important;
+}
+
+.bg-gradient-to-r.from-blue-500.to-purple-500 {
+  background: var(--gradient-primary) !important;
+}
+
+.bg-gradient-to-r.from-blue-600.to-purple-600 {
+  background: var(--gradient-primary) !important;
+}
+
+.bg-gradient-to-r.from-indigo-400.to-purple-400 {
+  background: var(--gradient-primary) !important;
+}
+
+.bg-gradient-to-r.from-indigo-500.to-purple-500 {
+  background: var(--gradient-primary) !important;
+}
+
+.bg-gradient-to-r.from-indigo-600.to-purple-600 {
+  background: var(--gradient-primary) !important;
+}
+
+.bg-gradient-to-r.from-green-500.to-blue-500 {
+  background: var(--gradient-secondary) !important;
+}
+
+.bg-gradient-to-r.from-emerald-600.to-teal-600 {
+  background: var(--gradient-secondary) !important;
+}
+
+/* Text gradient overrides */
+.from-blue-400.via-purple-400.to-pink-400 {
+  background: var(--gradient-primary) !important;
+}
+
+.from-blue-400.to-purple-400 {
+  background: var(--gradient-primary) !important;
+}
+
+.from-indigo-400.to-purple-400 {
+  background: var(--gradient-primary) !important;
+}
+
+.from-emerald-600.to-teal-600 {
+  background: var(--gradient-secondary) !important;
+}
+
+.from-green-400.to-emerald-400 {
+  background: var(--gradient-secondary) !important;
+}
+
+/* Additional gradient overrides for comprehensive theme coverage */
+.from-blue-500.to-purple-500 {
+  background: var(--gradient-primary) !important;
+}
+
+.from-blue-600.to-purple-600 {
+  background: var(--gradient-primary) !important;
+}
+
+.from-purple-400.to-pink-400 {
+  background: var(--gradient-accent) !important;
+}
+
+.from-purple-500.to-pink-500 {
+  background: var(--gradient-accent) !important;
+}
+
+.from-purple-600.to-pink-600 {
+  background: var(--gradient-accent) !important;
+}
+
+.from-teal-600.to-cyan-600 {
+  background: var(--gradient-secondary) !important;
+}
+
+.from-blue-400.to-cyan-400 {
+  background: var(--gradient-secondary) !important;
+}
+
+.from-red-600.to-orange-600 {
+  background: var(--gradient-accent) !important;
+}
+
+.from-orange-500.to-red-500 {
+  background: var(--gradient-accent) !important;
+}
+
+.from-orange-400.to-red-400 {
+  background: var(--gradient-accent) !important;
+}
+
+/* Additional background gradient overrides */
+.bg-gradient-to-r.from-blue-500\/20.to-purple-500\/20 {
+  background: linear-gradient(to right, rgba(var(--theme-primary-rgb), 0.2), rgba(var(--theme-secondary-rgb), 0.2)) !important;
+}
+
+.bg-gradient-to-r.from-purple-500\/20.to-pink-500\/20 {
+  background: linear-gradient(to right, rgba(var(--theme-primary-rgb), 0.2), rgba(var(--theme-accent-rgb), 0.2)) !important;
+}
+
+.bg-gradient-to-r.from-green-500\/20.to-emerald-500\/20 {
+  background: linear-gradient(to right, rgba(var(--theme-secondary-rgb), 0.2), rgba(var(--theme-accent-rgb), 0.2)) !important;
+}
+
+.bg-gradient-to-r.from-blue-500\/10.to-cyan-500\/10 {
+  background: linear-gradient(to right, rgba(var(--theme-primary-rgb), 0.1), rgba(var(--theme-secondary-rgb), 0.1)) !important;
+}
+
+/* Cosmic theme overrides for better theme consistency */
+.text-cosmic-text {
+  color: var(--color-text) !important;
+}
+
+.text-cosmic-text-dim {
+  color: var(--color-text-secondary) !important;
+}
+
+.cosmic-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(var(--theme-primary-rgb), 0.2);
 }
 
 /* Override Tailwind colors to use theme variables */
@@ -779,4 +985,172 @@ h3 {
 
 .animate-glow {
   animation: glow 2s ease-in-out infinite;
+}
+
+/* Theme-aware accent colors for specific use cases */
+.theme-bg-warning {
+  background-color: #f59e0b;
+}
+
+.theme-text-warning {
+  color: #f59e0b;
+}
+
+.theme-border-warning {
+  border-color: #f59e0b;
+}
+
+.theme-bg-danger {
+  background-color: #ef4444;
+}
+
+.theme-text-danger {
+  color: #ef4444;
+}
+
+.theme-border-danger {
+  border-color: #ef4444;
+}
+
+.theme-bg-success {
+  background-color: var(--color-secondary);
+}
+
+.theme-text-success {
+  color: var(--color-secondary);
+}
+
+.theme-border-success {
+  border-color: var(--color-secondary);
+}
+
+/* Hardcoded accent color overrides */
+.bg-red-50, .bg-red-100, .bg-red-200 {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+.bg-red-500, .bg-red-600, .bg-red-700, .bg-red-800 {
+  background-color: #ef4444 !important;
+}
+
+.text-red-600, .text-red-700, .text-red-800 {
+  color: #ef4444 !important;
+}
+
+.border-red-200, .border-red-300 {
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+.bg-orange-50, .bg-orange-100, .bg-orange-200 {
+  background-color: rgba(249, 115, 22, 0.1) !important;
+}
+
+.bg-orange-500, .bg-orange-600, .bg-orange-700, .bg-orange-800 {
+  background-color: #f97316 !important;
+}
+
+.text-orange-600, .text-orange-700, .text-orange-800 {
+  color: #f97316 !important;
+}
+
+.border-orange-200, .border-orange-300 {
+  border-color: rgba(249, 115, 22, 0.3) !important;
+}
+
+.bg-yellow-50, .bg-yellow-100, .bg-yellow-200 {
+  background-color: rgba(234, 179, 8, 0.1) !important;
+}
+
+.bg-yellow-500, .bg-yellow-600, .bg-yellow-700, .bg-yellow-800 {
+  background-color: #eab308 !important;
+}
+
+.text-yellow-400, .text-yellow-600, .text-yellow-700, .text-yellow-800 {
+  color: #eab308 !important;
+}
+
+.border-yellow-200, .border-yellow-300 {
+  border-color: rgba(234, 179, 8, 0.3) !important;
+}
+
+.bg-emerald-50, .bg-emerald-100, .bg-emerald-200 {
+  background-color: rgba(var(--theme-secondary-rgb), 0.1) !important;
+}
+
+.bg-emerald-500, .bg-emerald-600, .bg-emerald-700, .bg-emerald-800 {
+  background-color: var(--color-secondary) !important;
+}
+
+.text-emerald-600, .text-emerald-700, .text-emerald-800 {
+  color: var(--color-secondary) !important;
+}
+
+.border-emerald-200, .border-emerald-300 {
+  border-color: rgba(var(--theme-secondary-rgb), 0.3) !important;
+}
+
+.bg-teal-500, .bg-teal-600 {
+  background-color: var(--color-secondary) !important;
+}
+
+.bg-pink-400, .bg-pink-500 {
+  background-color: rgba(var(--theme-accent-rgb), 0.8) !important;
+}
+
+.bg-cyan-400, .bg-cyan-500 {
+  background-color: rgba(var(--theme-secondary-rgb), 0.8) !important;
+}
+
+/* Dark theme overrides for slate colors */
+.bg-slate-800, .bg-slate-900 {
+  background-color: rgba(15, 23, 42, 0.9) !important;
+}
+
+.border-slate-600, .border-slate-500 {
+  border-color: rgba(71, 85, 105, 0.6) !important;
+}
+
+.bg-slate-400 {
+  background-color: #94a3b8 !important;
+}
+
+/* Override hardcoded opacity colors to use theme */
+.bg-red-500\/10 {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+.bg-orange-500\/10 {
+  background-color: rgba(249, 115, 22, 0.1) !important;
+}
+
+.bg-yellow-500\/10 {
+  background-color: rgba(234, 179, 8, 0.1) !important;
+}
+
+.bg-emerald-500\/10 {
+  background-color: rgba(var(--theme-secondary-rgb), 0.1) !important;
+}
+
+.bg-teal-500\/10 {
+  background-color: rgba(var(--theme-secondary-rgb), 0.1) !important;
+}
+
+.bg-pink-500\/10 {
+  background-color: rgba(var(--theme-accent-rgb), 0.1) !important;
+}
+
+.bg-cyan-500\/10 {
+  background-color: rgba(var(--theme-secondary-rgb), 0.1) !important;
+}
+
+.bg-emerald-400\/20 {
+  background-color: rgba(var(--theme-secondary-rgb), 0.2) !important;
+}
+
+.bg-cyan-400\/50 {
+  background-color: rgba(var(--theme-secondary-rgb), 0.5) !important;
+}
+
+.bg-pink-400\/50 {
+  background-color: rgba(var(--theme-accent-rgb), 0.5) !important;
 }

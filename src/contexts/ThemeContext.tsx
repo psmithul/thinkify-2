@@ -115,18 +115,18 @@ const themes: Theme[] = [
     }
   },
   {
-    name: 'Royal',
-    description: 'Royal purple and gold',
+    name: 'Gold',
+    description: 'Luxurious gold and amber',
     colors: {
-      primaryStart: '#7c3aed',
-      primaryEnd: '#5b21b6',
-      secondaryStart: '#a855f7',
-      secondaryEnd: '#7c3aed',
-      primary: '#7c3aed',
-      secondary: '#a855f7',
-      accent: '#fbbf24',
+      primaryStart: '#d97706',
+      primaryEnd: '#b45309',
+      secondaryStart: '#fbbf24',
+      secondaryEnd: '#f59e0b',
+      primary: '#d97706',
+      secondary: '#fbbf24',
+      accent: '#dc2626',
       background: '#ffffff',
-      surface: '#faf5ff',
+      surface: '#fefdf2',
       text: '#1e293b',
       textSecondary: '#475569'
     }
@@ -166,18 +166,18 @@ const themes: Theme[] = [
     }
   },
   {
-    name: 'Mint',
-    description: 'Cool mint and teal',
+    name: 'Champagne',
+    description: 'Elegant champagne and gold',
     colors: {
-      primaryStart: '#14b8a6',
-      primaryEnd: '#0d9488',
-      secondaryStart: '#5eead4',
-      secondaryEnd: '#14b8a6',
-      primary: '#14b8a6',
-      secondary: '#5eead4',
-      accent: '#06b6d4',
+      primaryStart: '#eab308',
+      primaryEnd: '#ca8a04',
+      secondaryStart: '#fbbf24',
+      secondaryEnd: '#eab308',
+      primary: '#eab308',
+      secondary: '#fbbf24',
+      accent: '#f97316',
       background: '#ffffff',
-      surface: '#f0fdfa',
+      surface: '#fffbeb',
       text: '#1e293b',
       textSecondary: '#475569'
     }

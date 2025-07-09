@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P S Mithul Sourav - Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @page {
+            size: A4;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 9.5px;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.25in;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 4px;
+        }
+        
+        .title {
+            font-size: 12px;
+            font-weight: 500;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+        
+        .contact {
+            font-size: 9px;
+            color: #4b5563;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .section {
+            margin-bottom: 14px;
+        }
+        
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #1e40af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+        }
+        
+        .summary {
+            font-size: 9.5px;
+            line-height: 1.5;
+            text-align: justify;
+            color: #4b5563;
+        }
+        
+        .experience-item {
+            margin-bottom: 12px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+        
+        .job-title {
+            font-size: 10px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .company {
+            font-size: 9px;
+            font-weight: 500;
+            color: #2563eb;
+            font-style: italic;
+        }
+        
+        .job-details {
+            font-size: 8.5px;
+            color: #6b7280;
+            text-align: right;
+        }
+        
+        .category {
+            font-size: 9px;
+            font-weight: 600;
+            color: #059669;
+            margin-top: 4px;
+            margin-bottom: 2px;
+        }
+        
+        .achievements {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .achievements li {
+            font-size: 8.5px;
+            margin-bottom: 1.5px;
+            padding-left: 12px;
+            position: relative;
+            text-align: justify;
+        }
+        
+        .achievements li:before {
+            content: "•";
+            color: #2563eb;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .education-item {
+            margin-bottom: 8px;
+        }
+        
+        .degree {
+            font-size: 10px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .institution {
+            font-size: 9px;
+            color: #2563eb;
+            font-style: italic;
+        }
+        
+        .education-details {
+            font-size: 8.5px;
+            color: #6b7280;
+            margin-top: 2px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        
+        .skill-category {
+            background: #f8fafc;
+            padding: 6px;
+            border-radius: 4px;
+            border-left: 3px solid #2563eb;
+        }
+        
+        .skill-title {
+            font-size: 9px;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 3px;
+        }
+        
+        .skill-list {
+            font-size: 8px;
+            color: #4b5563;
+            line-height: 1.3;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        
+        .project-item {
+            margin-bottom: 8px;
+        }
+        
+        .project-title {
+            font-size: 9px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .project-meta {
+            font-size: 8px;
+            color: #6b7280;
+            font-style: italic;
+            margin-bottom: 2px;
+        }
+        
+        .project-description {
+            font-size: 8px;
+            color: #4b5563;
+            line-height: 1.3;
+        }
+        
+        .certifications-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        
+        .cert-item {
+            font-size: 8.5px;
+            padding: 4px 6px;
+            background: #eff6ff;
+            border-radius: 3px;
+            border-left: 2px solid #2563eb;
+        }
+        
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+        
+        .language-item {
+            text-align: center;
+            font-size: 8.5px;
+            padding: 4px;
+            background: #f0fdf4;
+            border-radius: 3px;
+        }
+        
+        .language-name {
+            font-weight: 600;
+            color: #059669;
+        }
+        
+        .language-level {
+            color: #6b7280;
+            font-size: 7.5px;
+        }
+        
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        
+        .interest-category {
+            background: #fef7ff;
+            padding: 4px 6px;
+            border-radius: 3px;
+            border-left: 2px solid #a855f7;
+        }
+        
+        .interest-title {
+            font-size: 8.5px;
+            font-weight: 600;
+            color: #7c3aed;
+            margin-bottom: 2px;
+        }
+        
+        .interest-list {
+            font-size: 7.5px;
+            color: #6b7280;
+            line-height: 1.2;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 12px;
+            padding-top: 8px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 7.5px;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name">P S Mithul Sourav</div>
+        <div class="title">Strategic Finance & Technology Leader</div>
+        <div class="contact">
+            <div class="contact-item">📞 +91 7845160181</div>
+            <div class="contact-item">✉️ psmithul@gmail.com</div>
+            <div class="contact-item">🔗 linkedin.com/in/psmithulsourav</div>
+            <div class="contact-item">📍 Bangalore, India</div>
+            <div class="contact-item">🌐 github.com/psmithul</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="summary">
+            Dynamic finance and technology professional with 3+ years of experience spanning investment banking, fund management, and startup operations. Proven track record of delivering exceptional returns (10%+ in 2 months), driving business growth through strategic partnerships, and leading cross-functional teams. Combines strong analytical skills with hands-on technical expertise in Python automation and financial modeling.
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Work & Leadership Experience</div>
+        
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Founder's Office / Generalist Intern</div>
+                    <div class="company">Thinkify Labs</div>
+                </div>
+                <div class="job-details">
+                    Remote / Bangalore, India<br>
+                    March 2024 – Present
+                </div>
+            </div>
+            
+            <div class="category">Business Development & Strategic Growth:</div>
+            <ul class="achievements">
+                <li>Collaborated directly with founder across sales, operations, and product functions to drive 40% business growth</li>
+                <li>Spearheaded comprehensive market analysis and competitive intelligence, resulting in strategic pivot that increased market share</li>
+                <li>Developed and implemented go-to-market strategies for 3 new product lines, generating $250K+ in pipeline revenue</li>
+            </ul>
+            
+            <div class="category">Sales & Client Relations:</div>
+            <ul class="achievements">
+                <li>Sourced and converted leads independently, successfully onboarding 7 new enterprise clients in a single month</li>
+                <li>Managed end-to-end client lifecycle from prospecting to retention, achieving 90% client satisfaction rate</li>
+                <li>Built long-term relationships with C-suite executives at Fortune 500 companies</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Fund Manager</div>
+                    <div class="company">NH66 Fund, P&L NITK</div>
+                </div>
+                <div class="job-details">
+                    Mangalore, Karnataka<br>
+                    January 2025
+                </div>
+            </div>
+            
+            <ul class="achievements">
+                <li>Directed a ₹1.5L student investment fund with full P&L responsibility, delivering exceptional 10% returns in 2 months</li>
+                <li>Achieved portfolio performance 2x above benchmark index through rigorous fundamental and technical analysis</li>
+                <li>Led team of 3 analysts in preparing comprehensive equity research reports and investment memos</li>
+                <li>Developed automated trading algorithms and portfolio optimization models using Python</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Investment Banking Intern</div>
+                    <div class="company">ILO Consulting</div>
+                </div>
+                <div class="job-details">
+                    Delhi, India<br>
+                    May 2024 – July 2024
+                </div>
+            </div>
+            
+            <ul class="achievements">
+                <li>Partnered with senior leadership to analyze market trends, translating insights into 10+ strategic growth recommendations</li>
+                <li>Co-led cross-functional team to define market entry roadmap for Ireland expansion across 3 high-impact sectors</li>
+                <li>Streamlined deal-sourcing process by curating and validating 150+ high-fit buyer profiles, boosting executive pipeline efficiency by 40%</li>
+                <li>Supported due diligence activities for M&A transactions worth $50M+ in aggregate value</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="two-column">
+        <div>
+            <div class="section">
+                <div class="section-title">Education</div>
+                <div class="education-item">
+                    <div class="degree">BTech in Mechanical Engineering and Minors in Economics</div>
+                    <div class="institution">National Institute of Technology, Karnataka</div>
+                    <div class="education-details">
+                        <strong>GPA:</strong> 8.1/10 (Top 15% of class) | <strong>Expected:</strong> 2027<br>
+                        <strong>Achievements:</strong> Dean's List (3 semesters), Business Plan Competition Winner 2024<br>
+                        <strong>Leadership:</strong> President - Finance Club NITK, Captain - College Tennis Team
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Projects & Achievements</div>
+                
+                <div class="project-item">
+                    <div class="project-title">AI-Powered Investment Recommendation System</div>
+                    <div class="project-meta">Personal Project | October 2024</div>
+                    <div class="project-description">Developed ML model using Python and TensorFlow achieving 78% accuracy in stock price prediction using sentiment analysis and technical indicators.</div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-title">E-commerce Analytics Dashboard</div>
+                    <div class="project-meta">Freelance Project | August 2024</div>
+                    <div class="project-description">Built real-time analytics dashboard reducing manual work by 80% and generating insights that increased conversion rates by 25%.</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Certifications</div>
+                <div class="certifications-list">
+                    <div class="cert-item"><strong>CFA Level 1</strong> Candidate (June 2025)</div>
+                    <div class="cert-item"><strong>Bloomberg BMC</strong> Certified</div>
+                    <div class="cert-item"><strong>Financial Markets</strong> Yale (96%)</div>
+                    <div class="cert-item"><strong>Google Analytics</strong> Certified</div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="section">
+                <div class="section-title">Technical Skills</div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-title">Programming</div>
+                        <div class="skill-list">Python (Advanced), SQL, R, JavaScript, HTML/CSS, VBA</div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-title">Financial Tools</div>
+                        <div class="skill-list">Bloomberg Terminal, DCF Analysis, LBO Modeling, Risk Management</div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-title">Analytics</div>
+                        <div class="skill-list">Excel, PowerBI, Tableau, TensorFlow, Pandas, NumPy</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Languages</div>
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <div class="language-name">English</div>
+                        <div class="language-level">Native</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Hindi</div>
+                        <div class="language-level">Native</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Kannada</div>
+                        <div class="language-level">Conversational</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Telugu</div>
+                        <div class="language-level">Basic</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Interests & Activities</div>
+                <div class="interests-grid">
+                    <div class="interest-category">
+                        <div class="interest-title">Sports</div>
+                        <div class="interest-list">Tennis (State-level), Cricket, Running (2 half-marathons)</div>
+                    </div>
+                    <div class="interest-category">
+                        <div class="interest-title">Technology</div>
+                        <div class="interest-list">Blockchain, AI/ML in Finance, Web Development</div>
+                    </div>
+                    <div class="interest-category">
+                        <div class="interest-title">Community</div>
+                        <div class="interest-list">Financial Literacy Workshops (500+ students), Teaching (200+ hours)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <strong>References available upon request</strong> | Last updated: January 2025 | Mithul - Page 1 of 1
+    </div>
+</body>
+</html> 
