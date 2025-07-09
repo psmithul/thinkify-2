@@ -144,6 +144,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Company Carousel Section - Now above Trusted by Industry Leaders */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CompanyCarousel 
+            title="Trusted by Industry Leaders"
+            subtitle="Join companies like these who've scaled their engineering teams with Thinkify's elite talent"
+          />
+        </div>
+      </section>
+
       {/* Revolutionary Trusted by Industry Leaders Section */}
       <section className="py-32 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
         {/* Animated Background Elements */}
@@ -168,10 +178,10 @@ export default function HomePage() {
             </div>
 
             <h2 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Trusted</span>
-              {' '}by{' '}
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Why Leaders</span>
+              {' '}
               <span className="relative inline-block">
-                <span className="text-gray-900">Industry</span>
+                <span className="text-gray-900">Choose</span>
                 <motion.div 
                   className="absolute -bottom-4 left-0 w-full h-3 bg-blue-500/20 rounded-full"
                   initial={{ scaleX: 0 }}
@@ -180,7 +190,7 @@ export default function HomePage() {
                 />
               </span>
               <br />
-              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Leaders</span>
+              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Thinkify</span>
             </h2>
             
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
@@ -203,12 +213,6 @@ export default function HomePage() {
               ))}
             </div>
           </motion.div>
-
-          {/* Enhanced Company Showcase */}
-          <CompanyCarousel 
-            title=""
-            subtitle=""
-          />
 
           {/* Trust Metrics */}
           <motion.div

@@ -77,15 +77,10 @@ export default function DevelopersPage() {
               transition={{ duration: 1, delay: 0.5 }}
               className="mb-12"
             >
-              <div className="text-center mb-8">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                  Work with <span className="theme-gradient-text">Top Companies</span>
-                </h3>
-                <p className="text-sm text-gray-600 max-w-2xl mx-auto">
-                  Join a platform that connects you with leading companies actively hiring remote developers
-                </p>
-              </div>
-              <CompanyCarouselMini />
+              <CompanyCarousel 
+                title="Work with Top Companies"
+                subtitle="Join a platform that connects you with leading companies actively hiring remote developers"
+              />
             </motion.div>
 
             <motion.div 
