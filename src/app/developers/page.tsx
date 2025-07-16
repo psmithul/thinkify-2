@@ -185,9 +185,7 @@ export default function DevelopersPage() {
                         <p className="theme-text-primary font-semibold">@ Google</p>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-green-600 text-sm font-semibold">+350% increase</div>
-                    </div>
+                    
                   </div>
                   
                   <blockquote className="dm-serif-text-regular-italic text-xl mb-6 leading-relaxed theme-text-body">
@@ -197,10 +195,7 @@ export default function DevelopersPage() {
                   
                                       <div className="flex items-center justify-between">
                     <div className="flex gap-4">
-                      <div className="bg-green-50 rounded-xl px-4 py-2 border border-green-200">
-                        <div className="text-sm text-green-600">Before Thinkify</div>
-                        <div className="font-bold text-green-700">$45K/year</div>
-                      </div>
+                      
                       <div className="bg-blue-50 rounded-xl px-4 py-2 border border-blue-200">
                         <div className="text-sm text-blue-600">Time to Big Tech</div>
                         <div className="font-bold text-blue-700">4 months</div>
@@ -551,11 +546,11 @@ export default function DevelopersPage() {
               },
               {
                 title: 'Elite Negotiation Support',
-                subtitle: 'Maximize your market value',
-                description: 'Our expert negotiators have secured millions in additional compensation. We fight for packages that reflect your true worth.',
+                subtitle: 'Maximize your opportunity impact',
+                description: 'Our expert negotiators secure roles with strategic alignment to your goals. We advocate for your next big leap — not just a job, but your ideal opportunity.',
                 color: 'from-green-500 to-emerald-500',
-                features: ['Salary benchmarking', 'Package optimization', 'Expert negotiators', 'Market value analysis'],
-                stats: { value: '40%', label: 'Salary Increase' }
+                features: ['Role benchmarking', 'Offer optimization', 'Expert negotiators', 'Oppurtunity fit analysis'],
+                stats: { value: 'Career Acceleration', label: 'Unlocked' }
               }
             ].map((item, index) => (
               <motion.div
@@ -719,7 +714,7 @@ export default function DevelopersPage() {
                 description: 'You value your time and want expert negotiators fighting for your worth, not wasting months in back-and-forth discussions.',
                 requirements: ['Expert negotiation support', 'Market-rate salaries', 'Time-efficient process', 'Professional representation'],
                 gradient: 'from-blue-500 to-purple-500',
-                stats: { value: '40%', label: 'Avg. Salary Boost' }
+                stats: { value: 'Fast-Tracked', label: 'Career Moves' }
               },
               {
                 title: 'Career-Focused Mindset',
@@ -790,8 +785,7 @@ export default function DevelopersPage() {
             <div className="bg-white/90 backdrop-blur-lg rounded-3xl p-12 border theme-border-surface shadow-2xl max-w-4xl mx-auto">
               <h3 className="text-3xl font-bold theme-text-body mb-6">Think You're Elite Material?</h3>
               <p className="theme-text-muted mb-8 text-lg">
-                Only 15% of applicants make it through our vetting process. Join the exclusive network of 
-                top-tier developers who command premium salaries and work on cutting-edge projects.
+              Only 15% of applicants make it through our vetting process. Join the exclusive network of top-tier developers working on industry-defining projects and accelerating their careers…
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.button 
@@ -816,7 +810,7 @@ export default function DevelopersPage() {
               <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t theme-border-surface">
                 {[
                   { stat: '15%', label: 'Acceptance Rate' },
-                  { stat: '$120K+', label: 'Average Salary' },
+                  { stat: '10x', label: 'Oppurtunity Access' },
                   { stat: '95%', label: 'Satisfaction Rate' }
                 ].map((item, index) => (
                   <div key={index} className="text-center">
@@ -1073,7 +1067,7 @@ export default function DevelopersPage() {
                 {[
                   { value: '98.7%', label: 'Success Rate' },
                   { value: '15 days', label: 'Avg. Hire Time' },
-                  { value: '$142K', label: 'Avg. Salary' },
+                  { value: 'Strategic', label: 'Role Matching' },
                   { value: '10K+', label: 'Happy Developers' }
                 ].map((metric, index) => (
                   <motion.div
