@@ -6,37 +6,37 @@
 
 /* Root Variables - Theme-aware */
 :root {
-  /* Default theme colors - will be overridden by theme system */
-  --color-primary: #8b5cf6;
-  --color-secondary: #3b82f6;
-  --color-accent: #ec4899;
-  --color-background: #ffffff;
-  --color-surface: #f8fafc;
-  --color-text: #1e293b;
-  --color-text-secondary: #475569;
+  /* Thinkify Labs Brand Colors */
+  --color-primary: #15304b; /* Deep Navy */
+  --color-secondary: #1cc6b6; /* Vibrant Teal */
+  --color-accent: #ff9900; /* Citrus Orange */
+  --color-background: #f8fafc; /* Off-white */
+  --color-surface: #f4f6f8; /* Light Graphite */
+  --color-text: #1a2233; /* Deep Navy for text */
+  --color-text-secondary: #5a6473; /* Soft Slate Gray */
   
   /* Gradient properties */
-  --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
-  --gradient-secondary: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  --gradient-primary: linear-gradient(135deg, #1cc6b6 0%, #15304b 100%); /* Teal to Navy */
+  --gradient-secondary: linear-gradient(135deg, #ff9900 0%, #1cc6b6 100%); /* Orange to Teal */
   
   /* RGB versions for rgba usage */
-  --theme-primary-rgb: 139, 92, 246;
-  --theme-secondary-rgb: 59, 130, 246;
-  --theme-accent-rgb: 236, 72, 153;
+  --theme-primary-rgb: 21, 48, 75;
+  --theme-secondary-rgb: 28, 198, 182;
+  --theme-accent-rgb: 255, 153, 0;
   
   /* Layout properties */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --text-primary: #1e293b;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --border-color: rgba(139, 92, 246, 0.3);
-  --card-bg: rgba(255, 255, 255, 0.9);
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f4f6f8;
+  --text-primary: #1a2233;
+  --text-secondary: #5a6473;
+  --text-muted: #8a94a6;
+  --border-color: rgba(21, 48, 75, 0.12);
+  --card-bg: rgba(255, 255, 255, 0.98);
   --section-padding: 4rem 0;
   --container-padding: 1rem;
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 21, 48, 75;
+  --background-start-rgb: 248, 250, 252;
+  --background-end-rgb: 244, 246, 248;
 }
 
 /* Enhanced Theme-aware utility classes */
@@ -769,7 +769,7 @@ h3 {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
-  padding: 2rem 0;
+  padding: 1rem 0; /* Reduced from 2rem 0 */
   mask: linear-gradient(
     to right,
     transparent,
@@ -795,22 +795,22 @@ h3 {
 .company-infinite-set {
   display: flex;
   align-items: center;
-  gap: 4rem;
-  padding: 0 2rem;
+  gap: 2rem; /* Reduced from 4rem */
+  padding: 0 1rem; /* Reduced from 2rem */
 }
 
 .company-infinite-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 180px;
+  min-width: 120px; /* Reduced from 180px */
   flex-shrink: 0;
 }
 
 .company-logo-infinite {
-  height: 4rem;
+  height: 2.5rem; /* Reduced from 4rem */
   width: auto;
-  max-width: 200px;
+  max-width: 120px; /* Reduced from 200px */
   object-fit: contain;
   filter: grayscale(10%);
   opacity: 0.9;
@@ -1153,4 +1153,15 @@ h3 {
 
 .bg-pink-400\/50 {
   background-color: rgba(var(--theme-accent-rgb), 0.5) !important;
+}
+
+/* Make the pill above the hero heading smaller */
+.hero-pill, .inline-flex.items-center.gap-2.px-4.py-2.rounded-full.bg-white\/90.backdrop-blur-md.border.theme-border-primary.shadow-lg.mb-8 {
+  padding: 0.25rem 0.75rem !important; /* Smaller vertical and horizontal padding */
+  font-size: 0.85rem !important;
+}
+
+/* Update font stack for headings */
+.font-display, .font-heading, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', 'Poppins', 'Plus Jakarta Sans', 'Inter', sans-serif;
 }

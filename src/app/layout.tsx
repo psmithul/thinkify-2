@@ -25,8 +25,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap" rel="stylesheet" />
       </head>
-      <body className={`${inter.variable} font-sans antialiased bg-white text-neutral-900`}>
+      <body className="font-nunito-sans antialiased bg-white text-neutral-900">
         <ThemeProvider>
           {children}
         </ThemeProvider>

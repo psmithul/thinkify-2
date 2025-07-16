@@ -8,10 +8,7 @@ interface CompanyCarouselProps {
   subtitle?: string;
 }
 
-const CompanyCarousel: React.FC<CompanyCarouselProps> = ({ 
-  title = "Trusted by Industry Leaders",
-  subtitle = "Join companies like these who've scaled their engineering teams with Thinkify's elite talent"
-}) => {
+const CompanyCarousel: React.FC<CompanyCarouselProps> = () => {
   const companyLogos = [
     { name: 'Flipkart', src: '/companies/Flipkart_Symbol_0.svg' },
     { name: 'Swiggy', src: '/companies/swiggy.svg' },
@@ -28,31 +25,8 @@ const CompanyCarousel: React.FC<CompanyCarouselProps> = ({
   const duplicatedLogos = [...companyLogos, ...companyLogos];
 
   return (
-    <section className="py-12 relative theme-bg-surface overflow-hidden">
+    <section className="py-8 relative theme-bg-surface overflow-hidden"> {/* Reduced vertical padding */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {title && (
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-8"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold theme-text-body mb-4">
-              {title.includes('Industry Leaders') ? (
-                <>Trusted by <span className="theme-gradient-text">Industry Leaders</span></>
-              ) : title.includes('Top Companies') ? (
-                <>Work with <span className="theme-gradient-text">Top Companies</span></>
-              ) : (
-                title
-              )}
-            </h2>
-            <p className="theme-text-muted max-w-2xl mx-auto">
-              {subtitle}
-            </p>
-          </motion.div>
-        )}
-        
         {/* Infinite Loop Company Carousel */}
         <div className="company-infinite-container">
           <div className="company-infinite-track">

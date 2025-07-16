@@ -47,10 +47,8 @@ export default function DevelopersPage() {
               transition={{ duration: 0.8 }}
               className="mb-8"
             >
-              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/90 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
-                <div className="text-xl">🚀</div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
                 <span className="font-semibold theme-text-primary">Your Career, But Actually Good</span>
-                <div className="text-xl">✨</div>
               </div>
             </motion.div>
 
@@ -79,7 +77,7 @@ export default function DevelopersPage() {
             >
               Remember when dating apps changed everything? <strong className="theme-text-primary">We're doing that for tech careers.</strong> 
               Skip the soul-crushing job hunt. Companies compete for YOU. Work on your terms. 
-              Get paid what you're actually worth. 💰
+              Get paid what you're actually worth.
             </motion.p>
 
             {/* Work with Top Companies */}
@@ -105,8 +103,9 @@ export default function DevelopersPage() {
                   className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
                 >
-                  Join the Elite Squad 🎯
+                  Join the Elite Squad
                   <ArrowRightIcon className="w-5 h-5 ml-2 inline-block" />
                 </motion.button>
               </Link>
@@ -137,10 +136,8 @@ export default function DevelopersPage() {
             transition={{ duration: 1 }}
             className="text-center mb-20"
           >
-                         <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
-               <div className="text-xl">🏆</div>
+                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
                <span className="dm-serif-text-regular theme-text-primary font-medium">Plot Twist Stories</span>
-               <div className="text-xl">📈</div>
              </div>
             
             <h2 className="dm-serif-text-regular text-5xl md:text-7xl theme-text-body mb-8 leading-tight">
@@ -153,7 +150,7 @@ export default function DevelopersPage() {
             <p className="font-body text-xl theme-text-muted max-w-4xl mx-auto text-balance leading-relaxed">
               These developers were getting ghosted by HR departments and failing whiteboard interviews. 
               <strong className="theme-text-primary"> Now they're the ones saying no to job offers.</strong> 
-              Here's how they flipped the script. 🔄
+              Here's how they flipped the script.
             </p>
           </motion.div>
 
@@ -185,34 +182,32 @@ export default function DevelopersPage() {
                       <div>
                         <h3 className="dm-serif-text-regular text-2xl mb-1">Yash Pandit</h3>
                         <p className="theme-text-muted">Senior Research Engineer</p>
-                        <p className="theme-text-primary font-semibold">@ Google 🔥</p>
+                        <p className="theme-text-primary font-semibold">@ Google</p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-3xl font-bold mb-1 theme-text-body">$160K</div>
-                      <div className="theme-text-muted text-sm">Annual Salary</div>
-                      <div className="text-green-600 text-sm font-semibold">+350% increase 📈</div>
+                      <div className="text-green-600 text-sm font-semibold">+350% increase</div>
                     </div>
                   </div>
                   
                   <blockquote className="dm-serif-text-regular-italic text-xl mb-6 leading-relaxed theme-text-body">
                     "I was getting rejected by startups for 'lack of experience.' Six months later, 
-                    Google was sliding into my DMs. Thinkify didn't just change my career—it gave me superpowers. 🦸‍♂️"
+                    Google was sliding into my DMs. Thinkify didn't just change my career—it gave me superpowers."
                   </blockquote>
                   
                                       <div className="flex items-center justify-between">
                     <div className="flex gap-4">
                       <div className="bg-green-50 rounded-xl px-4 py-2 border border-green-200">
                         <div className="text-sm text-green-600">Before Thinkify</div>
-                        <div className="font-bold text-green-700">$45K/year 😢</div>
+                        <div className="font-bold text-green-700">$45K/year</div>
                       </div>
                       <div className="bg-blue-50 rounded-xl px-4 py-2 border border-blue-200">
                         <div className="text-sm text-blue-600">Time to Big Tech</div>
-                        <div className="font-bold text-blue-700">4 months ⚡</div>
+                        <div className="font-bold text-blue-700">4 months</div>
                       </div>
                     </div>
                     <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
-                      Read Epic Journey 🚀
+                      Read Epic Journey
                     </button>
                   </div>
                 </div>
@@ -227,9 +222,9 @@ export default function DevelopersPage() {
               className="space-y-6"
             >
               {[
-                { name: 'Jyotendra S.', company: 'Microsoft', salary: '$155K', increase: '+280%', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face' },
-                { name: 'Rushikesh A.', company: 'Stripe', salary: '$145K', increase: '+200%', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face' },
-                { name: 'Sumit D.', company: 'Netflix', salary: '$170K', increase: '+300%', image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop&crop=face' }
+                { name: 'Jyotendra S.', company: 'Microsoft', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face' },
+                { name: 'Rushikesh A.', company: 'Stripe', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face' },
+                { name: 'Sumit D.', company: 'Netflix', image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop&crop=face' }
               ].map((alumni, index) => (
                 <motion.div
                   key={alumni.name}
@@ -246,10 +241,6 @@ export default function DevelopersPage() {
                       <h4 className="dm-serif-text-regular text-lg theme-text-body mb-1">{alumni.name}</h4>
                       <p className="text-sm theme-text-muted">@ {alumni.company}</p>
                     </div>
-                    <div className="text-right">
-                      <div className="font-bold theme-text-body">{alumni.salary}</div>
-                      <div className="theme-text-secondary text-sm font-medium">{alumni.increase}</div>
-                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -259,6 +250,7 @@ export default function DevelopersPage() {
                 animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 1 }}
                 className="w-full bg-white border-2 theme-border-primary theme-text-primary py-4 px-6 rounded-2xl font-semibold hover:theme-bg-primary hover:theme-text-body transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
               >
                 View All Success Stories
                 <ArrowRightIcon className="w-5 h-5 ml-2 inline-block" />
@@ -281,11 +273,11 @@ export default function DevelopersPage() {
               </div>
               
               <div className="relative z-10">
-                <h3 className="dm-serif-text-regular text-4xl mb-6 theme-text-body">Ready to Flip the Script? 🎬</h3>
+                <h3 className="dm-serif-text-regular text-4xl mb-6 theme-text-body">Ready to Flip the Script?</h3>
                 <p className="text-xl theme-text-muted mb-8 max-w-2xl mx-auto">
                   <strong>800+ developers</strong> have already escaped the traditional job hunt. 
                   They're getting multiple offers, working remotely, and actually enjoying their careers. 
-                  <strong className="theme-text-primary">Your turn. 🚀</strong>
+                  <strong className="theme-text-primary">Your turn.</strong>
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -293,15 +285,17 @@ export default function DevelopersPage() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
                   >
-                    Join the Revolution 🔥
+                    Join the Revolution
                   </motion.button>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="border-2 theme-border-primary theme-text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:theme-bg-primary hover:theme-text-body transition-all duration-300"
+                    onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
                   >
-                    See If You Qualify ✨
+                    See If You Qualify
                   </motion.button>
                 </div>
               </div>
@@ -332,10 +326,8 @@ export default function DevelopersPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border border-red-200 shadow-lg mb-8">
-              <div className="text-xl">🤦‍♂️</div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-red-200 shadow-lg mb-8">
               <span className="font-semibold text-red-700">The Job Hunt Reality Check</span>
-              <div className="text-xl">📉</div>
             </div>
           </motion.div>
 
@@ -353,7 +345,7 @@ export default function DevelopersPage() {
                 <span className="theme-text-body">by recruiters?</span>
                 <br />
                 <span className="text-2xl theme-text-muted">
-                  Join the club. 😮‍💨
+                  Join the club.
                 </span>
               </h2>
               
@@ -364,9 +356,9 @@ export default function DevelopersPage() {
 
               <div className="space-y-6">
                 {[
-                  { text: 'Companies fighting over YOU (not the other way around)', icon: '🎯', color: 'from-blue-500 to-purple-500' },
-                  { text: 'Work from your couch, a beach, or Mars (we don\'t judge)', icon: '🏖️', color: 'from-green-500 to-teal-500' },
-                  { text: 'Actually challenging problems (not just "make the logo bigger")', icon: '🧠', color: 'from-purple-500 to-pink-500' }
+                  { text: 'Companies fighting over YOU (not the other way around)', color: 'from-blue-500 to-purple-500' },
+                  { text: 'Work from your couch, a beach, or Mars (we don\'t judge)', color: 'from-green-500 to-teal-500' },
+                  { text: 'Actually challenging problems (not just "make the logo bigger")', color: 'from-purple-500 to-pink-500' }
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -378,7 +370,6 @@ export default function DevelopersPage() {
                     <div className={`absolute inset-0 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl`}></div>
                     <div className="relative z-10 flex items-center space-x-4">
                       <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-xl flex items-center justify-center text-2xl shadow-lg`}>
-                        {item.icon}
                       </div>
                       <span className="text-lg theme-text-body font-semibold">{item.text}</span>
                     </div>
@@ -504,10 +495,8 @@ export default function DevelopersPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border border-emerald-200 shadow-lg mb-8">
-              <div className="text-xl">🎉</div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-emerald-200 shadow-lg mb-8">
               <span className="font-semibold text-emerald-700">Plot Twist: It Does!</span>
-              <div className="text-xl">✨</div>
             </div>
 
             <h2 className="text-5xl md:text-7xl font-bold theme-text-body mb-8 leading-tight">
@@ -516,18 +505,18 @@ export default function DevelopersPage() {
               <br />
               <span className="theme-gradient-text">wingman</span>
               <span className="text-2xl theme-text-muted">
-                <br />(But for jobs, not dating) 😉
+                <br />(But for jobs, not dating)
               </span>
             </h2>
             
             <p className="text-xl theme-text-muted max-w-4xl mx-auto leading-relaxed mb-8">
               <strong>Here's the deal:</strong> We don't just find you jobs—we turn you into the developer 
-              companies fight over. Interview coaching? ✅ Salary negotiation? ✅ Making you look like a rockstar? ✅ 
+              companies fight over. Interview coaching? ✓ Salary negotiation? ✓ Making you look like a rockstar? ✓ 
               <strong className="theme-text-primary">All completely free.</strong> (Yes, really.)
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 text-sm">
-              {['🆓 100% Free Platform', '🏆 Career Coaching', '💰 Salary Negotiation', '🎯 Interview Mastery', '🤝 Perfect Job Matching'].map((feature, index) => (
+              {['100% Free Platform', 'Career Coaching', 'Salary Negotiation', 'Interview Mastery', 'Perfect Job Matching'].map((feature, index) => (
                 <motion.div
                   key={feature}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -545,7 +534,6 @@ export default function DevelopersPage() {
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {[
               {
-                icon: '🎯',
                 title: 'Perfect Job Matching',
                 subtitle: 'AI-powered precision',
                 description: 'Our advanced algorithms analyze 500+ data points to match you with companies that align perfectly with your skills, values, and career aspirations.',
@@ -554,7 +542,6 @@ export default function DevelopersPage() {
                 stats: { value: '95%', label: 'Match Accuracy' }
               },
               {
-                icon: '🚀',
                 title: 'Accelerated Hiring',
                 subtitle: '3x faster than traditional methods',
                 description: 'Skip the endless applications and waiting. Our proven process connects you directly with hiring managers actively seeking your expertise.',
@@ -563,7 +550,6 @@ export default function DevelopersPage() {
                 stats: { value: '21', label: 'Days Average' }
               },
               {
-                icon: '💰',
                 title: 'Elite Negotiation Support',
                 subtitle: 'Maximize your market value',
                 description: 'Our expert negotiators have secured millions in additional compensation. We fight for packages that reflect your true worth.',
@@ -590,7 +576,6 @@ export default function DevelopersPage() {
                   {/* Header */}
                   <div className="flex items-center justify-between mb-6">
                     <div className={`w-16 h-16 bg-gradient-to-r ${item.color} rounded-2xl flex items-center justify-center text-3xl shadow-lg`}>
-                      {item.icon}
                     </div>
                     <div className="text-right">
                       <div className="text-2xl font-bold theme-text-primary">{item.stats.value}</div>
@@ -636,7 +621,7 @@ export default function DevelopersPage() {
             className="text-center"
           >
             <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-12 border border-white/40 shadow-2xl max-w-4xl mx-auto">
-              <h3 className="text-3xl font-bold theme-text-body mb-6">Stop Reading. Start Doing. 🚀</h3>
+              <h3 className="text-3xl font-bold theme-text-body mb-6">Stop Reading. Start Doing.</h3>
               <p className="theme-text-muted mb-8 text-lg">
                 <strong>10,000+ developers</strong> have already ditched the traditional job hunt. 
                 They're working remotely, earning more, and actually excited about Monday mornings. 
@@ -647,15 +632,17 @@ export default function DevelopersPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl"
+                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
                 >
-                  Let's Do This! 💪
+                  Let's Do This!
                 </motion.button>
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-white/80 theme-text-muted border-2 theme-border-surface px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white transition-all duration-300"
+                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
                 >
-                  Just Show Me How 👀
+                  Just Show Me How
                 </motion.button>
               </div>
             </div>
@@ -680,10 +667,9 @@ export default function DevelopersPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/90 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
               <div className="w-2 h-2 theme-bg-primary rounded-full animate-pulse"></div>
               <span className="font-semibold theme-text-primary">Elite Developer Criteria</span>
-              <div className="text-2xl">🎯</div>
             </div>
 
             <h2 className="text-5xl md:text-7xl font-bold theme-text-body mb-8 leading-tight">
@@ -712,7 +698,6 @@ export default function DevelopersPage() {
           <div className="grid lg:grid-cols-2 gap-8 mb-16">
             {[
               {
-                icon: '⭐',
                 title: 'Proven Technical Excellence',
                 subtitle: 'Minimum 4+ years of hands-on experience',
                 description: 'You have deep expertise in full-stack development, MERN stack, frontend, or backend technologies. Your code speaks for itself.',
@@ -721,7 +706,6 @@ export default function DevelopersPage() {
                 stats: { value: '4+', label: 'Years Required' }
               },
               {
-                icon: '🎯',
                 title: 'Value-Driven Partnership',
                 subtitle: '100% free platform for developers',
                 description: 'You understand that the best platforms invest in talent, not exploit it. We charge hiring partners, never developers.',
@@ -730,7 +714,6 @@ export default function DevelopersPage() {
                 stats: { value: '0%', label: 'Developer Fees' }
               },
               {
-                icon: '⚡',
                 title: 'Time-Conscious Professional',
                 subtitle: 'Skip the negotiation hassles',
                 description: 'You value your time and want expert negotiators fighting for your worth, not wasting months in back-and-forth discussions.',
@@ -739,7 +722,6 @@ export default function DevelopersPage() {
                 stats: { value: '40%', label: 'Avg. Salary Boost' }
               },
               {
-                icon: '🚀',
                 title: 'Career-Focused Mindset',
                 subtitle: 'Lifelong growth partner',
                 description: 'You\'re not just looking for a job - you want a career transformation partner invested in making you a top-tier, marketable talent.',
@@ -766,7 +748,6 @@ export default function DevelopersPage() {
                   {/* Header */}
                   <div className="flex items-center justify-between mb-6">
                     <div className={`w-16 h-16 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center text-3xl shadow-lg`}>
-                      {item.icon}
                     </div>
                     <div className="text-right">
                       <div className="text-2xl font-bold theme-text-primary">{item.stats.value}</div>
@@ -817,6 +798,7 @@ export default function DevelopersPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
                 >
                   Apply for Elite Status
                 </motion.button>
@@ -824,6 +806,7 @@ export default function DevelopersPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-white theme-text-body border-2 theme-border-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/90 transition-all duration-300"
+                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
                 >
                   Learn About Vetting
                 </motion.button>
@@ -943,7 +926,6 @@ export default function DevelopersPage() {
             {[
               {
                 id: 'security',
-                icon: '🛡️',
                 title: 'Total Career Protection',
                 subtitle: 'Your success is our guarantee',
                 description: 'Full-spectrum career insurance including health benefits, legal support, and contract negotiation. We fight for your rights every step of the way.',
@@ -954,7 +936,6 @@ export default function DevelopersPage() {
               },
               {
                 id: 'global',
-                icon: '🌍',
                 title: 'Global Elite Network',
                 subtitle: 'Join the world\'s top 1%',
                 description: 'Exclusive access to a curated community of world-class developers. Network with industry leaders, share knowledge, and grow together.',
@@ -965,7 +946,6 @@ export default function DevelopersPage() {
               },
               {
                 id: 'growth',
-                icon: '📈',
                 title: 'Exponential Growth Engine',
                 subtitle: 'Your career, supercharged',
                 description: 'Personalized career acceleration with AI-powered matching, skill development, and strategic positioning for maximum growth potential.',
@@ -976,7 +956,6 @@ export default function DevelopersPage() {
               },
               {
                 id: 'events',
-                icon: '🎯',
                 title: 'Exclusive Access Hub',
                 subtitle: 'Learn from the legends',
                 description: 'Private events with tech titans, exclusive workshops, and insider sessions. Get direct access to the minds shaping the future of technology.',
@@ -1003,7 +982,6 @@ export default function DevelopersPage() {
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex items-center gap-4">
                         <div className={`w-16 h-16 bg-gradient-to-r ${feature.gradient} rounded-2xl flex items-center justify-center text-2xl shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
-                          {feature.icon}
                         </div>
                         <div>
                           <h3 className="text-2xl font-bold theme-text-body mb-1">{feature.title}</h3>
@@ -1093,10 +1071,10 @@ export default function DevelopersPage() {
 
               <div className="grid md:grid-cols-4 gap-8">
                 {[
-                  { value: '98.7%', label: 'Success Rate', icon: '🎯' },
-                  { value: '15 days', label: 'Avg. Hire Time', icon: '⚡' },
-                  { value: '$142K', label: 'Avg. Salary', icon: '💰' },
-                  { value: '10K+', label: 'Happy Developers', icon: '🚀' }
+                  { value: '98.7%', label: 'Success Rate' },
+                  { value: '15 days', label: 'Avg. Hire Time' },
+                  { value: '$142K', label: 'Avg. Salary' },
+                  { value: '10K+', label: 'Happy Developers' }
                 ].map((metric, index) => (
                   <motion.div
                     key={index}
@@ -1105,8 +1083,7 @@ export default function DevelopersPage() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="text-center group"
                   >
-                    <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
-                      {metric.icon}
+                    <div className="mb-2">
                     </div>
                     <div className="text-3xl md:text-4xl font-bold theme-text-primary mb-2">
                       {metric.value}
@@ -1178,7 +1155,6 @@ export default function DevelopersPage() {
                 <div className="w-3 h-3 theme-bg-accent rounded-full animate-pulse delay-400"></div>
               </div>
               <span className="font-bold theme-text-primary">Elite Developer Collective</span>
-              <div className="text-2xl">👑</div>
             </motion.div>
 
             <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight theme-text-body">
@@ -1207,6 +1183,7 @@ export default function DevelopersPage() {
                     className="btn-cosmic-primary px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl transition-all duration-300"
                     whileHover={{ scale: 1.05, y: -5 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
                   >
                     Join Elite Collective
                     <ArrowRightIcon className="w-6 h-6 ml-3 inline-block" />
@@ -1216,6 +1193,7 @@ export default function DevelopersPage() {
                   className="bg-white border-2 theme-border-primary theme-text-primary px-12 py-6 rounded-2xl font-bold text-xl hover:theme-bg-primary hover:text-white transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
                 >
                   View Member Benefits
                 </motion.button>
@@ -1224,9 +1202,9 @@ export default function DevelopersPage() {
               {/* Member Benefits Preview */}
               <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 {[
-                  { icon: '💼', text: 'Premium Job Access', desc: 'Exclusive opportunities' },
-                  { icon: '🚀', text: 'Career Acceleration', desc: '3x faster growth' },
-                  { icon: '💰', text: 'Salary Optimization', desc: '40% higher packages' }
+                  { text: 'Premium Job Access', desc: 'Exclusive opportunities' },
+                  { text: 'Career Acceleration', desc: '3x faster growth' },
+                  { text: 'Salary Optimization', desc: '40% higher packages' }
                 ].map((benefit, index) => (
                   <motion.div
                     key={index}
@@ -1235,7 +1213,7 @@ export default function DevelopersPage() {
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     className="bg-white backdrop-blur-sm rounded-xl p-4 border theme-border-surface shadow-lg"
                   >
-                    <div className="text-2xl mb-2">{benefit.icon}</div>
+                    <div className="mb-2"></div>
                     <div className="font-semibold theme-text-body">{benefit.text}</div>
                     <div className="text-xs theme-text-muted">{benefit.desc}</div>
                   </motion.div>
