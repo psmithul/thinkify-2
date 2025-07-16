@@ -110,7 +110,7 @@ export default function ThemeSwitcher() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                 >
-                  🎨 All colors sync across the entire website
+                  All colors sync across the entire website
                 </motion.p>
               </div>
             </motion.div>

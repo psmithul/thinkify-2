@@ -106,26 +106,25 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/90 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
               <div className="w-2 h-2 theme-bg-primary rounded-full animate-pulse"></div>
-              <span className="font-semibold theme-text-primary">✨ The Future of Work is Here</span>
-              <div className="text-xl">🚀</div>
+              <span className="font-semibold theme-text-primary">The Future of Work is Here</span>
             </div>
           </motion.div>
 
           <motion.h1 
-            className="font-display text-5xl md:text-7xl mb-8 theme-text-body text-balance leading-tight"
+            className="font-display text-5xl md:text-7xl mb-8 pb-8 theme-text-body text-balance leading-[1.15]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Hire like{' '}
+            Hire {' '}
             <span className="theme-gradient-text">
-              Netflix
+              Thoughtfully
             </span>
             <br />
-            <span className="theme-text-body">Scale like</span>{' '}
-            <span className="theme-gradient-text">Uber</span>
+            <span className="theme-text-body">Scale </span>{' '}
+            <span className="theme-gradient-text">Instantly</span>
           </motion.h1>
           
           <motion.p 
@@ -134,9 +133,8 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Remember when you had to own DVDs to watch movies? Or call a taxi company and wait an hour? 
-            <strong className="theme-text-primary"> We're doing the same thing to tech hiring.</strong> Get world-class engineers 
-            on-demand, pay only for what you use, scale instantly.
+            With Thinkify, get vetted talent on-demand. Experience the 
+            <strong className="theme-text-primary"> freedom and flexibility of modern contingent hiring.</strong>
           </motion.p>
           
           <motion.div 
@@ -145,47 +143,21 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Link href="#contact" className="btn-cosmic-primary px-8 py-4 text-lg">
-              Get Your Dream Team ✨
+            <Link href="https://connect.thinkify.io" className="btn-cosmic-primary px-8 py-4 text-lg">
+              Get Your Dream Team
             </Link>
             <Link 
               href="/developers" 
               className="bg-white theme-border-primary theme-text-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2"
             >
-              Join the Future 🌟
+              Join the Future
             </Link>
           </motion.div>
 
-          {/* Trust Indicators */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-wrap justify-center items-center gap-8 text-sm theme-text-muted"
-          >
-            <div className="flex items-center gap-2">
-              <div className="text-xl">🎯</div>
-              <span><strong>500+</strong> Elite Engineers Ready</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="text-xl">⚡</div>
-              <span><strong>72hrs</strong> From Brief to Brilliant</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="text-xl">💎</div>
-              <span><strong>98%</strong> "Would Recommend"</span>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Company Carousel Section */}
-      <section className="py-8 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CompanyCarousel 
-            title="Join the Smart Companies Already Scaling"
-            subtitle="These forward-thinking teams discovered the secret to rapid growth"
-          />
+          {/* Logo Ticker (CompanyCarousel) inside hero */}
+          <div className="mt-12">
+            <CompanyCarousel />
+          </div>
         </div>
       </section>
 
@@ -200,7 +172,7 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
-                <div className="text-xl">🤯</div>
+                <div className="text-xl"></div>
                 <span className="font-semibold theme-text-primary">The Old Way is Broken</span>
               </div>
               
@@ -211,7 +183,7 @@ export default function HomePage() {
                 </span>
                 <br />
                 <span className="text-2xl theme-text-muted">
-                  Are you serious? 😅
+                  Are you serious?
                 </span>
               </h2>
               
@@ -225,7 +197,7 @@ export default function HomePage() {
                   onboard for a month... <strong className="text-red-600">and by then, the opportunity is gone.</strong>
                 </p>
                 <p className="text-xl font-semibold theme-text-primary">
-                  Meanwhile, your competitor? They scaled their team overnight. 🚀
+                  Meanwhile, your competitor? They scaled their team overnight.
                 </p>
               </div>
             </motion.div>
@@ -239,7 +211,7 @@ export default function HomePage() {
             >
               <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
                 <div className="text-center mb-6">
-                  <div className="text-4xl mb-2">😭</div>
+                  <div className="text-4xl mb-2"></div>
                   <div className="font-bold text-xl theme-text-body">Traditional Hiring Reality</div>
                 </div>
                 <div className="space-y-4">
@@ -256,7 +228,7 @@ export default function HomePage() {
                       <div className="font-semibold text-yellow-700">Week 9-16: Interview Hell</div>
                       <div className="text-sm text-yellow-600">"Can you invert a binary tree on a whiteboard?"</div>
                     </div>
-                    <div className="text-2xl">😵‍💫</div>
+    
                   </div>
                   
                   <div className="flex items-center justify-between p-4 bg-purple-50 rounded-xl border border-purple-200">
@@ -294,7 +266,7 @@ export default function HomePage() {
             >
               <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl p-8 shadow-2xl border border-green-100">
                 <div className="text-center mb-6">
-                  <div className="text-4xl mb-2">🎉</div>
+  
                   <div className="font-bold text-xl theme-text-body">The Thinkify Way</div>
                 </div>
                 <div className="space-y-4">
@@ -311,7 +283,7 @@ export default function HomePage() {
                       <div className="font-semibold text-blue-700">Tuesday: Meet Your Perfect Match</div>
                       <div className="text-sm text-blue-600">"This is Sarah, she built Netflix's recommendation engine"</div>
                     </div>
-                    <div className="text-2xl">🤝</div>
+  
                   </div>
                   
                   <div className="flex items-center justify-between p-4 theme-bg-primary-10 rounded-xl border theme-border-primary">
@@ -319,12 +291,12 @@ export default function HomePage() {
                       <div className="font-semibold theme-text-primary">Wednesday: They're Coding</div>
                       <div className="text-sm theme-text-primary">"Already deployed the MVP, what's next?"</div>
                     </div>
-                    <div className="text-2xl">⚡</div>
+  
                   </div>
 
                   <div className="text-center p-4 bg-yellow-50 rounded-xl border border-yellow-200">
                     <div className="font-bold text-yellow-700 text-lg">Total Time: 72 Hours</div>
-                    <div className="text-sm text-yellow-600">vs. 6 months of traditional hiring 🤯</div>
+                    <div className="text-sm text-yellow-600">vs. 6 months of traditional hiring</div>
                   </div>
                 </div>
               </div>
@@ -357,7 +329,7 @@ export default function HomePage() {
                 </p>
                 <p>
                   No interviews. No negotiations. No office politics. Just pure, concentrated brilliance 
-                  delivered to your door... er, Zoom room. 📦✨
+                  delivered to your door... er, Zoom room.
                 </p>
                 <p>
                   <strong>Best part?</strong> Project done? Scale down instantly. New urgent feature? 
@@ -428,7 +400,6 @@ export default function HomePage() {
                 subtitle: "Senior engineer validation",
                 description: "Industry veterans with 15+ years of experience conduct rigorous technical interviews, system design challenges, and comprehensive code reviews to ensure only elite talent passes through.",
                 features: ['15+ years experience', 'Technical deep-dives', 'System design tests', 'Code review process'],
-                icon: '🎯',
                 gradient: 'from-indigo-500 to-purple-500',
                 stats: { value: '15%', label: 'Pass Rate' }
               },
@@ -438,8 +409,7 @@ export default function HomePage() {
                 subtitle: "Risk-free delivery promise",
                 description: "Zero payment until successful placement with our iron-clad guarantee. We deliver in 15 days average vs industry standard of 45+ days, with 30-day replacement warranty.",
                 features: ['Zero upfront payment', '15-day average delivery', '30-day replacement', '99% success rate'],
-                icon: '🛡️',
-                gradient: 'from-purple-500 to-pink-500',
+                gradient: 'from-yellow-500 to-orange-500',
                 stats: { value: '0%', label: 'Risk to You' }
               }
             ].map((item, index) => (
@@ -463,7 +433,6 @@ export default function HomePage() {
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-4">
                       <div className={`w-16 h-16 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center text-3xl shadow-lg`}>
-                        {item.icon}
                       </div>
                       <div className="text-6xl font-bold theme-text-muted/20 group-hover:theme-text-muted/30 transition-colors duration-300">
                         {item.step}
@@ -534,10 +503,10 @@ export default function HomePage() {
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {[
-                  { metric: '72hrs', label: 'First Candidates', icon: '⚡' },
-                  { metric: '15 days', label: 'Average Delivery', icon: '🚀' },
-                  { metric: '95%', label: 'Success Rate', icon: '🎯' },
-                  { metric: '0%', label: 'Upfront Cost', icon: '💎' }
+                  { metric: '72hrs', label: 'First Candidates' },
+                  { metric: '15 days', label: 'Average Delivery' },
+                  { metric: '95%', label: 'Success Rate' },
+                  { metric: '0%', label: 'Upfront Cost' }
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -547,7 +516,6 @@ export default function HomePage() {
                     viewport={{ once: true }}
                     className="text-center"
                   >
-                    <div className="text-3xl mb-2">{item.icon}</div>
                     <div className="text-2xl font-bold theme-text-body mb-1">{item.metric}</div>
                     <div className="text-xs theme-text-muted">{item.label}</div>
                   </motion.div>
@@ -698,28 +666,24 @@ export default function HomePage() {
             <div className="lg:col-span-4 space-y-6">
               {[
                 {
-                  icon: '⚡',
                   title: 'Lightning Fast',
                   description: '72-hour delivery guarantee vs 45+ days industry standard',
                   color: 'from-yellow-500 to-orange-500',
                   metric: '15x'
                 },
                 {
-                  icon: '🎯',
                   title: 'Perfect Match',
                   description: 'AI-powered matching with 95% technical interview pass rate',
                   color: 'from-blue-500 to-purple-500',
                   metric: '95%'
                 },
                 {
-                  icon: '🔒',
                   title: 'Zero Risk',
                   description: 'No payment until successful placement and 30-day guarantee',
                   color: 'from-green-500 to-teal-500',
                   metric: '0%'
                 },
                 {
-                  icon: '🌍',
                   title: 'Global Network',
                   description: 'Access to 50K+ vetted engineers across 40+ countries',
                   color: 'from-purple-500 to-pink-500',
@@ -740,7 +704,6 @@ export default function HomePage() {
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-4">
                       <div className={`w-12 h-12 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center text-2xl shadow-lg`}>
-                        {feature.icon}
                       </div>
                       <div className="text-right">
                         <div className="text-2xl font-bold theme-gradient-text">{feature.metric}</div>
@@ -762,14 +725,14 @@ export default function HomePage() {
                 className="relative pt-4"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-20"></div>
-                <a href="#contact" className="relative block w-full btn-cosmic-primary px-8 py-5 rounded-2xl font-bold text-lg text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600">
+                <Link href="https://connect.thinkify.io" className="relative block w-full btn-cosmic-primary px-8 py-5 rounded-2xl font-bold text-lg text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600">
                   <span className="flex items-center justify-center gap-2">
                     Start Hiring Elite Talent
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </span>
-                </a>
+                </Link>
               </motion.div>
             </div>
           </div>
@@ -794,10 +757,9 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white backdrop-blur-md border theme-border-primary shadow-lg mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white backdrop-blur-md border theme-border-primary shadow-lg mb-8">
               <div className="w-2 h-2 theme-bg-secondary rounded-full animate-pulse"></div>
               <span className="font-semibold theme-text-primary">Proven Track Record</span>
-              <div className="text-2xl">🏆</div>
             </div>
             
             <h2 className="font-display text-5xl md:text-7xl theme-text-body mb-8 leading-tight">
@@ -946,12 +908,12 @@ export default function HomePage() {
               <h3 className="text-3xl font-bold theme-text-body mb-6">Ready to Write Your Success Story?</h3>
               <p className="theme-text-muted mb-8 text-lg">Join 500+ companies who've scaled their teams with Thinkify's elite engineering talent.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <Link href="https://connect.thinkify.io" className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
                   Start Your Transformation
-                </a>
-                <a href="#" className="bg-white theme-text-primary border-2 theme-border-primary px-8 py-4 rounded-xl font-semibold text-lg hover:theme-bg-primary hover:theme-text-body transition-all duration-300">
+                </Link>
+                <Link href="#" className="bg-white theme-text-primary border-2 theme-border-primary px-8 py-4 rounded-xl font-semibold text-lg hover:theme-bg-primary hover:theme-text-body transition-all duration-300">
                   View All Case Studies
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -1000,7 +962,6 @@ export default function HomePage() {
                 number: 15, 
                 label: "Days Average Placement", 
                 suffix: "", 
-                icon: '⚡',
                 gradient: 'from-yellow-500 to-orange-500',
                 comparison: 'vs 45+ industry standard',
                 improvement: '3x faster'
@@ -1009,7 +970,6 @@ export default function HomePage() {
                 number: 95, 
                 label: "Technical Interview Pass Rate", 
                 suffix: "%", 
-                icon: '🎯',
                 gradient: 'from-emerald-500 to-teal-500',
                 comparison: 'vs 60% industry average',
                 improvement: '35% higher'
@@ -1018,7 +978,6 @@ export default function HomePage() {
                 number: 100, 
                 label: "Zero Payment Until Delivery", 
                 suffix: "%", 
-                icon: '🛡️',
                 gradient: 'from-blue-500 to-purple-500',
                 comparison: 'risk-free guarantee',
                 improvement: 'Industry first'
@@ -1027,7 +986,6 @@ export default function HomePage() {
                 number: 15, 
                 label: "Years Senior Engineering Experience", 
                 suffix: "+", 
-                icon: '👨‍💻',
                 gradient: 'from-purple-500 to-pink-500',
                 comparison: 'of our vetting team',
                 improvement: 'Elite expertise'
@@ -1051,7 +1009,6 @@ export default function HomePage() {
                 <div className="relative z-10 text-center">
                   {/* Icon */}
                   <div className={`w-16 h-16 bg-gradient-to-r ${stat.gradient} rounded-2xl mx-auto mb-6 flex items-center justify-center text-3xl shadow-lg`}>
-                    {stat.icon}
                   </div>
 
                   {/* Main Metric */}
@@ -1092,7 +1049,7 @@ export default function HomePage() {
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Industry Standard */}
                 <div className="bg-red-50 rounded-2xl p-6 border-2 border-red-200">
-                  <h4 className="text-lg font-bold text-red-800 mb-4">🏢 Industry Standard</h4>
+                  <h4 className="text-lg font-bold text-red-800 mb-4">Industry Standard</h4>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center justify-between">
                       <span className="theme-text-muted">Avg. Placement Time</span>
@@ -1116,7 +1073,7 @@ export default function HomePage() {
                 {/* Thinkify */}
                 <div className="bg-emerald-50 rounded-2xl p-6 border-2 border-emerald-200 relative overflow-hidden">
                   <div className="absolute top-2 right-2 bg-emerald-500 text-black px-2 py-1 rounded-full text-xs font-bold">WINNER</div>
-                  <h4 className="text-lg font-bold text-emerald-800 mb-4">🚀 Thinkify</h4>
+                  <h4 className="text-lg font-bold text-emerald-800 mb-4">Thinkify</h4>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center justify-between">
                       <span className="theme-text-muted">Avg. Placement Time</span>
@@ -1149,9 +1106,9 @@ export default function HomePage() {
                   <strong>The choice is clear:</strong> While others struggle with outdated processes, 
                   we deliver revolutionary results that transform how companies build their engineering teams.
                 </p>
-                <button className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Link href="https://connect.thinkify.io" className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300">
                   Experience the Difference →
-                </button>
+                </Link>
               </motion.div>
             </div>
           </motion.div>
@@ -1168,33 +1125,7 @@ export default function HomePage() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 theme-bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
         </div>
 
-        {/* Floating Success Indicators */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[
-            { icon: '🚀', top: '15%', left: '10%', delay: 0 },
-            { icon: '⚡', top: '25%', right: '15%', delay: 1 },
-            { icon: '🎯', bottom: '25%', left: '12%', delay: 2 },
-            { icon: '💎', bottom: '15%', right: '10%', delay: 3 },
-            { icon: '🏆', top: '40%', left: '8%', delay: 4 },
-            { icon: '🌟', top: '60%', right: '8%', delay: 5 }
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
-              whileInView={{ opacity: 0.3, scale: 1, rotate: 0 }}
-              transition={{ duration: 2, delay: item.delay, repeat: Infinity, repeatType: 'reverse' }}
-              className="absolute theme-text-muted text-3xl"
-              style={{
-                top: item.top,
-                bottom: item.bottom,
-                left: item.left,
-                right: item.right
-              }}
-            >
-              {item.icon}
-            </motion.div>
-          ))}
-        </div>
+
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
@@ -1209,7 +1140,7 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-xl mb-8"
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-xl mb-8"
             >
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 theme-bg-secondary rounded-full animate-pulse"></div>
@@ -1217,7 +1148,6 @@ export default function HomePage() {
                 <div className="w-3 h-3 theme-bg-accent rounded-full animate-pulse delay-400"></div>
               </div>
               <span className="font-bold theme-text-primary">Transform Your Team Today</span>
-              <div className="text-2xl">🚀</div>
             </motion.div>
 
             <motion.h2 
@@ -1256,9 +1186,9 @@ export default function HomePage() {
               className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto"
             >
               {[
-                { icon: '🛡️', label: 'Zero Risk Guarantee', desc: '100% money-back promise' },
-                { icon: '⚡', label: '72-Hour Delivery', desc: 'First candidates within 3 days' },
-                { icon: '🎯', label: '95% Success Rate', desc: 'Industry-leading accuracy' }
+                { label: 'Zero Risk Guarantee', desc: '100% money-back promise' },
+                { label: '72-Hour Delivery', desc: 'First candidates within 3 days' },
+                { label: '95% Success Rate', desc: 'Industry-leading accuracy' }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -1268,7 +1198,6 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="bg-white backdrop-blur-sm rounded-2xl p-6 border theme-border-surface shadow-lg"
                 >
-                  <div className="text-3xl mb-3">{item.icon}</div>
                   <div className="font-bold theme-text-body mb-1">{item.label}</div>
                   <div className="text-sm theme-text-muted">{item.desc}</div>
                 </motion.div>
@@ -1283,7 +1212,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="flex flex-col md:flex-row gap-6 justify-center mb-12"
             >
-                              <a href="mailto:kulkarni.karthik@thinkify.io" className="group relative">
+                              <Link href="https://connect.thinkify.io" className="group relative">
                 <motion.button 
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
@@ -1292,8 +1221,8 @@ export default function HomePage() {
                   <span className="relative z-10">Start Your Transformation</span>
                   <div className="absolute inset-0 theme-gradient-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </motion.button>
-              </a>
-              <a href="tel:+919876543210" className="group relative">
+              </Link>
+              <Link href="tel:+919876543210" className="group relative">
                 <motion.button 
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
@@ -1301,7 +1230,7 @@ export default function HomePage() {
                 >
                   Schedule Strategy Call
                 </motion.button>
-              </a>
+              </Link>
             </motion.div>
 
             {/* Social Proof */}
@@ -1323,7 +1252,7 @@ export default function HomePage() {
                     viewport={{ once: true }}
                     className="theme-text-warning text-xl"
                   >
-                    ⭐
+                    ★
                   </motion.div>
                 ))}
                 <span className="theme-text-muted ml-2">4.9/5 from 2,500+ reviews</span>
@@ -1623,25 +1552,24 @@ export default function HomePage() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    { name: "Hire AI/ML Engineers", icon: "🤖" },
-                    { name: "DevOps Specialists", icon: "⚡" },
-                    { name: "Backend Engineers", icon: "🛠️" },
-                    { name: "Frontend Engineers", icon: "💎" },
-                    { name: "Data Scientists", icon: "📊" },
-                    { name: "Mobile Engineers", icon: "📱" }
+                    { name: "Hire AI/ML Engineers" },
+                    { name: "DevOps Specialists" },
+                    { name: "Backend Engineers" },
+                    { name: "Frontend Engineers" },
+                    { name: "Data Scientists" },
+                    { name: "Mobile Engineers" }
                   ].map((item, index) => (
                     <motion.li 
                       key={index}
                       whileHover={{ x: 5 }}
                       className="group"
                     >
-                      <a href="#" className="flex items-center theme-text-muted hover:theme-text-primary transition-all duration-300 group-hover:bg-white/5 rounded-lg p-2">
-                        <span className="text-sm mr-3">{item.icon}</span>
+                      <Link href="https://connect.thinkify.io" className="flex items-center theme-text-muted hover:theme-text-primary transition-all duration-300 group-hover:bg-white/5 rounded-lg p-2">
                         <span className="flex-1">{item.name}</span>
                         <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
                         </svg>
-                      </a>
+                      </Link>
                     </motion.li>
                   ))}
                 </ul>
@@ -1673,25 +1601,24 @@ export default function HomePage() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    { name: "Join Elite Network", icon: "🚀", href: "/developers" },
-                    { name: "Remote Opportunities", icon: "🌍" },
-                    { name: "Career Acceleration", icon: "📈" },
-                    { name: "Skill Assessment", icon: "🎯" },
-                    { name: "Interview Mastery", icon: "💡" },
-                    { name: "Success Stories", icon: "⭐" }
+                    { name: "Join Elite Network", href: "/developers" },
+                    { name: "Remote Opportunities" },
+                    { name: "Career Acceleration" },
+                    { name: "Skill Assessment" },
+                    { name: "Interview Mastery" },
+                    { name: "Success Stories" }
                   ].map((item, index) => (
                     <motion.li 
                       key={index}
                       whileHover={{ x: 5 }}
                       className="group"
                     >
-                      <a href={item.href || "#"} className="flex items-center theme-text-muted hover:theme-text-primary transition-all duration-300 group-hover:bg-white/5 rounded-lg p-2">
-                        <span className="text-sm mr-3">{item.icon}</span>
+                      <Link href={item.href || "#"} className="flex items-center theme-text-muted hover:theme-text-primary transition-all duration-300 group-hover:bg-white/5 rounded-lg p-2">
                         <span className="flex-1">{item.name}</span>
                         <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
                         </svg>
-                      </a>
+                      </Link>
                     </motion.li>
                   ))}
                 </ul>
@@ -1723,25 +1650,24 @@ export default function HomePage() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    { name: "Tech Salary Intelligence", icon: "💰" },
-                    { name: "Elite Hiring Playbook", icon: "📖" },
-                    { name: "Engineering Intelligence", icon: "🧠" },
-                    { name: "Market Research", icon: "📊" },
-                    { name: "Success Case Studies", icon: "🏆" },
-                    { name: "Expert Webinars", icon: "🎥" }
+                    { name: "Tech Salary Intelligence" },
+                    { name: "Elite Hiring Playbook" },
+                    { name: "Engineering Intelligence" },
+                    { name: "Market Research" },
+                    { name: "Success Case Studies" },
+                    { name: "Expert Webinars" }
                   ].map((item, index) => (
                     <motion.li 
                       key={index}
                       whileHover={{ x: 5 }}
                       className="group"
                     >
-                      <a href="#" className="flex items-center theme-text-muted hover:theme-text-primary transition-all duration-300 group-hover:bg-white/5 rounded-lg p-2">
-                        <span className="text-sm mr-3">{item.icon}</span>
+                      <Link href="https://connect.thinkify.io" className="flex items-center theme-text-muted hover:theme-text-primary transition-all duration-300 group-hover:bg-white/5 rounded-lg p-2">
                         <span className="flex-1">{item.name}</span>
                         <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
                         </svg>
-                      </a>
+                      </Link>
                     </motion.li>
                   ))}
                 </ul>
@@ -1773,25 +1699,24 @@ export default function HomePage() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    { name: "Our Mission", icon: "🎯" },
-                    { name: "How We Work", icon: "⚙️" },
-                    { name: "Investment Plans", icon: "💎" },
-                    { name: "Contact Elite Team", icon: "📞" },
-                    { name: "Join Our Team", icon: "🌟" },
-                    { name: "Media Resources", icon: "📰" }
+                    { name: "Our Mission" },
+                    { name: "How We Work" },
+                    { name: "Investment Plans" },
+                    { name: "Contact Elite Team" },
+                    { name: "Join Our Team" },
+                    { name: "Media Resources" }
                   ].map((item, index) => (
                     <motion.li 
                       key={index}
                       whileHover={{ x: 5 }}
                       className="group"
                     >
-                      <a href="#" className="flex items-center theme-text-muted hover:theme-text-primary transition-all duration-300 group-hover:bg-white/5 rounded-lg p-2">
-                        <span className="text-sm mr-3">{item.icon}</span>
+                      <Link href="https://connect.thinkify.io" className="flex items-center theme-text-muted hover:theme-text-primary transition-all duration-300 group-hover:bg-white/5 rounded-lg p-2">
                         <span className="flex-1">{item.name}</span>
                         <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
                         </svg>
-                      </a>
+                      </Link>
                     </motion.li>
                   ))}
                 </ul>

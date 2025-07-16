@@ -134,7 +134,7 @@ export default function ThinkifyLogo({
 
   if (variant === 'text') {
     return (
-      <div className={`font-bold ${textSize[size]} ${className}`}>
+      <div className={`font-bold font-nunito-sans text-3xl ${className}`}>
         <span 
           className="text-transparent"
           style={{
@@ -152,8 +152,8 @@ export default function ThinkifyLogo({
 
   return (
     <div className={`flex items-center space-x-3 ${className}`}>
-      <ThinkifyLogo variant="icon" size={size} />
-      <ThinkifyLogo variant="text" size={size} />
+      <ThinkifyLogo variant="icon" size="xl" />
+      <ThinkifyLogo variant="text" size="xl" />
     </div>
   );
 } 

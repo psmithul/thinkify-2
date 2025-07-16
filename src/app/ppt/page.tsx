@@ -90,9 +90,9 @@ export default function PresentationPage() {
           }
         }
         
-        .airbnb-red { color: #FF5A5F; }
-        .airbnb-gray { color: #484848; }
-        .airbnb-light-gray { color: #767676; }
+        .airbnb-red { color: #FFC300; } /* gold for highlights */
+        .airbnb-gray { color: #000; } /* black for main text */
+        .airbnb-light-gray { color: #000; } /* black for main text */
         .center-content {
           display: flex;
           flex-direction: column;
@@ -120,7 +120,7 @@ export default function PresentationPage() {
           
           {/* Clock SVG */}
           <div className="mt-8">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" className="text-red-300">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" className="text-yellow-400">
               <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
               <polyline points="12,6 12,12 16,14" stroke="currentColor" strokeWidth="2"/>
             </svg>
@@ -129,7 +129,7 @@ export default function PresentationPage() {
       </div>
 
       {/* Page 2: Amplify the Pain */}
-      <div className="page bg-gray-50">
+      <div className="page bg-yellow-50">
         <div className="center-content">
           <h1 className="page-title airbnb-gray mb-12">
             The hidden cost of slow hiring
@@ -141,7 +141,7 @@ export default function PresentationPage() {
               <div className="text-xl airbnb-gray font-medium mb-2">Lost Revenue</div>
               <div className="airbnb-light-gray">Per unfilled senior role</div>
               <div className="mt-4">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" className="text-red-400 mx-auto">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" className="text-yellow-400 mx-auto">
                   <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" strokeWidth="2"/>
                 </svg>
               </div>
@@ -152,7 +152,7 @@ export default function PresentationPage() {
               <div className="text-xl airbnb-gray font-medium mb-2">Wrong Hires</div>
               <div className="airbnb-light-gray">Fail within 18 months</div>
               <div className="mt-4">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" className="text-red-400 mx-auto">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" className="text-yellow-400 mx-auto">
                   <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="2"/>
                   <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
                   <line x1="17" y1="8" x2="22" y2="13" stroke="currentColor" strokeWidth="2"/>
@@ -166,7 +166,7 @@ export default function PresentationPage() {
               <div className="text-xl airbnb-gray font-medium mb-2">Overspend</div>
               <div className="airbnb-light-gray">vs. optimal hiring cost</div>
               <div className="mt-4">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" className="text-red-400 mx-auto">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" className="text-yellow-400 mx-auto">
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" strokeWidth="2"/>
                 </svg>
               </div>
@@ -245,7 +245,7 @@ export default function PresentationPage() {
       </div>
 
       {/* Page 4: The Solution */}
-      <div className="page bg-gray-50">
+      <div className="page bg-yellow-50">
         <div className="center-content">
           <h1 className="page-title airbnb-gray mb-8">
             What if you could hire<br />
@@ -307,7 +307,7 @@ export default function PresentationPage() {
           </h1>
           
           <div className="grid grid-cols-2 gap-16 max-w-5xl w-full mb-16">
-            <div className="text-left bg-gray-50 rounded-2xl p-8">
+            <div className="text-left bg-yellow-50 rounded-2xl p-8">
               <div className="metric-medium airbnb-red mb-4">95%</div>
               <div className="text-xl airbnb-gray font-medium mb-4">Success Rate</div>
               <div className="airbnb-light-gray mb-6">
@@ -316,7 +316,7 @@ export default function PresentationPage() {
               <div className="text-sm airbnb-gray font-medium">— CTO, Fortune 500 Fintech</div>
             </div>
             
-            <div className="text-left bg-gray-50 rounded-2xl p-8">
+            <div className="text-left bg-yellow-50 rounded-2xl p-8">
               <div className="metric-medium airbnb-red mb-4">40%</div>
               <div className="text-xl airbnb-gray font-medium mb-4">Cost Reduction</div>
               <div className="airbnb-light-gray mb-6">
@@ -342,7 +342,7 @@ export default function PresentationPage() {
       </div>
 
       {/* Page 6: How It Works */}
-      <div className="page bg-gray-50">
+      <div className="page bg-yellow-50">
         <div className="center-content max-w-5xl">
           <h1 className="page-title airbnb-gray mb-16">
             From brief to brilliant engineer
@@ -350,7 +350,7 @@ export default function PresentationPage() {
           
           <div className="space-y-12 w-full">
             <div className="flex items-center gap-12">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-2xl font-bold airbnb-red flex-shrink-0">1</div>
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-2xl font-bold airbnb-red flex-shrink-0">1</div>
               <div className="flex-1">
                 <div className="text-2xl airbnb-gray font-medium mb-2">Share Your Needs</div>
                 <div className="airbnb-light-gray text-lg">Tell us about your project, tech stack, and timeline in a 15-minute call.</div>
@@ -363,7 +363,7 @@ export default function PresentationPage() {
             </div>
             
             <div className="flex items-center gap-12">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-2xl font-bold airbnb-red flex-shrink-0">2</div>
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-2xl font-bold airbnb-red flex-shrink-0">2</div>
               <div className="flex-1">
                 <div className="text-2xl airbnb-gray font-medium mb-2">Get Matched</div>
                 <div className="airbnb-light-gray text-lg">Our AI identifies 3-5 perfect candidates from our pre-vetted network within 24 hours.</div>
@@ -377,7 +377,7 @@ export default function PresentationPage() {
             </div>
             
             <div className="flex items-center gap-12">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-2xl font-bold airbnb-red flex-shrink-0">3</div>
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-2xl font-bold airbnb-red flex-shrink-0">3</div>
               <div className="flex-1">
                 <div className="text-2xl airbnb-gray font-medium mb-2">Start Building</div>
                 <div className="airbnb-light-gray text-lg">Your chosen engineer starts within 72 hours, fully onboarded and ready to contribute.</div>
@@ -437,23 +437,23 @@ export default function PresentationPage() {
               <h3 className="text-2xl airbnb-gray font-medium mb-8 text-center">The Thinkify Way</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-yellow-600 text-xl">✓</span>
                   <span className="airbnb-gray">72-hour deployment</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-yellow-600 text-xl">✓</span>
                   <span className="airbnb-gray">95% success rate</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-yellow-600 text-xl">✓</span>
                   <span className="airbnb-gray">Transparent, fair pricing</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-yellow-600 text-xl">✓</span>
                   <span className="airbnb-gray">Pre-vetted elite talent</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-yellow-600 text-xl">✓</span>
                   <span className="airbnb-gray">Global network access</span>
                 </div>
               </div>
@@ -474,105 +474,6 @@ export default function PresentationPage() {
         </div>
       </div>
 
-      {/* Page 8: Pricing */}
-      <div className="page bg-gray-50">
-        <div className="center-content">
-          <h1 className="page-title airbnb-gray mb-12">
-            Simple, transparent pricing
-          </h1>
-          
-          <div className="grid grid-cols-3 gap-8 max-w-6xl w-full">
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <div className="text-center">
-                <div className="text-xl airbnb-gray font-medium mb-4">Starter</div>
-                <div className="text-4xl airbnb-red font-light mb-6">15%</div>
-                <div className="airbnb-light-gray mb-8">placement fee</div>
-                <div className="text-left space-y-3">
-                  <div className="flex items-center gap-3">
-                    <span className="text-green-500">✓</span>
-                    <span className="airbnb-gray text-sm">1-3 engineers</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-green-500">✓</span>
-                    <span className="airbnb-gray text-sm">72hr deployment</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-green-500">✓</span>
-                    <span className="airbnb-gray text-sm">Basic support</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-red-200">
-              <div className="text-center">
-                <div className="text-xl airbnb-gray font-medium mb-4">Growth</div>
-                <div className="text-4xl airbnb-red font-light mb-6">12%</div>
-                <div className="airbnb-light-gray mb-8">placement fee</div>
-                <div className="text-left space-y-3">
-                  <div className="flex items-center gap-3">
-                    <span className="text-green-500">✓</span>
-                    <span className="airbnb-gray text-sm">4-10 engineers</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-green-500">✓</span>
-                    <span className="airbnb-gray text-sm">48hr deployment</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-green-500">✓</span>
-                    <span className="airbnb-gray text-sm">Priority support</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-green-500">✓</span>
-                    <span className="airbnb-gray text-sm">Account manager</span>
-                  </div>
-                </div>
-                <div className="mt-6 text-center">
-                  <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium">Most Popular</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <div className="text-center">
-                <div className="text-xl airbnb-gray font-medium mb-4">Enterprise</div>
-                <div className="text-4xl airbnb-red font-light mb-6">10%</div>
-                <div className="airbnb-light-gray mb-8">placement fee</div>
-                <div className="text-left space-y-3">
-                  <div className="flex items-center gap-3">
-                    <span className="text-green-500">✓</span>
-                    <span className="airbnb-gray text-sm">10+ engineers</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-green-500">✓</span>
-                    <span className="airbnb-gray text-sm">24hr deployment</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-green-500">✓</span>
-                    <span className="airbnb-gray text-sm">White-glove service</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-green-500">✓</span>
-                    <span className="airbnb-gray text-sm">Custom integration</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-12 text-center">
-            <p className="text-lg airbnb-light-gray">
-              Compare to 20-30% traditional recruiter fees + 4-month delays
-            </p>
-            <div className="mt-6">
-              <svg width="50" height="50" viewBox="0 0 24 24" fill="none" className="text-green-400 mx-auto">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" strokeWidth="2"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Page 9: Call to Action */}
       <div className="page bg-white">
         <div className="center-content">
@@ -586,7 +487,7 @@ export default function PresentationPage() {
           </p>
           
           <div className="max-w-4xl w-full">
-            <div className="bg-gray-50 rounded-3xl p-12 mb-12">
+            <div className="bg-yellow-50 rounded-3xl p-12 mb-12">
               <div className="text-3xl airbnb-gray font-medium mb-8 text-center">Start your pilot today</div>
               
               <div className="grid grid-cols-3 gap-8 mb-8">
@@ -638,7 +539,7 @@ export default function PresentationPage() {
       </div>
 
       {/* Page 10: Thank You */}
-      <div className="page bg-gray-50">
+      <div className="page bg-yellow-50">
         <div className="center-content">
           <h1 className="page-title airbnb-gray mb-12">
             Thank you

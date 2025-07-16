@@ -23,7 +23,7 @@ export default function Navigation() {
             transition={{ duration: 0.2 }}
           >
             <Link href="/" className="flex items-center group">
-              <ThinkifyLogo size="md" className="hover:scale-105 transition-transform duration-200" />
+              <ThinkifyLogo size="xl" className="hover:scale-105 transition-transform duration-200 font-nunito-sans" />
             </Link>
           </motion.div>
 
@@ -61,8 +61,8 @@ export default function Navigation() {
               transition={{ duration: 0.2 }}
             >
               <Link 
-                href="/" 
-                className="btn-cosmic-primary"
+                href="https://connect.thinkify.io" target="_blank" rel="noopener noreferrer"
+                className="btn-cosmic-primary px-4 py-1 text-base"
               >
                 Get Started
               </Link>
