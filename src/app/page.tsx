@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import { motion, useInView } from 'framer-motion';
@@ -19,10 +18,8 @@ interface AnimatedCounterProps {
 
 const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ end, duration = 2000, suffix = '', isInView }) => {
   const [count, setCount] = useState(0);
-
   useEffect(() => {
     if (!isInView) return;
-
     let startTime: number;
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
@@ -37,7 +34,6 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ end, duration = 2000,
     
     requestAnimationFrame(animate);
   }, [end, duration, isInView]);
-
   return <span>{count}{suffix}</span>;
 };
 
@@ -46,13 +42,9 @@ export default function HomePage() {
   const [expandedSection, setExpandedSection] = useState<string | null>('fast');
   const statsRef = useRef(null);
   const isInView = useInView(statsRef, { once: true });
-
   const toggleSection = (section: string) => {
     setExpandedSection(expandedSection === section ? null : section);
   };
-
-
-
   const profiles = [
     {
       name: 'Sarah Chen',
@@ -87,18 +79,14 @@ export default function HomePage() {
       companyLogo: '/companies/huggingface-logo.svg'
     }
   ];
-
   return (
-    <div className="min-h-screen bg-white transition-all duration-300">
-
+    <div className="min-h-screen bg-white transition-all duration-300 overflow-x-hidden">
       {/* Navigation */}
       <Navigation />
-
       {/* Theme Switcher */}
       <ThemeSwitcher />
-
       {/* Hero Section - Airbnb Style */}
-      <section className="pt-28 pb-16 relative overflow-hidden bg-white">
+      <section className="pt-28 pb-16 relative bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -111,20 +99,19 @@ export default function HomePage() {
               <span className="font-semibold theme-text-primary">The Future of Work is Here</span>
             </div>
           </motion.div>
-
           <motion.h1 
-            className="font-display text-5xl md:text-7xl mb-8 pb-8 theme-text-body text-balance leading-[1.15]"
+            className="font-display text-5xl md:text-7xl mb-8 pb-8 theme-text-body text-balance leading-[1.2]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Hire {' '}
-            <span className="theme-gradient-text">
+            <span className="inline-block ">
               Thoughtfully
             </span>
             <br />
             <span className="theme-text-body">Scale </span>{' '}
-            <span className="theme-gradient-text">Instantly</span>
+            <span className="theme-text-body">Instantly</span>
           </motion.h1>
           
           <motion.p 
@@ -153,16 +140,14 @@ export default function HomePage() {
               Join the Future
             </Link>
           </motion.div>
-
           {/* Logo Ticker (CompanyCarousel) inside hero */}
           <div className="mt-12">
             <CompanyCarousel />
           </div>
         </div>
       </section>
-
       {/* Story Section 1: The Challenge - Airbnb Style */}
-      <section className="py-32 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+      <section className="py-32 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -238,7 +223,6 @@ export default function HomePage() {
                     </div>
                     <div className="text-2xl">💸</div>
                   </div>
-
                   <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200">
                     <div>
                       <div className="font-semibold text-gray-700">Month 6: They Start</div>
@@ -252,9 +236,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Story Section 2: The Solution - Airbnb Style */}
-      <section className="py-32 bg-white relative overflow-hidden">
+      <section className="py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -293,7 +276,6 @@ export default function HomePage() {
                     </div>
   
                   </div>
-
                   <div className="text-center p-4 bg-yellow-50 rounded-xl border border-yellow-200">
                     <div className="font-bold text-yellow-700 text-lg">Total Time: 72 Hours</div>
                     <div className="text-sm text-yellow-600">vs. 6 months of traditional hiring</div>
@@ -316,7 +298,7 @@ export default function HomePage() {
               
               <h2 className="text-5xl md:text-6xl font-bold theme-text-body mb-8 leading-tight">
                 What if hiring was as{' '}
-                <span className="theme-gradient-text">
+                <span className="theme-text-body">
                   easy
                 </span>
                 {' '}as ordering an Uber?
@@ -343,17 +325,15 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Revolutionary How We Deliver Section */}
-      <section id="how-it-works" className="py-32 bg-white relative overflow-hidden">
+      <section id="how-it-works" className="py-32 bg-white relative">
         {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 opacity-30 overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-600/10 via-purple-600/10 to-pink-600/10"></div>
           <div className="absolute top-20 right-20 w-80 h-80 theme-bg-secondary/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 left-20 w-96 h-96 theme-bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 theme-bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
         </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -367,7 +347,6 @@ export default function HomePage() {
               <span className="font-semibold theme-text-primary">Our Process</span>
               <div className="text-2xl">⚙️</div>
             </div>
-
             <h2 className="text-5xl md:text-7xl font-bold theme-text-body mb-8 leading-tight">
               How We{' '}
               <span className="theme-gradient-text">Deliver</span>
@@ -380,7 +359,6 @@ export default function HomePage() {
               that combines cutting-edge technology with human expertise.
             </p>
           </motion.div>
-
           {/* Enhanced Process Grid */}
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {[
@@ -443,12 +421,10 @@ export default function HomePage() {
                       <div className="text-xs theme-text-muted">{item.stats.label}</div>
                     </div>
                   </div>
-
                   {/* Content */}
                   <h3 className="text-2xl font-bold theme-text-body mb-2">{item.title}</h3>
                   <p className="text-sm font-medium theme-text-primary mb-4">{item.subtitle}</p>
                   <p className="theme-text-muted mb-6 leading-relaxed">{item.description}</p>
-
                   {/* Features List */}
                   <div className="space-y-3 mb-6">
                     {item.features.map((feature, featureIndex) => (
@@ -465,7 +441,6 @@ export default function HomePage() {
                       </motion.div>
                     ))}
                   </div>
-
                   {/* Progress Indicator */}
                   <div className="mt-8 pt-6 border-t border-white/10">
                     <div className="flex items-center gap-2">
@@ -485,7 +460,6 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
-
           {/* Process Flow Visualization */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -525,16 +499,14 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
             {/* Revolutionary Elite Tech Talent Section */}
-      <section id="talent" className="py-32 relative bg-gradient-to-br from-slate-50 via-white to-gray-50 overflow-hidden">
+      <section id="talent" className="py-32 relative bg-gradient-to-br from-slate-50 via-white to-gray-50">
         {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-60">
+        <div className="absolute inset-0 opacity-60 overflow-hidden">
           <div className="absolute top-20 left-10 w-72 h-72 theme-bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 theme-bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 theme-bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
         </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
           <motion.div 
@@ -565,7 +537,6 @@ export default function HomePage() {
               Access our curated network of 50,000+ pre-vetted engineers. From AI/ML specialists to DevOps architects, 
               scale your team instantly with guaranteed quality.
             </p>
-
             <div className="flex flex-wrap justify-center gap-3 text-sm">
               {['AI/ML Engineers', 'DevOps Specialists', 'Full-Stack Developers', 'Data Scientists', 'Mobile Engineers'].map((skill, index) => (
                 <motion.div
@@ -581,7 +552,6 @@ export default function HomePage() {
               ))}
             </div>
           </motion.div>
-
           {/* Interactive Talent Showcase Grid */}
           <div className="grid lg:grid-cols-12 gap-8 mb-16">
             {/* Featured Talent Cards - Enhanced */}
@@ -661,7 +631,6 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-
             {/* Enhanced Feature Sidebar */}
             <div className="lg:col-span-4 space-y-6">
               {[
@@ -738,16 +707,14 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Revolutionary Success Stories Section */}
-      <section id="success" className="py-32 relative bg-white overflow-hidden">
+      <section id="success" className="py-32 relative bg-white">
         {/* Animated Background */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-1/4 w-96 h-96 theme-bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-0 right-1/4 w-80 h-80 theme-bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }}></div>
           <div className="absolute top-1/3 right-1/3 w-64 h-64 theme-bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
         </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
           <motion.div 
@@ -773,7 +740,6 @@ export default function HomePage() {
               Real results from unicorn startups and industry leaders who transformed their engineering teams with Thinkify's elite talent.
             </p>
           </motion.div>
-
           {/* Interactive Success Stories Grid */}
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {[
@@ -895,7 +861,6 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
-
           {/* Bottom CTA */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -919,16 +884,14 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Revolutionary Proven Results Section */}
-      <section ref={statsRef} className="py-32 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative overflow-hidden">
+      <section ref={statsRef} className="py-32 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative">
         {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0 opacity-40 overflow-hidden">
           <div className="absolute top-20 left-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 theme-bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
         </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -942,7 +905,6 @@ export default function HomePage() {
               <span className="font-semibold text-emerald-700">Performance Metrics</span>
               <div className="text-2xl">📊</div>
             </div>
-
             <h2 className="text-5xl md:text-7xl font-bold theme-text-body mb-8 leading-tight">
               <span className="theme-text-body">Proven Results</span>
               <br />
@@ -954,7 +916,6 @@ export default function HomePage() {
               in engineering recruitment with results that consistently outperform industry standards.
             </p>
           </motion.div>
-
           {/* Enhanced Stats Grid */}
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-16">
             {[
@@ -1010,7 +971,6 @@ export default function HomePage() {
                   {/* Icon */}
                   <div className={`w-16 h-16 bg-gradient-to-r ${stat.gradient} rounded-2xl mx-auto mb-6 flex items-center justify-center text-3xl shadow-lg`}>
                   </div>
-
                   {/* Main Metric */}
                   <div className="text-4xl md:text-5xl font-bold theme-text-primary mb-3">
                     <AnimatedCounter 
@@ -1019,10 +979,8 @@ export default function HomePage() {
                       isInView={isInView}
                     />
                   </div>
-
                   {/* Label */}
                   <p className="theme-text-muted font-semibold text-sm mb-4 leading-tight">{stat.label}</p>
-
                   {/* Comparison */}
                   <div className="space-y-2">
                     <div className="text-xs theme-text-muted">{stat.comparison}</div>
@@ -1034,7 +992,6 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
-
           {/* Performance Comparison */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -1069,7 +1026,6 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-
                 {/* Thinkify */}
                 <div className="bg-emerald-50 rounded-2xl p-6 border-2 border-emerald-200 relative overflow-hidden">
                   <div className="absolute top-2 right-2 bg-emerald-500 text-black px-2 py-1 rounded-full text-xs font-bold">WINNER</div>
@@ -1094,7 +1050,6 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1114,19 +1069,15 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Revolutionary Final CTA Section - "Ready to Scale Your Engineering Team?" */}
-      <section id="contact" className="py-32 bg-white relative overflow-hidden">
+      <section id="contact" className="py-32 bg-white relative">
         {/* Advanced Background Effects */}
-        <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0 opacity-40 overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-600/20 via-purple-600/20 to-pink-600/20"></div>
           <div className="absolute top-20 left-20 w-96 h-96 theme-bg-secondary/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-80 h-80 theme-bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 theme-bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
         </div>
-
-
-
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -1149,7 +1100,6 @@ export default function HomePage() {
               </div>
               <span className="font-bold theme-text-primary">Transform Your Team Today</span>
             </motion.div>
-
             <motion.h2 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1161,7 +1111,7 @@ export default function HomePage() {
               <span className="theme-gradient-text">Scale</span>
               <br />
               Your{' '}
-              <span className="theme-gradient-text">Engineering</span>
+              <span className="theme-text-body">Engineering</span>
               <br />
               <span className="theme-text-body">Team?</span>
             </motion.h2>
@@ -1176,7 +1126,6 @@ export default function HomePage() {
               Join the ranks of <strong>Swiggy, Flipkart, and Meesho</strong> who trust Thinkify for their most critical engineering hires. 
               Experience zero-risk recruitment with guaranteed results that will transform your entire organization.
             </motion.p>
-
             {/* Trust Indicators */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1232,7 +1181,6 @@ export default function HomePage() {
                 </motion.button>
               </Link>
             </motion.div>
-
             {/* Social Proof */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1259,7 +1207,6 @@ export default function HomePage() {
               </div>
             </motion.div>
           </motion.div>
-
           {/* Bottom Stats Dashboard */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -1291,7 +1238,6 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-
             {/* Floating Call-to-Action Bubbles */}
             <motion.div 
               initial={{ opacity: 0, x: -40 }}
@@ -1303,7 +1249,6 @@ export default function HomePage() {
               <div className="text-xs font-bold text-indigo-700">Time to First Hire</div>
               <div className="text-2xl font-bold theme-text-primary">3 Days</div>
             </motion.div>
-
             <motion.div 
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -1317,11 +1262,10 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Revolutionary Modern Footer */}
-      <footer className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-gray-50">
+      <footer className="relative bg-gradient-to-br from-slate-50 via-white to-gray-50">
         {/* Sophisticated Background Pattern */}
-        <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0 opacity-40 overflow-hidden">
           <div className="absolute inset-0" style={{
             backgroundImage: `
               radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
@@ -1330,7 +1274,6 @@ export default function HomePage() {
             `
           }}></div>
         </div>
-
         {/* Elegant Geometric Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-20 w-32 h-32 border border-blue-200/30 rounded-full"></div>
@@ -1366,7 +1309,6 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-
                 <h3 className="text-4xl md:text-5xl font-bold theme-text-body mb-6 leading-tight">
                   Join the Elite Engineering 
                   <span className="block theme-text-primary">
@@ -1378,7 +1320,6 @@ export default function HomePage() {
                   Get exclusive access to cutting-edge insights, salary benchmarks, and engineering leadership intelligence 
                   from India's top unicorn ecosystem. Join 15,000+ senior engineers and CTOs.
                 </p>
-
                 {/* Enhanced Email Form */}
                 <div className="bg-gray-50 rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
                   <div className="flex flex-col sm:flex-row gap-4">
@@ -1403,7 +1344,6 @@ export default function HomePage() {
                     </motion.button>
                   </div>
                 </div>
-
                 {/* Trust Indicators */}
                 <div className="grid md:grid-cols-3 gap-6 text-sm">
                   <div className="flex items-center justify-center gap-3 p-4 bg-white rounded-xl border border-gray-100">
@@ -1445,7 +1385,6 @@ export default function HomePage() {
               </div>
             </div>
           </motion.div>
-
           {/* Revolutionary Footer Navigation Matrix */}
           <div className="grid lg:grid-cols-6 md:grid-cols-4 gap-8 mb-16">
             {/* Elite Brand Portal */}
@@ -1499,7 +1438,6 @@ export default function HomePage() {
                     <div className="text-sm theme-text-muted">Success Rate</div>
                   </motion.div>
                 </div>
-
                 {/* Elite Social Network */}
                 <div className="flex space-x-4">
                   {[
@@ -1526,7 +1464,6 @@ export default function HomePage() {
                 </div>
               </motion.div>
             </div>
-
             {/* Elite Corporate Portal */}
             <div>
               <motion.div
@@ -1575,7 +1512,6 @@ export default function HomePage() {
                 </ul>
               </motion.div>
             </div>
-
             {/* Elite Developer Network */}
             <div>
               <motion.div
@@ -1624,7 +1560,6 @@ export default function HomePage() {
                 </ul>
               </motion.div>
             </div>
-
             {/* Intelligence Hub */}
             <div>
               <motion.div
@@ -1783,7 +1718,6 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
-
           {/* Elite Foundation */}
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 rounded-t-3xl"></div>
@@ -1856,7 +1790,6 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
-
       <style jsx>{`
         @keyframes scroll-left {
           0% { transform: translateX(0); }
@@ -1866,4 +1799,3 @@ export default function HomePage() {
     </div>
   );
 }
-

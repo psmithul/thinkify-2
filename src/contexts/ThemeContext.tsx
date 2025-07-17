@@ -47,6 +47,45 @@ const themes: Theme[] = [
     }
   },
   {
+    name: 'LinkedIn Webinar',
+    description: 'Colors from the LinkedIn Ads enhancements webinar slide',
+    colors: {
+      primaryStart:   '#c1e0e6', // light‑blue header
+      primaryEnd:     '#accedc',
+      secondaryStart: '#805548', // brown background
+      secondaryEnd:   '#734433',
+      primary:        '#accedc',
+      secondary:      '#805548',
+      accent:         '#c1e0e6',
+      background:     '#c1e0e6',
+      surface:        '#805548',
+      text:           '#1e293b', // keep your usual dark‑text
+      textSecondary:  '#475569',
+    }
+  },
+  {
+    name: 'Brown & Cyan',
+    description: 'Solid brown background with bright cyan text',
+    colors: {
+      // gradients you can use for buttons, cards, etc.
+      primaryStart:   '#734433',  // deep brown
+      primaryEnd:     '#5D4037',  // slightly lighter brown
+      secondaryStart: '#734433',
+      secondaryEnd:   '#5D4037',
+      // solid fills
+      primary:        '#734433',
+      secondary:      '#5D4037',
+      accent:         '#00FFFF',  // cyan accent
+      // page-level
+      background:     '#5D4037',  // all‑over brown
+      surface:        '#865E54',  // cards, panels
+      // text
+      text:           '#00FFFF',  // all primary text in cyan
+      textSecondary:  '#80FFFF'   // lighter cyan for secondary copy
+    }
+  },
+    
+  {
     name: 'Rose',
     description: 'Elegant rose and pink',
     colors: {

@@ -498,7 +498,7 @@ export default function DevelopersPage() {
               Meet your{' '}
               <span className="theme-text-primary font-bold">career</span>
               <br />
-              <span className="theme-gradient-text">wingman</span>
+              <span className="theme-text-primary font-bold">wingman</span>
               <span className="text-2xl theme-text-muted">
                 <br />(But for jobs, not dating)
               </span>
@@ -1215,124 +1215,7 @@ export default function DevelopersPage() {
               </div>
             </motion.div>
 
-            {/* Enhanced Developer Dashboard Preview */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="relative max-w-6xl mx-auto"
-            >
-              <div className="bg-white backdrop-blur-lg rounded-3xl p-8 border theme-border-surface shadow-2xl">
-                {/* Terminal Header */}
-                <div className="bg-slate-900/80 rounded-2xl p-6 backdrop-blur-sm">
-                  <div className="flex items-center space-x-2 mb-6">
-                    <div className="w-3 h-3 theme-bg-danger rounded-full"></div>
-                    <div className="w-3 h-3 theme-bg-warning rounded-full"></div>
-                    <div className="w-3 h-3 theme-bg-secondary rounded-full"></div>
-                    <span className="theme-text-muted text-sm ml-4">Thinkify Developer Portal</span>
-                  </div>
-                  
-                  {/* Dashboard Content */}
-                  <div className="space-y-6">
-                    {/* Profile Section */}
-                    <div className="flex items-center space-x-4 mb-8">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                      <div>
-                        <div className="text-white font-medium">Elite Developer Portal</div>
-                        <div className="text-green-400 text-sm">● Active - 847 opportunities available</div>
-                      </div>
-                      <div className="ml-auto bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 rounded-lg">
-                        <span className="text-white text-sm font-medium">Verified Elite</span>
-                      </div>
-                    </div>
-
-                    {/* Job Opportunities Grid */}
-                    <div className="grid md:grid-cols-3 gap-4">
-                      {[
-                        { 
-                          title: 'Senior Full-Stack Engineer', 
-                          company: 'Unicorn Startup', 
-                          salary: '$140-180k', 
-                          remote: 'Remote',
-                          urgency: 'Hot',
-                          gradient: 'from-red-500 to-orange-500'
-                        },
-                        { 
-                          title: 'AI/ML Engineering Lead', 
-                          company: 'Fortune 500', 
-                          salary: '$160-220k', 
-                          remote: 'Remote',
-                          urgency: 'Featured',
-                          gradient: 'from-blue-500 to-purple-500'
-                        },
-                        { 
-                          title: 'DevOps Architect', 
-                          company: 'Scale-up', 
-                          salary: '$120-160k', 
-                          remote: 'Remote',
-                          urgency: 'New',
-                          gradient: 'from-green-500 to-teal-500'
-                        }
-                      ].map((job, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ opacity: 0, scale: 0.9 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.4, delay: i * 0.1 }}
-                          className="bg-slate-800/80 rounded-xl p-4 border border-slate-600 hover:border-slate-500 transition-all duration-300 hover:scale-105"
-                        >
-                          <div className="flex items-center justify-between mb-3">
-                            <div className={`px-2 py-1 rounded text-xs font-medium bg-gradient-to-r ${job.gradient} text-white`}>
-                              {job.urgency}
-                            </div>
-                            <div className="theme-text-muted text-xs">{job.remote}</div>
-                          </div>
-                          <div className="text-white font-medium text-sm mb-1">{job.title}</div>
-                          <div className="theme-text-muted text-xs mb-2">{job.company}</div>
-                          <div className="text-green-400 font-bold text-lg">{job.salary}</div>
-                        </motion.div>
-                      ))}
-                    </div>
-
-                    {/* Stats Bar */}
-                    <div className="grid grid-cols-4 gap-4 pt-6 border-t border-slate-600">
-                      {[
-                        { label: 'Active Applications', value: '12' },
-                        { label: 'Interview Requests', value: '5' },
-                        { label: 'Offers Received', value: '3' },
-                        { label: 'Avg. Response Time', value: '2h' }
-                      ].map((stat, index) => (
-                        <div key={index} className="text-center">
-                          <div className="text-white font-bold text-lg">{stat.value}</div>
-                          <div className="theme-text-muted text-xs">{stat.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Elements */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 1 }}
-                className="absolute -left-8 top-1/4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/40"
-              >
-                <div className="text-xs font-bold text-green-700">Success Rate</div>
-                <div className="text-2xl font-bold theme-text-secondary">95%</div>
-              </motion.div>
-
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-                className="absolute -right-8 bottom-1/4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/40"
-              >
-                <div className="text-xs font-bold theme-text-primary">Avg. Salary</div>
-                <div className="text-2xl font-bold theme-text-primary">$140K+</div>
-              </motion.div>
-            </motion.div>
+            
           </motion.div>
         </div>
       </motion.section>
