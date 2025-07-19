@@ -47,36 +47,36 @@ export default function HomePage() {
   };
   const profiles = [
     {
-      name: 'Sarah Chen',
-      role: 'Data Scientist',
-      experience: '10 Years Experience',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
-      company: 'OpenAI',
-      companyLogo: '/companies/openai-logo.svg'
-    },
-    {
-      name: 'David Kumar',
-      role: 'AI Architect',
+      name: 'Sagar Giri',
+      role: 'Software Development Engineer',
       experience: '8 Years Experience',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-      company: 'MongoDB',
-      companyLogo: '/companies/mongodb-logo.svg'
+      image: '/Sagargiri.jpeg',
+      company: 'Uber',
+      companyLogo: '/companies/uber-logo.svg'
     },
     {
-      name: 'Emily Zhang',
-      role: 'AI Engineer',
-      experience: '8 Years Experience',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face',
-      company: 'Langfuse',
-      companyLogo: '/companies/langfuse-logo.svg'
+      name: 'Sulabh Biswas',
+      role: 'Software Development Engineer',
+      experience: '7 Years Experience',
+      image: '/SulabhBiswas.jpeg',
+      company: 'Flipkart',
+      companyLogo: '/companies/flipkart-logo.svg'
     },
     {
-      name: 'Michael Rodriguez',
-      role: 'ML Engineer',
-      experience: '9 Years Experience',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-      company: 'Hugging Face',
-      companyLogo: '/companies/huggingface-logo.svg'
+      name: 'Purvaja Khatod',
+      role: 'Quality Assurance Engineer',
+      experience: '6 Years Experience',
+      image: '/Purvajakhatod.jpeg',
+      company: 'Amazon',
+      companyLogo: '/companies/amazon-logo.svg'
+    },
+    {
+      name: 'Asharani M.R.',
+      role: 'Software Development Engineer in Test',
+      experience: '5 Years Experience',
+      image: '/AsharaniMR.jpeg',
+      company: 'ThoughtSpot',
+      companyLogo: '/companies/thoughtspot-logo.svg'
     }
   ];
   return (
@@ -120,7 +120,7 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            With Thinkify, get vetted talent on-demand. Experience the 
+            With Thinkify, get vetted Engineering talent on-demand. Experience the 
             <strong className="theme-text-primary"> freedom and flexibility of modern contingent hiring.</strong>
           </motion.p>
           
@@ -369,7 +369,7 @@ export default function HomePage() {
                 description: "Our proprietary AI engine analyzes 500K+ engineer profiles using advanced algorithms that evaluate technical skills, experience depth, and cultural alignment with surgical precision.",
                 features: ['500K+ developer database', 'ML-powered matching', 'Cultural fit analysis', 'Technical skill mapping'],
                 icon: '🧠',
-                gradient: 'from-blue-500 to-cyan-500',
+                gradient: 'from-blue-600 to-indigo-600',
                 stats: { value: '95%', label: 'Match Accuracy' }
               },
               {
@@ -378,7 +378,7 @@ export default function HomePage() {
                 subtitle: "Senior engineer validation",
                 description: "Industry veterans with 15+ years of experience conduct rigorous technical interviews, system design challenges, and comprehensive code reviews to ensure only elite talent passes through.",
                 features: ['15+ years experience', 'Technical deep-dives', 'System design tests', 'Code review process'],
-                gradient: 'from-indigo-500 to-purple-500',
+                gradient: 'from-indigo-600 to-purple-600',
                 stats: { value: '15%', label: 'Pass Rate' }
               },
               {
@@ -387,7 +387,7 @@ export default function HomePage() {
                 subtitle: "Risk-free delivery promise",
                 description: "Zero payment until successful placement with our iron-clad guarantee. We deliver in 15 days average vs industry standard of 45+ days, with 30-day replacement warranty.",
                 features: ['Zero upfront payment', '15-day average delivery', '30-day replacement', '99% success rate'],
-                gradient: 'from-yellow-500 to-orange-500',
+                gradient: 'from-purple-600 to-pink-600',
                 stats: { value: '0%', label: 'Risk to You' }
               }
             ].map((item, index) => (
@@ -538,7 +538,7 @@ export default function HomePage() {
               scale your team instantly with guaranteed quality.
             </p>
             <div className="flex flex-wrap justify-center gap-3 text-sm">
-              {['AI/ML Engineers', 'DevOps Specialists', 'Full-Stack Developers', 'Data Scientists', 'Mobile Engineers'].map((skill, index) => (
+              {['QA Specialists', 'DevOps Specialists', 'Full-Stack Developers', 'Data Analysts', 'Mobile Engineers'].map((skill, index) => (
                 <motion.div
                   key={skill}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -598,29 +598,7 @@ export default function HomePage() {
                         </div>
                       </div>
                       
-                      {/* Enhanced Stats Grid */}
-                      <div className="grid grid-cols-2 gap-4 mb-8">
-                        <div className="bg-white/60 rounded-xl p-4 text-center border theme-border-surface">
-                          <div className="text-2xl font-bold theme-gradient-text mb-1">{profile.experience.split(' ')[0]}+</div>
-                          <div className="text-xs theme-text-muted font-medium">Years Experience</div>
-                        </div>
-                        <div className="bg-white/60 rounded-xl p-4 text-center border theme-border-surface">
-                          <div className="text-2xl font-bold theme-text-secondary mb-1">95%</div>
-                          <div className="text-xs theme-text-muted font-medium">Success Rate</div>
-                        </div>
-                      </div>
-                      
-                      {/* Skills Tags */}
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {['React', 'Node.js', 'Python', 'AWS'].map((skill, skillIndex) => (
-                          <span 
-                            key={skill} 
-                            className="px-3 py-1 theme-bg-surface theme-text-muted rounded-lg text-xs font-medium"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
+
                       
                       {/* Action Button */}
                       <button className="w-full btn-cosmic-primary py-4 px-6 rounded-xl font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-y-6 group-hover:translate-y-0 transition-all duration-500 shadow-lg hover:shadow-xl">
@@ -651,12 +629,6 @@ export default function HomePage() {
                   description: 'No payment until successful placement and 30-day guarantee',
                   color: 'from-green-500 to-teal-500',
                   metric: '0%'
-                },
-                {
-                  title: 'Global Network',
-                  description: 'Access to 50K+ vetted engineers across 40+ countries',
-                  color: 'from-purple-500 to-pink-500',
-                  metric: '50K+'
                 }
               ].map((feature, index) => (
                 <motion.div
@@ -774,19 +746,19 @@ export default function HomePage() {
                 role: "CTO"
               },
               {
-                company: "Meesho",
-                logo: "/companies/meesho.png",
-                result: "Backend Team Expansion",
-                description: "Added 5 senior engineers to optimize their social commerce platform architecture",
-                metric: "40% Faster",
-                metricDesc: "API response times",
-                challenge: "Performance optimization",
-                solution: "Backend Architecture",
-                impact: "2x user engagement",
-                timeline: "15 days",
-                gradient: "from-green-500 to-teal-500",
-                testimonial: "Outstanding talent that understood our tech stack immediately and delivered results fast.",
-                role: "Engineering Manager"
+                company: "ThoughtSpot",
+                logo: "/companies/ThoughtSpot_idEiE5Z1Gr_0.svg",
+                result: "AI Analytics Team Built",
+                description: "Assembled 3 senior engineers to develop their next-generation AI-powered analytics platform",
+                metric: "50% Faster",
+                metricDesc: "query performance",
+                challenge: "AI platform scaling",
+                solution: "AI Analytics Platform",
+                impact: "10x faster insights",
+                timeline: "12 days",
+                gradient: "from-purple-500 to-pink-500",
+                testimonial: "Thinkify's engineers brought deep AI expertise that accelerated our platform development significantly.",
+                role: "VP of Engineering"
               }
             ].map((story, index) => (
               <motion.div

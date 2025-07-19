@@ -18,6 +18,8 @@ export default function DevelopersPage() {
   const workRef = useRef<HTMLElement>(null);
   const testimonialsRef = useRef<HTMLElement>(null);
   
+  const [selectedCandidate, setSelectedCandidate] = useState(0);
+  
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, 100]);
   const y2 = useTransform(scrollY, [0, 300], [0, -100]);
@@ -28,6 +30,49 @@ export default function DevelopersPage() {
   const solutionInView = useInView(solutionRef, { once: true });
   const workInView = useInView(workRef, { once: true });
   const testimonialsInView = useInView(testimonialsRef, { once: true });
+
+  const candidates = [
+    {
+      name: 'Sagar Giri',
+      title: 'Software Development Engineer',
+      company: '@ Uber',
+      image: '/Sagargiri.jpeg',
+      testimonial: "I've shipped products used by millions of users. Thinkify connected me with companies where I can make real impact—not just maintain legacy systems. The projects here actually matter.",
+      timeToBigTech: '4 months',
+      journey: 'Read Epic Journey',
+      linkedin: 'https://www.linkedin.com/in/sagargiri07/'
+    },
+    {
+      name: 'Sulabh Biswas',
+      title: 'Software Development Engineer',
+      company: '@ Flipkart',
+      image: '/SulabhBiswas.jpeg',
+      testimonial: "Working on Flipkart's core infrastructure has been incredible. Thinkify matched me with the perfect role where I can architect systems at scale. The technical challenges here are exactly what I was looking for.",
+      timeToBigTech: '6 months',
+      journey: 'Read Success Story',
+      linkedin: 'https://www.linkedin.com/in/sulabh-biswas/'
+    },
+    {
+      name: 'Purvaja Khatod',
+      title: 'Quality Assurance Engineer',
+      company: '@ Amazon',
+      image: '/Purvajakhatod.jpeg',
+      testimonial: "Building systems that serve millions of customers is intense. Thinkify found me a role where I can work on cutting-edge technology while maintaining work-life balance. Perfect match.",
+      timeToBigTech: '3 months',
+      journey: 'Read Journey',
+      linkedin: 'https://www.linkedin.com/in/purvaja-khatod/'
+    },
+    {
+      name: 'Asharani M.R.',
+      title: 'Software Development Engineer in Test',
+      company: '@ ThoughtSpot',
+      image: '/AsharaniMR.jpeg',
+      testimonial: "Building AI-powered analytics that help businesses make better decisions. Thinkify connected me with ThoughtSpot where I can push the boundaries of ML at scale. The impact here is massive.",
+      timeToBigTech: '5 months',
+      journey: 'Read Story',
+      linkedin: 'https://www.linkedin.com/in/asharani-m-r-34888760/'
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -48,7 +93,7 @@ export default function DevelopersPage() {
               className="mb-8"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
-                <span className="font-semibold theme-text-primary">Your Career, But Actually Good</span>
+                <span className="font-semibold theme-text-primary">Elite Developer Network</span>
               </div>
             </motion.div>
 
@@ -58,14 +103,12 @@ export default function DevelopersPage() {
               transition={{ duration: 1, delay: 0.2 }}
               className="font-display text-5xl md:text-7xl text-black leading-tight mb-8 text-balance"
             >
-              Stop applying to{' '}
-              <span className="theme-gradient-text">
-                300 jobs
-              </span>
+              Ship impactful products
               <br />
-              Start getting{' '}
-              <span className="theme-gradient-text">
-                offers
+              Solve real problems
+              <br />
+              <span className="theme-text-primary font-bold">
+                Earn top pay
               </span>
             </motion.h1>
 
@@ -75,9 +118,8 @@ export default function DevelopersPage() {
               transition={{ duration: 1, delay: 0.4 }}
               className="font-body text-xl theme-text-muted max-w-3xl mx-auto mb-8 text-balance"
             >
-              Remember when dating apps changed everything? <strong className="theme-text-primary">We're doing that for tech careers.</strong> 
-              Skip the soul-crushing job hunt. Companies compete for YOU. Work on your terms. 
-              Get paid what you're actually worth.
+              Tackle ambitious challenges that stretch your abilities—from scaling AI systems to architecting platforms used by millions. 
+              We connect you to missions that matter.
             </motion.p>
 
             {/* Work with Top Companies */}
@@ -141,16 +183,13 @@ export default function DevelopersPage() {
              </div>
             
             <h2 className="dm-serif-text-regular text-5xl md:text-7xl theme-text-body mb-8 leading-tight">
-              From{' '}
-              <span className="text-red-600">rejected</span>
-              {' '}to{' '}
-              <span className="theme-gradient-text">recruited</span>
+              Build with a trusted network of{' '}
+              <span className="theme-gradient-text">elite builders</span>
             </h2>
             
             <p className="font-body text-xl theme-text-muted max-w-4xl mx-auto text-balance leading-relaxed">
-              These developers were getting ghosted by HR departments and failing whiteboard interviews. 
-              <strong className="theme-text-primary"> Now they're the ones saying no to job offers.</strong> 
-              Here's how they flipped the script.
+              Join a curated community of senior engineers, product managers, and AI experts. 
+              Engage in professional guilds, exchange knowledge, and collaborate with peers who push you to grow.
             </p>
           </motion.div>
 
@@ -165,7 +204,7 @@ export default function DevelopersPage() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="lg:col-span-2"
             >
-                             <div className="bg-white rounded-3xl p-8 relative overflow-hidden h-full border theme-border-surface shadow-xl">
+              <div className="bg-white rounded-3xl p-8 relative overflow-hidden h-full border theme-border-surface shadow-xl">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32"></div>
                 <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-24 -translate-x-24"></div>
                 
@@ -174,35 +213,37 @@ export default function DevelopersPage() {
                     <div className="flex items-center gap-4">
                       <div className="w-20 h-20 rounded-2xl overflow-hidden ring-4 ring-white/30">
                         <img 
-                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" 
-                          alt="Yash Pandit"
+                          src={candidates[selectedCandidate].image} 
+                          alt={candidates[selectedCandidate].name}
                           className="w-full h-full object-cover"
                         />
                       </div>
                       <div>
-                        <h3 className="dm-serif-text-regular text-2xl mb-1">Yash Pandit</h3>
-                        <p className="theme-text-muted">Senior Research Engineer</p>
-                        <p className="theme-text-primary font-semibold">@ Google</p>
+                        <h3 className="dm-serif-text-regular text-2xl mb-1">{candidates[selectedCandidate].name}</h3>
+                        <p className="theme-text-muted">{candidates[selectedCandidate].title}</p>
+                        <p className="theme-text-primary font-semibold">{candidates[selectedCandidate].company}</p>
                       </div>
                     </div>
                     
                   </div>
                   
                   <blockquote className="dm-serif-text-regular-italic text-xl mb-6 leading-relaxed theme-text-body">
-                    "I was getting rejected by startups for 'lack of experience.' Six months later, 
-                    Google was sliding into my DMs. Thinkify didn't just change my career—it gave me superpowers."
+                    "{candidates[selectedCandidate].testimonial}"
                   </blockquote>
                   
-                                      <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between">
                     <div className="flex gap-4">
                       
                       <div className="bg-blue-50 rounded-xl px-4 py-2 border border-blue-200">
                         <div className="text-sm text-blue-600">Time to Big Tech</div>
-                        <div className="font-bold text-blue-700">4 months</div>
+                        <div className="font-bold text-blue-700">{candidates[selectedCandidate].timeToBigTech}</div>
                       </div>
                     </div>
-                    <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
-                      Read Epic Journey
+                    <button 
+                      className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all"
+                      onClick={() => window.open(candidates[selectedCandidate].linkedin, '_blank', 'noopener,noreferrer')}
+                    >
+                      {candidates[selectedCandidate].journey}
                     </button>
                   </div>
                 </div>
@@ -216,40 +257,31 @@ export default function DevelopersPage() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="space-y-6"
             >
-              {[
-                { name: 'Jyotendra S.', company: 'Microsoft', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face' },
-                { name: 'Rushikesh A.', company: 'Stripe', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face' },
-                { name: 'Sumit D.', company: 'Netflix', image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop&crop=face' }
-              ].map((alumni, index) => (
+              {candidates.map((candidate, index) => (
                 <motion.div
-                  key={alumni.name}
+                  key={candidate.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-                  className="bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white/40 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                  className={`bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white/40 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group ${
+                    selectedCandidate === index ? 'ring-2 ring-purple-500 shadow-xl' : ''
+                  }`}
+                  onClick={() => setSelectedCandidate(index)}
                 >
                   <div className="flex items-center gap-4">
-                                         <div className="w-14 h-14 rounded-xl overflow-hidden ring-2 ring-gray-100 group-hover:ring-gray-200 transition-all">
-                      <img src={alumni.image} alt={alumni.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <div className="w-14 h-14 rounded-xl overflow-hidden ring-2 ring-gray-100 group-hover:ring-gray-200 transition-all">
+                      <img src={candidate.image} alt={candidate.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="dm-serif-text-regular text-lg theme-text-body mb-1">{alumni.name}</h4>
-                      <p className="text-sm theme-text-muted">@ {alumni.company}</p>
+                      <h4 className="dm-serif-text-regular text-lg theme-text-body mb-1">{candidate.name}</h4>
+                      <p className="text-sm theme-text-muted">{candidate.company}</p>
                     </div>
+                    {selectedCandidate === index && (
+                      <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                    )}
                   </div>
                 </motion.div>
               ))}
-              
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 1 }}
-                className="w-full bg-white border-2 theme-border-primary theme-text-primary py-4 px-6 rounded-2xl font-semibold hover:theme-bg-primary hover:theme-text-body transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
-              >
-                View All Success Stories
-                <ArrowRightIcon className="w-5 h-5 ml-2 inline-block" />
-              </motion.button>
             </motion.div>
           </div>
 
@@ -268,11 +300,11 @@ export default function DevelopersPage() {
               </div>
               
               <div className="relative z-10">
-                <h3 className="dm-serif-text-regular text-4xl mb-6 theme-text-body">Ready to Flip the Script?</h3>
+                <h3 className="dm-serif-text-regular text-4xl mb-6 theme-text-body">Ready to join the elite network?</h3>
                 <p className="text-xl theme-text-muted mb-8 max-w-2xl mx-auto">
-                  <strong>800+ developers</strong> have already escaped the traditional job hunt. 
-                  They're getting multiple offers, working remotely, and actually enjoying their careers. 
-                  <strong className="theme-text-primary">Your turn.</strong>
+                  <strong>800+ developers</strong> are already building impactful products and solving real problems. 
+                  They're working on cutting-edge technology and earning competitive rates. 
+                  <strong className="theme-text-primary">Your next project awaits.</strong>
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -321,8 +353,8 @@ export default function DevelopersPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-red-200 shadow-lg mb-8">
-              <span className="font-semibold text-red-700">The Job Hunt Reality Check</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-emerald-200 shadow-lg mb-8">
+              <span className="font-semibold text-emerald-700">What You Get</span>
             </div>
           </motion.div>
 
@@ -333,27 +365,26 @@ export default function DevelopersPage() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-5xl md:text-7xl font-bold theme-text-body mb-8 leading-tight">
-                Tired of being{' '}
-                <span className="text-red-600 font-extrabold">ghost</span>
-                <span className="text-red-600 font-extrabold">ed</span>
+                Collaborate directly with{' '}
+                <span className="text-emerald-600 font-extrabold">product leaders</span>
                 <br />
-                <span className="theme-text-body">by recruiters?</span>
+                <span className="theme-text-body">on core initiatives</span>
                 <br />
                 <span className="text-2xl theme-text-muted">
-                  Join the club.
+                  Not just bug fixes.
                 </span>
               </h2>
               
               <p className="text-xl theme-text-muted mb-8 leading-relaxed">
-                <strong>Plot twist:</strong> What if instead of chasing jobs, they chased YOU? 
-                What if you could pick and choose from offers that actually matter?
+                Work on the projects that matter—building new features, architecting systems, and making product decisions. 
+                No more maintaining legacy code or fixing edge cases.
               </p>
 
               <div className="space-y-6">
                 {[
-                  { text: 'Companies fighting over YOU (not the other way around)', color: 'from-blue-500 to-purple-500' },
-                  { text: 'Work from your couch, a beach, or Mars (we don\'t judge)', color: 'from-green-500 to-teal-500' },
-                  { text: 'Actually challenging problems (not just "make the logo bigger")', color: 'from-purple-500 to-pink-500' }
+                  { text: 'Set your rate and availability. We handle contracts and payments', color: 'from-blue-500 to-purple-500' },
+                  { text: 'Work remotely from anywhere—your couch, a beach, or your home office', color: 'from-green-500 to-teal-500' },
+                  { text: 'Build with cutting-edge tech—AI, cloud platforms, modern frameworks', color: 'from-purple-500 to-pink-500' }
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -387,26 +418,26 @@ export default function DevelopersPage() {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={problemInView ? { opacity: 1, scale: 1 } : {}}
                       transition={{ duration: 0.6, delay: 0.5 }}
-                      className="bg-red-100 border-2 border-red-300 rounded-2xl p-6 text-center relative overflow-hidden"
+                      className="bg-emerald-100 border-2 border-emerald-300 rounded-2xl p-6 text-center relative overflow-hidden"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-br from-red-200/50 to-red-300/30"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/50 to-emerald-300/30"></div>
                       <div className="relative z-10">
-                        <div className="text-3xl mb-3">🔒</div>
-                        <div className="text-sm font-bold text-red-800">No Autonomy</div>
-                        <div className="text-xs text-red-600 mt-2">Micromanaged daily</div>
+                        <div className="text-3xl mb-3">🚀</div>
+                        <div className="text-sm font-bold text-emerald-800">Full Autonomy</div>
+                        <div className="text-xs text-emerald-600 mt-2">Own your decisions</div>
                       </div>
                     </motion.div>
                     <motion.div 
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={problemInView ? { opacity: 1, scale: 1 } : {}}
                       transition={{ duration: 0.6, delay: 0.7 }}
-                      className="bg-orange-100 border-2 border-orange-300 rounded-2xl p-6 text-center relative overflow-hidden"
+                      className="bg-blue-100 border-2 border-blue-300 rounded-2xl p-6 text-center relative overflow-hidden"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-br from-orange-200/50 to-orange-300/30"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-200/50 to-blue-300/30"></div>
                       <div className="relative z-10">
-                        <div className="text-3xl mb-3">⏰</div>
-                        <div className="text-sm font-bold text-orange-800">No Flexibility</div>
-                        <div className="text-xs text-orange-600 mt-2">9-5 prison</div>
+                        <div className="text-3xl mb-3">⚡</div>
+                        <div className="text-sm font-bold text-blue-800">Complete Flexibility</div>
+                        <div className="text-xs text-blue-600 mt-2">Work-life harmony</div>
                       </div>
                     </motion.div>
                   </div>
@@ -415,13 +446,13 @@ export default function DevelopersPage() {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={problemInView ? { opacity: 1, scale: 1 } : {}}
                       transition={{ duration: 0.6, delay: 0.9 }}
-                      className="bg-yellow-100 border-2 border-yellow-300 rounded-2xl p-6 text-center relative overflow-hidden"
+                      className="bg-purple-100 border-2 border-purple-300 rounded-2xl p-6 text-center relative overflow-hidden"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-br from-yellow-200/50 to-yellow-300/30"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-200/50 to-purple-300/30"></div>
                       <div className="relative z-10">
-                        <div className="text-3xl mb-3">🏗️</div>
-                        <div className="text-sm font-bold text-yellow-800">Limited Resources</div>
-                        <div className="text-xs text-yellow-600 mt-2">Outdated tech stack</div>
+                        <div className="text-3xl mb-3">💎</div>
+                        <div className="text-sm font-bold text-purple-800">Cutting-Edge Tech</div>
+                        <div className="text-xs text-purple-600 mt-2">Latest technologies</div>
                       </div>
                     </motion.div>
                     <motion.div 
@@ -432,9 +463,9 @@ export default function DevelopersPage() {
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-gray-200/50 to-gray-300/30"></div>
                       <div className="relative z-10">
-                        <div className="text-3xl mb-3">📉</div>
-                        <div className="text-sm font-bold theme-text-body">Career Stagnation</div>
-                        <div className="text-xs theme-text-muted mt-2">No growth path</div>
+                        <div className="text-3xl mb-3">📈</div>
+                        <div className="text-sm font-bold theme-text-body">Rapid Growth</div>
+                        <div className="text-xs theme-text-muted mt-2">Clear advancement path</div>
                       </div>
                     </motion.div>
                   </div>
@@ -460,10 +491,10 @@ export default function DevelopersPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={problemInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 1.3 }}
-                  className="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-red-200"
+                  className="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-emerald-200"
                 >
-                  <div className="text-xs font-bold text-red-700">Rejection Rate</div>
-                  <div className="text-2xl font-bold text-red-600">89%</div>
+                  <div className="text-xs font-bold text-emerald-700">Success Rate</div>
+                  <div className="text-2xl font-bold text-emerald-600">91%</div>
                 </motion.div>
               </div>
             </motion.div>
@@ -491,22 +522,22 @@ export default function DevelopersPage() {
             className="text-center mb-20"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-emerald-200 shadow-lg mb-8">
-              <span className="font-semibold text-emerald-700">Plot Twist: It Does!</span>
+              <span className="font-semibold text-emerald-700">Your Success Partner</span>
             </div>
 
             <h2 className="text-5xl md:text-7xl font-bold theme-text-body mb-8 leading-tight">
               Meet your{' '}
               <span className="theme-text-primary font-bold">career</span>
               <br />
-              <span className="theme-text-primary font-bold">wingman</span>
+              <span className="theme-text-primary font-bold">acceleration</span>
               <span className="text-2xl theme-text-muted">
-                <br />(But for jobs, not dating)
+                <br />partner
               </span>
             </h2>
             
             <p className="text-xl theme-text-muted max-w-4xl mx-auto leading-relaxed mb-8">
-              <strong>Here's the deal:</strong> We don't just find you jobs—we turn you into the developer 
-              companies fight over. Interview coaching? ✓ Salary negotiation? ✓ Making you look like a rockstar? ✓ 
+              <strong>Here's how we transform careers:</strong> We don't just find you jobs—we position you as the developer 
+              companies actively pursue. Interview coaching? ✓ Salary optimization? ✓ Strategic positioning? ✓ 
               <strong className="theme-text-primary">All completely free.</strong> (Yes, really.)
             </p>
 
@@ -616,11 +647,11 @@ export default function DevelopersPage() {
             className="text-center"
           >
             <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-12 border border-white/40 shadow-2xl max-w-4xl mx-auto">
-              <h3 className="text-3xl font-bold theme-text-body mb-6">Stop Reading. Start Doing.</h3>
+              <h3 className="text-3xl font-bold theme-text-body mb-6">Ready to Transform Your Career?</h3>
               <p className="theme-text-muted mb-8 text-lg">
-                <strong>10,000+ developers</strong> have already ditched the traditional job hunt. 
-                They're working remotely, earning more, and actually excited about Monday mornings. 
-                <strong className="theme-text-primary">Seriously, what are you waiting for?</strong>
+                <strong>10,000+ developers</strong> have already accelerated their careers through Thinkify. 
+                They're working with cutting-edge technology, earning competitive salaries, and building fulfilling careers. 
+                <strong className="theme-text-primary">Your success story starts today.</strong>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.button 
