@@ -200,7 +200,7 @@ const updateCSSProperties = (theme: Theme) => {
 };
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [currentTheme, setCurrentTheme] = useState<Theme>(themes[0]);
+  const [currentTheme, setCurrentTheme] = useState<Theme>(themes[7]); // Purple Orange theme
 
   const setTheme = (theme: Theme) => {
     setCurrentTheme(theme);

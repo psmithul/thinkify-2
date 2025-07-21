@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
-import ThemeSwitcher from '@/components/ThemeSwitcher';
+
 import CompanyCarousel from '@/components/CompanyCarousel';
 import { useTheme } from '@/contexts/ThemeContext';
 
@@ -82,9 +82,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white transition-all duration-300 overflow-x-hidden">
       {/* Navigation */}
-      <Navigation />
-      {/* Theme Switcher */}
-      <ThemeSwitcher />
+              <Navigation />      
       {/* Hero Section - Airbnb Style */}
       <section className="pt-28 pb-16 relative bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -369,7 +367,7 @@ export default function HomePage() {
                 description: "Our proprietary AI engine analyzes 500K+ engineer profiles using advanced algorithms that evaluate technical skills, experience depth, and cultural alignment with surgical precision.",
                 features: ['500K+ developer database', 'ML-powered matching', 'Cultural fit analysis', 'Technical skill mapping'],
                 icon: '🧠',
-                gradient: 'from-blue-600 to-indigo-600',
+                gradient: 'from-blue-500 to-cyan-500',
                 stats: { value: '95%', label: 'Match Accuracy' }
               },
               {
@@ -378,7 +376,8 @@ export default function HomePage() {
                 subtitle: "Senior engineer validation",
                 description: "Industry veterans with 15+ years of experience conduct rigorous technical interviews, system design challenges, and comprehensive code reviews to ensure only elite talent passes through.",
                 features: ['15+ years experience', 'Technical deep-dives', 'System design tests', 'Code review process'],
-                gradient: 'from-indigo-600 to-purple-600',
+                icon: '👨‍💻',
+                gradient: 'from-purple-500 to-pink-500',
                 stats: { value: '15%', label: 'Pass Rate' }
               },
               {
@@ -387,7 +386,8 @@ export default function HomePage() {
                 subtitle: "Risk-free delivery promise",
                 description: "Zero payment until successful placement with our iron-clad guarantee. We deliver in 15 days average vs industry standard of 45+ days, with 30-day replacement warranty.",
                 features: ['Zero upfront payment', '15-day average delivery', '30-day replacement', '99% success rate'],
-                gradient: 'from-purple-600 to-pink-600',
+                icon: '✅',
+                gradient: 'from-emerald-500 to-teal-500',
                 stats: { value: '0%', label: 'Risk to You' }
               }
             ].map((item, index) => (
@@ -397,34 +397,35 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="group relative bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 shadow-2xl hover:shadow-3xl transition-all duration-700 overflow-hidden hover:bg-white/10"
+                className="group relative bg-white rounded-3xl p-8 border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-700 overflow-hidden hover:scale-105"
               >
                 {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-700`}></div>
                 
                 {/* Floating Elements */}
-                <div className="absolute top-4 right-4 w-12 h-12 bg-white/5 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '0.5s' }}></div>
-                <div className="absolute bottom-6 left-6 w-8 h-8 theme-bg-secondary/20 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute bottom-6 left-6 w-8 h-8 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
                 
                 <div className="relative z-10">
                   {/* Header */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-4">
                       <div className={`w-16 h-16 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center text-3xl shadow-lg`}>
+                        {item.icon}
                       </div>
-                      <div className="text-6xl font-bold theme-text-muted/20 group-hover:theme-text-muted/30 transition-colors duration-300">
+                      <div className="text-6xl font-bold text-gray-200 group-hover:text-gray-300 transition-colors duration-300">
                         {item.step}
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold theme-text-primary">{item.stats.value}</div>
-                      <div className="text-xs theme-text-muted">{item.stats.label}</div>
+                      <div className="text-2xl font-bold text-gray-800">{item.stats.value}</div>
+                      <div className="text-xs text-gray-500">{item.stats.label}</div>
                     </div>
                   </div>
                   {/* Content */}
-                  <h3 className="text-2xl font-bold theme-text-body mb-2">{item.title}</h3>
-                  <p className="text-sm font-medium theme-text-primary mb-4">{item.subtitle}</p>
-                  <p className="theme-text-muted mb-6 leading-relaxed">{item.description}</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">{item.title}</h3>
+                  <p className="text-sm font-medium text-gray-600 mb-4">{item.subtitle}</p>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{item.description}</p>
                   {/* Features List */}
                   <div className="space-y-3 mb-6">
                     {item.features.map((feature, featureIndex) => (
@@ -437,15 +438,15 @@ export default function HomePage() {
                         className="flex items-center gap-3"
                       >
                         <div className={`w-2 h-2 bg-gradient-to-r ${item.gradient} rounded-full`}></div>
-                        <span className="text-sm theme-text-muted">{feature}</span>
+                        <span className="text-sm text-gray-600">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
                   {/* Progress Indicator */}
-                  <div className="mt-8 pt-6 border-t border-white/10">
+                  <div className="mt-8 pt-6 border-t border-gray-100">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs theme-text-muted">Step {item.step}</span>
-                      <div className="flex-1 h-1 bg-white/10 rounded-full overflow-hidden">
+                      <span className="text-xs text-gray-500">Step {item.step}</span>
+                      <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
                         <motion.div 
                           className={`h-full bg-gradient-to-r ${item.gradient}`}
                           initial={{ width: 0 }}
@@ -600,10 +601,7 @@ export default function HomePage() {
                       
 
                       
-                      {/* Action Button */}
-                      <button className="w-full btn-cosmic-primary py-4 px-6 rounded-xl font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-y-6 group-hover:translate-y-0 transition-all duration-500 shadow-lg hover:shadow-xl">
-                        View Full Profile & Hire →
-                      </button>
+
                     </div>
                   </motion.div>
                 ))}
@@ -848,7 +846,7 @@ export default function HomePage() {
                 <Link href="https://connect.thinkify.io" className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
                   Start Your Transformation
                 </Link>
-                <Link href="#" className="bg-white theme-text-primary border-2 theme-border-primary px-8 py-4 rounded-xl font-semibold text-lg hover:theme-bg-primary hover:theme-text-body transition-all duration-300">
+                <Link href="https://connect.thinkify.io/case-studies" className="bg-white theme-text-primary border-2 theme-border-primary px-8 py-4 rounded-xl font-semibold text-lg hover:theme-bg-primary hover:theme-text-body transition-all duration-300">
                   View All Case Studies
                 </Link>
               </div>
@@ -1420,7 +1418,9 @@ export default function HomePage() {
                   ].map((social, index) => (
                     <motion.a 
                       key={index}
-                      href="#" 
+                      href={index === 0 ? "https://twitter.com/thinkify" : index === 1 ? "mailto:hello@thinkify.io" : "https://github.com/thinkify"} 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.2, y: -3 }}
                       whileTap={{ scale: 0.9 }}
                       className="relative group"

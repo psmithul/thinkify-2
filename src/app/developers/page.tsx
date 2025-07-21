@@ -4,10 +4,10 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
-import ThemeSwitcher from '@/components/ThemeSwitcher';
+
 import CompanyCarousel from '@/components/CompanyCarousel';
 import CompanyCarouselMini from '@/components/CompanyCarouselMini';
-import { useTheme } from '@/contexts/ThemeContext';
+
 import { CheckIcon, StarIcon, ArrowRightIcon, PlayIcon, SparklesIcon, RocketLaunchIcon, BoltIcon, TrophyIcon, UserGroupIcon, CurrencyDollarIcon, ChartBarIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 
 export default function DevelopersPage() {
@@ -77,7 +77,7 @@ export default function DevelopersPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <ThemeSwitcher />
+      
       
       {/* Hero Section */}
       <motion.section
