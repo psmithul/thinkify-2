@@ -108,7 +108,7 @@ export default function DevelopersPage() {
               Solve real problems
               <br />
               <span className="theme-text-primary font-bold">
-                Earn top pay
+                Seize new opportunities
               </span>
             </motion.h1>
 
@@ -183,8 +183,8 @@ export default function DevelopersPage() {
              </div>
             
             <h2 className="dm-serif-text-regular text-5xl md:text-7xl theme-text-body mb-8 leading-tight">
-              Build with a trusted network of{' '}
-              <span className="theme-gradient-text">elite builders</span>
+              Shape the Future with a Network of{' '}
+              <span className="theme-gradient-text">Proven Innovators</span>
             </h2>
             
             <p className="font-body text-xl theme-text-muted max-w-4xl mx-auto text-balance leading-relaxed">
@@ -234,17 +234,7 @@ export default function DevelopersPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex gap-4">
                       
-                      <div className="bg-blue-50 rounded-xl px-4 py-2 border border-blue-200">
-                        <div className="text-sm text-blue-600">Time to Big Tech</div>
-                        <div className="font-bold text-blue-700">{candidates[selectedCandidate].timeToBigTech}</div>
-                      </div>
                     </div>
-                    <button 
-                      className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all"
-                      onClick={() => window.open(candidates[selectedCandidate].linkedin, '_blank', 'noopener,noreferrer')}
-                    >
-                      {candidates[selectedCandidate].journey}
-                    </button>
                   </div>
                 </div>
               </div>
@@ -303,7 +293,7 @@ export default function DevelopersPage() {
                 <h3 className="dm-serif-text-regular text-4xl mb-6 theme-text-body">Ready to join the elite network?</h3>
                 <p className="text-xl theme-text-muted mb-8 max-w-2xl mx-auto">
                   <strong>800+ developers</strong> are already building impactful products and solving real problems. 
-                  They're working on cutting-edge technology and earning competitive rates. 
+                  They're working on cutting-edge technology and driving innovation. 
                   <strong className="theme-text-primary">Your next project awaits.</strong>
                 </p>
                 
@@ -1122,134 +1112,24 @@ export default function DevelopersPage() {
         </div>
       </motion.section>
 
-      {/* Final CTA Section */}
-      {/* Revolutionary "Join the most sought-out developer collective" Section */}
-              <motion.section className="py-32 bg-white relative overflow-hidden">
-        {/* Advanced Background Effects */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20"></div>
-          <div className="absolute top-0 left-1/4 w-96 h-96 theme-bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-1/4 w-80 h-80 theme-bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 theme-bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+      {/* Footer */}
+      <footer className="relative bg-gradient-to-br from-slate-50 via-white to-gray-50 py-8 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-center md:text-left mb-4 md:mb-0">
+            <div className="theme-text-muted text-sm mb-1">
+              © 2024 Thinkify Technologies Pvt Ltd. All rights reserved.
+            </div>
+            <div className="theme-text-muted font-semibold text-sm">
+              Elite Tech Talent, Delivered.
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-center md:justify-end gap-4">
+            <a href="#" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Privacy Policy</a>
+            <a href="#" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Terms</a>
+            <a href="#" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Contact</a>
+          </div>
         </div>
-
-        {/* Floating Code Elements */}
-        <div className="absolute inset-0 opacity-10 overflow-hidden">
-          {[
-            { text: 'const elite = await findDevelopers()', top: '10%', left: '10%', delay: 0 },
-            { text: '{ skill: "exceptional" }', top: '20%', right: '15%', delay: 1 },
-            { text: 'if (developer.isElite())', top: '60%', left: '8%', delay: 2 },
-            { text: 'return premium.opportunities', bottom: '20%', right: '10%', delay: 3 },
-            { text: '// Join the collective', top: '40%', right: '20%', delay: 4 }
-          ].map((code, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 2, delay: code.delay, repeat: Infinity, repeatType: 'reverse' }}
-              className="absolute theme-text-muted font-mono text-sm opacity-30"
-              style={{
-                top: code.top,
-                bottom: code.bottom,
-                left: code.left,
-                right: code.right
-              }}
-            >
-              {code.text}
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            {/* Elite Badge */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white backdrop-blur-md border theme-border-primary shadow-xl mb-8"
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 theme-bg-primary rounded-full animate-pulse"></div>
-                <div className="w-3 h-3 theme-bg-primary rounded-full animate-pulse delay-200"></div>
-                <div className="w-3 h-3 theme-bg-accent rounded-full animate-pulse delay-400"></div>
-              </div>
-              <span className="font-bold theme-text-primary">Elite Developer Collective</span>
-            </motion.div>
-
-            <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight theme-text-body">
-              Join the most{' '}
-              <span className="theme-gradient-text">sought-out</span>
-              <br />
-              <span className="theme-text-body">developer</span>{' '}
-              <span className="theme-gradient-text">collective.</span>
-            </h2>
-            
-            <p className="text-xl theme-text-muted max-w-4xl mx-auto mb-12 leading-relaxed">
-              We handle the tedious recruitment process, negotiations, and career logistics. 
-              You focus on what you do best - creating exceptional software that changes the world.
-            </p>
-
-            {/* Enhanced CTA Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mb-16"
-            >
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Link href="#contact">
-                  <motion.button
-                    className="btn-cosmic-primary px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl transition-all duration-300"
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
-                  >
-                    Join Elite Collective
-                    <ArrowRightIcon className="w-6 h-6 ml-3 inline-block" />
-                  </motion.button>
-                </Link>
-                <motion.button
-                  className="bg-white border-2 theme-border-primary theme-text-primary px-12 py-6 rounded-2xl font-bold text-xl hover:theme-bg-primary hover:text-white transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
-                >
-                  View Member Benefits
-                </motion.button>
-              </div>
-
-              {/* Member Benefits Preview */}
-              <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                {[
-                  { text: 'Premium Job Access', desc: 'Exclusive opportunities' },
-                  { text: 'Career Acceleration', desc: '3x faster growth' },
-                  { text: 'Salary Optimization', desc: '40% higher packages' }
-                ].map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="bg-white backdrop-blur-sm rounded-xl p-4 border theme-border-surface shadow-lg"
-                  >
-                    <div className="mb-2"></div>
-                    <div className="font-semibold theme-text-body">{benefit.text}</div>
-                    <div className="text-xs theme-text-muted">{benefit.desc}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            
-          </motion.div>
-        </div>
-      </motion.section>
+      </footer>
     </div>
   );
 } 

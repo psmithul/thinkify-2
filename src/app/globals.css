@@ -6,23 +6,23 @@
 
 /* Root Variables - Theme-aware */
 :root {
-  /* Thinkify Labs Brand Colors */
-  --color-primary: #15304b; /* Deep Navy */
-  --color-secondary: #1cc6b6; /* Vibrant Teal */
-  --color-accent: #ff9900; /* Citrus Orange */
+  /* Thinkify Labs Brand Colors - Purple Orange Theme */
+  --color-primary: #7c3aed; /* Vibrant Purple */
+  --color-secondary: #f97316; /* Vibrant Orange */
+  --color-accent: #f97316; /* Orange Accent */
   --color-background: #f8fafc; /* Off-white */
   --color-surface: #f4f6f8; /* Light Graphite */
   --color-text: #1a2233; /* Deep Navy for text */
   --color-text-secondary: #5a6473; /* Soft Slate Gray */
   
   /* Gradient properties */
-  --gradient-primary: linear-gradient(135deg, #1cc6b6 0%, #15304b 100%); /* Teal to Navy */
-  --gradient-secondary: linear-gradient(135deg, #ff9900 0%, #1cc6b6 100%); /* Orange to Teal */
+  --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #f97316 100%); /* Purple to Orange */
+  --gradient-secondary: linear-gradient(135deg, #f97316 0%, #7c3aed 100%); /* Orange to Purple */
   
   /* RGB versions for rgba usage */
-  --theme-primary-rgb: 21, 48, 75;
-  --theme-secondary-rgb: 28, 198, 182;
-  --theme-accent-rgb: 255, 153, 0;
+  --theme-primary-rgb: 124, 58, 237;
+  --theme-secondary-rgb: 249, 115, 22;
+  --theme-accent-rgb: 249, 115, 22;
   
   /* Layout properties */
   --bg-primary: #f8fafc;
@@ -30,11 +30,11 @@
   --text-primary: #1a2233;
   --text-secondary: #5a6473;
   --text-muted: #8a94a6;
-  --border-color: rgba(21, 48, 75, 0.12);
+  --border-color: rgba(124, 58, 237, 0.12);
   --card-bg: rgba(255, 255, 255, 0.98);
   --section-padding: 4rem 0;
   --container-padding: 1rem;
-  --foreground-rgb: 21, 48, 75;
+  --foreground-rgb: 124, 58, 237;
   --background-start-rgb: 248, 250, 252;
   --background-end-rgb: 244, 246, 248;
 }
@@ -310,12 +310,24 @@
 .hover\:border-purple-300:hover { border-color: rgba(var(--theme-primary-rgb), 0.3) !important; }
 .hover\:text-purple-400:hover { color: rgba(var(--theme-primary-rgb), 0.8) !important; }
 
+/* Orange color overrides for secondary theme */
+.text-orange-600 { color: var(--color-secondary) !important; }
+.text-orange-500 { color: var(--color-secondary) !important; }
+.text-orange-400 { color: rgba(var(--theme-secondary-rgb), 0.8) !important; }
+.bg-orange-600 { background-color: var(--color-secondary) !important; }
+.bg-orange-500 { background-color: var(--color-secondary) !important; }
+.bg-orange-400 { background-color: rgba(var(--theme-secondary-rgb), 0.8) !important; }
+.border-orange-600 { border-color: var(--color-secondary) !important; }
+.border-orange-300 { border-color: rgba(var(--theme-secondary-rgb), 0.3) !important; }
+.hover\:border-orange-300:hover { border-color: rgba(var(--theme-secondary-rgb), 0.3) !important; }
+.hover\:text-orange-400:hover { color: rgba(var(--theme-secondary-rgb), 0.8) !important; }
+
 /* Custom gradients for developers page */
-.bg-gradient-to-r.from-green-600.to-blue-600 { 
-  background: linear-gradient(135deg, #16a34a 0%, #2563eb 100%);
+.bg-gradient-to-r.from-purple-600.to-orange-600 { 
+  background: linear-gradient(135deg, #7c3aed 0%, #f97316 100%);
 }
-.bg-gradient-to-r.from-orange-600.to-red-600 { 
-  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+.bg-gradient-to-r.from-orange-600.to-purple-600 { 
+  background: linear-gradient(135deg, #f97316 0%, #7c3aed 100%);
 }
 
 /* Button styles */
