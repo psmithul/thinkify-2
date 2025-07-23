@@ -369,29 +369,6 @@ export default function DevelopersPage() {
                 Work on the projects that matter—building new features, architecting systems, and making product decisions. 
                 No more maintaining legacy code or fixing edge cases.
               </p>
-
-              <div className="space-y-6">
-                {[
-                  { text: 'Set your rate and availability. We handle contracts and payments', color: 'from-blue-500 to-purple-500' },
-                  { text: 'Work remotely from anywhere—your couch, a beach, or your home office', color: 'from-green-500 to-teal-500' },
-                  { text: 'Build with cutting-edge tech—AI, cloud platforms, modern frameworks', color: 'from-purple-500 to-pink-500' }
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={problemInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
-                    className="group relative bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-xl transition-all duration-500"
-                  >
-                    <div className={`absolute inset-0 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl`}></div>
-                    <div className="relative z-10 flex items-center space-x-4">
-                      <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-xl flex items-center justify-center text-2xl shadow-lg`}>
-                      </div>
-                      <span className="text-lg theme-text-body font-semibold">{item.text}</span>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
 
             <motion.div
@@ -461,21 +438,6 @@ export default function DevelopersPage() {
                   </div>
                 </div>
 
-                {/* Frustrated Developer Image */}
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-                  animate={problemInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  className="absolute -top-8 -right-8 w-40 h-40 rounded-3xl overflow-hidden shadow-2xl border-4 border-white"
-                >
-                  <img 
-                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=200&h=200&fit=crop&crop=face" 
-                    alt="Frustrated developer"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </motion.div>
-
                 {/* Floating Pain Indicators */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
@@ -509,40 +471,113 @@ export default function DevelopersPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={solutionInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            className="relative mb-20"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-emerald-200 shadow-lg mb-8">
-              <span className="font-semibold text-emerald-700">Your Success Partner</span>
+            {/* Background Elements */}
+            <div className="absolute inset-0 -z-10">
+              <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-orange-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
             </div>
 
-            <h2 className="text-5xl md:text-7xl font-bold theme-text-body mb-8 leading-tight">
-              Meet your{' '}
-              <span className="theme-text-primary font-bold">career</span>
-              <br />
-              <span className="theme-text-primary font-bold">acceleration</span>
-              <span className="text-2xl theme-text-muted">
-                <br />partner
-              </span>
-            </h2>
-            
-            <p className="text-xl theme-text-muted max-w-4xl mx-auto leading-relaxed mb-8">
-              <strong>Here's how we transform careers:</strong> We don't just find you jobs—we position you as the developer 
-              companies actively pursue. Interview coaching? ✓ Salary optimization? ✓ Strategic positioning? ✓ 
-              <strong className="theme-text-primary">All completely free.</strong> (Yes, really.)
-            </p>
+            {/* Main Content */}
+            <div className="max-w-6xl mx-auto">
+              {/* Badge */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={solutionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-center mb-12"
+              >
+                <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/10 to-orange-500/10 backdrop-blur-md border border-purple-200/50 shadow-lg">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full animate-pulse"></div>
+                  <span className="font-semibold text-purple-700">Your Success Partner</span>
+                  <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                </div>
+              </motion.div>
 
-            <div className="flex flex-wrap justify-center gap-3 text-sm">
-              {['100% Free Platform', 'Career Coaching', 'Salary Negotiation', 'Interview Mastery', 'Perfect Job Matching'].map((feature, index) => (
-                <motion.div
-                  key={feature}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={solutionInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-emerald-200 font-medium text-emerald-700"
-                >
-                  {feature}
-                </motion.div>
-              ))}
+              {/* Hero Heading */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={solutionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-center mb-12"
+              >
+                <h2 className="text-6xl md:text-8xl font-black mb-6 leading-none">
+                  <span className="text-gray-800">Your</span>
+                  <br />
+                  <span className="theme-gradient-text">
+                    success
+                  </span>
+                  <br />
+                  <span className="theme-gradient-text">
+                    accelerator
+                  </span>
+                </h2>
+                <div className="text-3xl md:text-4xl font-bold text-gray-600">
+                  platform
+                </div>
+              </motion.div>
+
+              {/* Description */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={solutionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-center mb-16"
+              >
+                <p className="text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed mb-8">
+                  <strong className="text-gray-900">Here's how we transform careers:</strong> We don't just find you jobs—we position you as the developer 
+                  companies actively pursue.
+                </p>
+                
+                {/* Feature Highlights */}
+                <div className="flex flex-wrap justify-center gap-6 mb-8">
+                  {[
+                    { text: 'Strategic positioning', icon: '🎯' },
+                    { text: 'Career acceleration', icon: '🚀' },
+                    { text: 'Direct opportunities', icon: '⚡' }
+                  ].map((item, index) => (
+                    <motion.div
+                      key={item.text}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={solutionInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                      className="flex items-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      <span className="text-2xl">{item.icon}</span>
+                      <span className="font-semibold text-gray-800">{item.text}</span>
+                      <span className="text-green-500 text-xl">✓</span>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className="text-2xl font-bold">
+                  <span className="theme-gradient-text">
+                    All completely free.
+                  </span>
+                  <span className="text-gray-600 ml-2">(Yes, really.)</span>
+                </div>
+              </motion.div>
+
+              {/* Feature Pills */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={solutionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex flex-wrap justify-center gap-4"
+              >
+                {['100% Free Platform', 'Strategic Positioning', 'Direct Opportunities', 'Perfect Job Matching', 'Career Acceleration'].map((feature, index) => (
+                  <motion.div
+                    key={feature}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={solutionInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
+                    className="px-6 py-3 bg-gradient-to-r from-purple-500/10 to-orange-500/10 backdrop-blur-sm rounded-full border border-purple-200/50 font-semibold text-purple-700 hover:from-purple-500/20 hover:to-orange-500/20 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  >
+                    {feature}
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
           </motion.div>
 
@@ -554,7 +589,7 @@ export default function DevelopersPage() {
                 subtitle: 'AI-powered precision',
                 description: 'Our advanced algorithms analyze 500+ data points to match you with companies that align perfectly with your skills, values, and career aspirations.',
                 color: 'from-blue-500 to-purple-500',
-                features: ['Skills alignment', 'Culture fit analysis', 'Career path mapping', 'Salary benchmarking'],
+                features: ['Skills alignment', 'Culture fit analysis', 'Career path mapping', 'Opportunity benchmarking'],
                 stats: { value: '95%', label: 'Match Accuracy' }
               },
               {
@@ -562,7 +597,7 @@ export default function DevelopersPage() {
                 subtitle: '3x faster than traditional methods',
                 description: 'Skip the endless applications and waiting. Our proven process connects you directly with hiring managers actively seeking your expertise.',
                 color: 'from-emerald-500 to-teal-500',
-                features: ['Direct hiring manager access', 'Fast-track interviews', 'Skip initial screenings', 'Priority consideration'],
+                features: ['Direct hiring manager access', 'Fast-track assessments', 'Skip initial screenings', 'Priority consideration'],
                 stats: { value: '21', label: 'Days Average' }
               },
               {
@@ -570,7 +605,7 @@ export default function DevelopersPage() {
                 subtitle: 'Maximize your opportunity impact',
                 description: 'Our expert negotiators secure roles with strategic alignment to your goals. We advocate for your next big leap — not just a job, but your ideal opportunity.',
                 color: 'from-green-500 to-emerald-500',
-                features: ['Role benchmarking', 'Offer optimization', 'Expert negotiators', 'Oppurtunity fit analysis'],
+                features: ['Role benchmarking', 'Opportunity optimization', 'Expert negotiators', 'Strategic fit analysis'],
                 stats: { value: 'Career Acceleration', label: 'Unlocked' }
               }
             ].map((item, index) => (
@@ -733,7 +768,7 @@ export default function DevelopersPage() {
                 title: 'Time-Conscious Professional',
                 subtitle: 'Skip the negotiation hassles',
                 description: 'You value your time and want expert negotiators fighting for your worth, not wasting months in back-and-forth discussions.',
-                requirements: ['Expert negotiation support', 'Market-rate salaries', 'Time-efficient process', 'Professional representation'],
+                requirements: ['Expert negotiation support', 'Market-rate opportunities', 'Time-efficient process', 'Professional representation'],
                 gradient: 'from-blue-500 to-purple-500',
                 stats: { value: 'Fast-Tracked', label: 'Career Moves' }
               },
@@ -861,7 +896,7 @@ export default function DevelopersPage() {
           </div>
           <div className="absolute bottom-32 left-20 opacity-10 text-xs theme-text-muted font-mono transform -rotate-12">
             <div className="bg-slate-900 rounded-lg p-3">
-              <div className="theme-text-primary-80">{"{ success: true, salary: '2x' }"}</div>
+              <div className="theme-text-primary-80">{"{ success: true, growth: '2x' }"}</div>
             </div>
           </div>
         </div>
@@ -944,7 +979,7 @@ export default function DevelopersPage() {
                 title: 'Total Career Protection',
                 subtitle: 'Your success is our guarantee',
                 description: 'Full-spectrum career insurance including health benefits, legal support, and contract negotiation. We fight for your rights every step of the way.',
-                features: ['Comprehensive health insurance', 'Legal contract review', 'Salary negotiation support', '24/7 career guidance'],
+                features: ['Comprehensive health insurance', 'Legal contract review', 'Strategic positioning support', '24/7 career guidance'],
                 image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&h=400&fit=crop',
                 gradient: 'from-emerald-500 to-teal-600',
                 stats: { value: '100%', label: 'Protection Rate' }
@@ -967,7 +1002,7 @@ export default function DevelopersPage() {
                 features: ['AI-powered career matching', 'Skill gap analysis', 'Growth trajectory planning', 'Performance optimization'],
                 image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
                 gradient: 'from-orange-500 to-red-500',
-                stats: { value: '3.2x', label: 'Avg Salary Increase' }
+                stats: { value: '3.2x', label: 'Career Growth Rate' }
               },
               {
                 id: 'events',

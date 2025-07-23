@@ -364,14 +364,14 @@ export default function HomePage() {
                 step: "02",
                 title: "Expert Human Vetting",
                 subtitle: "Senior engineer validation",
-                description: "Industry veterans with 15+ years of experience conduct rigorous technical interviews, system design challenges, and comprehensive code reviews to ensure only elite talent passes through.",
+                description: "Industry veterans with 15+ years of experience conduct rigorous technical assessments, system design challenges, and comprehensive code reviews to ensure only elite talent passes through.",
                 features: ['15+ years experience', 'Technical deep-dives', 'System design tests', 'Code review process'],
                 icon: (
-                  <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-purple-500">
+                  <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-orange-500">
                     <path d="M5 13l4 4L19 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
-                gradient: 'from-purple-500 to-pink-500',
+                gradient: 'from-purple-600 to-orange-500',
                 stats: { value: '15%', label: 'Pass Rate' }
               },
               {
@@ -581,7 +581,7 @@ export default function HomePage() {
                 },
                 {
                   title: 'Perfect Match',
-                  description: 'AI-powered matching with 95% technical interview pass rate',
+                  description: 'AI-powered matching with 95% technical assessment pass rate',
                   color: 'from-blue-500 to-purple-500',
                   metric: '95%'
                 },
@@ -862,7 +862,7 @@ export default function HomePage() {
               },
               { 
                 number: 95, 
-                label: "Technical Interview Pass Rate", 
+                label: "Technical Assessment Pass Rate", 
                 suffix: "%", 
                 gradient: 'from-emerald-500 to-teal-500',
                 comparison: 'vs 60% industry average',
@@ -1154,7 +1154,7 @@ export default function HomePage() {
                   { metric: '500+', label: 'Companies Scaled' },
                   { metric: '15K+', label: 'Engineers Placed' },
                   { metric: '72hrs', label: 'Average Response' },
-                  { metric: '$2.5M+', label: 'Total Salaries Negotiated' }
+                  { metric: '95%', label: 'Success Rate' }
                 ].map((stat, index) => (
                   <motion.div
                     key={index}

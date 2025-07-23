@@ -37,41 +37,13 @@ export default function ThinkifyLogo({
     xl: 'text-3xl'
   };
 
-  // Theme-aware colors
+  // Purple-Orange theme colors
   const getThemeColors = () => {
-    switch (currentTheme.name) {
-      case 'Ocean':
-        return {
-          primary: '#d97706', // Gold
-          secondary: '#b45309' // Darker gold
-        };
-      case 'Sunset':
-        return {
-          primary: '#d97706', // Gold
-          secondary: '#b45309' // Darker gold
-        };
-      case 'Forest':
-      case 'Green':
-        return {
-          primary: '#d97706', // Gold
-          secondary: '#b45309' // Darker gold
-        };
-      case 'Gold':
-        return {
-          primary: '#d97706', // Gold
-          secondary: '#b45309' // Darker gold
-        };
-      case 'Champagne':
-        return {
-          primary: '#eab308', // Champagne gold
-          secondary: '#ca8a04' // Darker champagne
-        };
-      default: // Use gold as default instead of purple
-        return {
-          primary: '#d97706', // Gold
-          secondary: '#b45309' // Darker gold
-        };
-    }
+    return {
+      primary: '#7c3aed', // Vibrant Purple
+      secondary: '#f97316', // Vibrant Orange
+      accent: '#f97316' // Orange Accent
+    };
   };
 
   const colors = getThemeColors();
@@ -87,14 +59,14 @@ export default function ThinkifyLogo({
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-full"
         >
-          {/* Modern Brain Icon */}
+          {/* Dotted T Design */}
           <defs>
-            <linearGradient id={`brainGradient-${currentTheme.name}`} x1="0%" y1="0%" x2="100%" y2="100%">
+            <linearGradient id={`tGradient-${currentTheme.name}`} x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor={colors.primary} />
               <stop offset="100%" stopColor={colors.secondary} />
             </linearGradient>
             <filter id="glow">
-              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
               <feMerge> 
                 <feMergeNode in="coloredBlur"/>
                 <feMergeNode in="SourceGraphic"/>
@@ -102,30 +74,45 @@ export default function ThinkifyLogo({
             </filter>
           </defs>
           
-          {/* Brain Shape */}
-          <path
-            d="M25 35C20 30 15 35 15 45C15 55 20 65 30 70C35 72 40 70 45 68C50 70 55 72 60 70C70 65 75 55 75 45C75 35 70 30 65 35C60 25 55 20 50 25C45 20 40 25 35 35C30 25 25 30 25 35Z"
-            fill={`url(#brainGradient-${currentTheme.name})`}
-            filter="url(#glow)"
-          />
-          
-          {/* Neural Network Lines */}
-          <g stroke="rgba(255,255,255,0.8)" strokeWidth="1.5" fill="none">
-            <path d="M30 45 L35 40 L45 45 L55 40 L65 45" strokeLinecap="round" />
-            <path d="M32 55 L42 50 L52 55 L62 50" strokeLinecap="round" />
-            <circle cx="35" cy="40" r="2" fill="white" />
-            <circle cx="45" cy="45" r="2" fill="white" />
-            <circle cx="55" cy="40" r="2" fill="white" />
-            <circle cx="42" cy="50" r="2" fill="white" />
-            <circle cx="52" cy="55" r="2" fill="white" />
+          {/* Horizontal bar of T (dotted) */}
+          <g>
+            {/* Top dots */}
+            <circle cx="20" cy="25" r="3" fill={`url(#tGradient-${currentTheme.name})`} filter="url(#glow)" />
+            <circle cx="35" cy="25" r="3" fill={`url(#tGradient-${currentTheme.name})`} filter="url(#glow)" />
+            <circle cx="50" cy="25" r="3" fill={`url(#tGradient-${currentTheme.name})`} filter="url(#glow)" />
+            <circle cx="65" cy="25" r="3" fill={`url(#tGradient-${currentTheme.name})`} filter="url(#glow)" />
+            <circle cx="80" cy="25" r="3" fill={`url(#tGradient-${currentTheme.name})`} filter="url(#glow)" />
+            
+            {/* Vertical bar of T (dotted) */}
+            <circle cx="50" cy="40" r="3" fill={`url(#tGradient-${currentTheme.name})`} filter="url(#glow)" />
+            <circle cx="50" cy="55" r="3" fill={`url(#tGradient-${currentTheme.name})`} filter="url(#glow)" />
+            <circle cx="50" cy="70" r="3" fill={`url(#tGradient-${currentTheme.name})`} filter="url(#glow)" />
+            <circle cx="50" cy="85" r="3" fill={`url(#tGradient-${currentTheme.name})`} filter="url(#glow)" />
           </g>
           
-          {/* Sparkle Effects */}
-          <g fill="rgba(255,255,255,0.9)">
-            <circle cx="20" cy="25" r="1.5" />
-            <circle cx="75" cy="30" r="1" />
-            <circle cx="80" cy="60" r="1.5" />
-            <circle cx="15" cy="70" r="1" />
+          {/* Connecting lines (subtle) */}
+          <g stroke={`url(#tGradient-${currentTheme.name})`} strokeWidth="1" fill="none" opacity="0.3">
+            {/* Horizontal connections */}
+            <path d="M23 25 L32 25" strokeLinecap="round" />
+            <path d="M38 25 L47 25" strokeLinecap="round" />
+            <path d="M53 25 L62 25" strokeLinecap="round" />
+            <path d="M68 25 L77 25" strokeLinecap="round" />
+            
+            {/* Vertical connections */}
+            <path d="M50 28 L50 37" strokeLinecap="round" />
+            <path d="M50 43 L50 52" strokeLinecap="round" />
+            <path d="M50 58 L50 67" strokeLinecap="round" />
+            <path d="M50 73 L50 82" strokeLinecap="round" />
+          </g>
+          
+          {/* Sparkle effects around the T */}
+          <g fill="rgba(255,255,255,0.8)">
+            <circle cx="15" cy="15" r="1" />
+            <circle cx="85" cy="15" r="1" />
+            <circle cx="15" cy="85" r="1" />
+            <circle cx="85" cy="85" r="1" />
+            <circle cx="50" cy="10" r="1.5" />
+            <circle cx="50" cy="90" r="1.5" />
           </g>
         </svg>
       </div>
