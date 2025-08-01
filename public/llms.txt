@@ -18,7 +18,7 @@ Thinkify is India's premier platform for contingent hiring and staffing solution
 - **Local Expertise**: Contingent hiring services across Karnataka and India
 
 ## Geographic Coverage
-- **Mangaluru**: Contingent hiring services in Mangaluru
+- **Bangalore**: Contingent hiring services in Bangalore
 - **Karnataka**: Comprehensive contingent staffing across Karnataka
 - **India**: Nationwide contingent recruitment and temporary staffing
 - **Remote**: Global contingent hiring for distributed teams
@@ -34,7 +34,7 @@ Thinkify is India's premier platform for contingent hiring and staffing solution
 - Website: https://www.thinkify.io
 - Services: Contingent hiring, temporary staffing, contract hiring, contingent recruitment
 - Focus: Engineering contingent hiring, IT contingent staffing, contingent workforce management
-- Location: Mangaluru, Karnataka, India
+- Location: Bangalore, Karnataka, India
 
 ## Additional Resources
 - Contingent hiring guides and best practices
