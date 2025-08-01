@@ -1,18 +1,22 @@
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
-  title: "Elite Developer Network | Thinkify - Top Engineering Talent",
-  description: "Meet our elite network of engineers from FAANG and unicorn companies. Success stories, career journeys, and proven track records of rapid deployment.",
-  keywords: "elite developers, engineering talent, FAANG engineers, tech careers, software engineers, developer network",
+  title: "Elite Engineering Talent Network | Contingent Hiring Solutions | Thinkify",
+  description: "Access elite engineering talent for contingent hiring and staffing needs. Top 1% developers from FAANG companies available for temporary staffing and contract hiring across Karnataka and India.",
+  keywords: "elite engineering talent, contingent hiring developers, temporary staffing engineers, contract hiring IT professionals, contingent workforce engineering, staffing solutions Karnataka, contingent recruitment developers",
   openGraph: {
-    title: "Elite Developer Network | Thinkify",
-    description: "Meet our elite network of engineers from FAANG and unicorn companies. Success stories and proven track records.",
+    title: "Elite Engineering Talent Network | Contingent Hiring Solutions",
+    description: "Access elite engineering talent for contingent hiring and staffing needs. Top 1% developers from FAANG companies available for temporary staffing and contract hiring.",
     type: "website",
     url: "https://www.thinkify.io/developers",
+    locale: "en_US",
   },
   twitter: {
-    title: "Elite Developer Network | Thinkify",
-    description: "Meet our elite network of engineers from FAANG and unicorn companies. Success stories and proven track records.",
+    title: "Elite Engineering Talent Network | Contingent Hiring Solutions",
+    description: "Access elite engineering talent for contingent hiring and staffing needs. Top 1% developers from FAANG companies available for temporary staffing and contract hiring.",
+  },
+  alternates: {
+    canonical: "https://www.thinkify.io/developers",
   },
 };
 

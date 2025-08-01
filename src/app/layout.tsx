@@ -9,24 +9,40 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Thinkify - Elite Engineering Teams On-Demand | Rapid Deployment",
-  description: "Thinkify delivers world-class engineering teams in 72 hours. Connect with top 1% talent from FAANG and unicorn companies for rapid product development and innovation.",
-  keywords: "engineering talent, contingent staffing, rapid deployment, elite engineers, tech teams, software development",
+  title: "Contingent Hiring & Staffing Solutions | Thinkify - Elite Engineering Teams",
+  description: "Leading contingent hiring and staffing solutions. Deploy elite engineering teams in 72 hours. Top contingent recruitment services for temporary staffing and contract hiring across India.",
+  keywords: "contingent hiring, contingent staffing, contingent recruitment, temporary staffing solutions, contract hiring services, contingent workforce management, contingent hiring Mangaluru, contingent staffing Karnataka, engineering contingent hiring, IT contingent staffing",
   authors: [{ name: "Thinkify" }],
   creator: "Thinkify",
   publisher: "Thinkify",
   robots: "index, follow",
+  alternates: {
+    canonical: "https://www.thinkify.io",
+  },
   openGraph: {
-    title: "Thinkify - Elite Engineering Teams On-Demand",
-    description: "Deploy world-class engineering teams in 72 hours. Top 1% talent from FAANG and unicorn companies.",
+    title: "Contingent Hiring & Staffing Solutions | Thinkify",
+    description: "Leading contingent hiring and staffing solutions. Deploy elite engineering teams in 72 hours. Top contingent recruitment services for temporary staffing and contract hiring.",
     type: "website",
     url: "https://www.thinkify.io",
     siteName: "Thinkify",
+    locale: "en_US",
+    images: [
+      {
+        url: "https://www.thinkify.io/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Thinkify - Contingent Hiring Solutions",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Thinkify - Elite Engineering Teams On-Demand",
-    description: "Deploy world-class engineering teams in 72 hours. Top 1% talent from FAANG and unicorn companies.",
+    title: "Contingent Hiring & Staffing Solutions | Thinkify",
+    description: "Leading contingent hiring and staffing solutions. Deploy elite engineering teams in 72 hours.",
+    images: ["https://www.thinkify.io/og-image.jpg"],
+  },
+  other: {
+    "google-site-verification": "your-verification-code",
   },
 };
 
@@ -47,6 +63,80 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap" rel="stylesheet" />
+        
+        {/* Google Jobs Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Thinkify",
+              "url": "https://www.thinkify.io",
+              "logo": "https://www.thinkify.io/logo.png",
+              "description": "Leading contingent hiring and staffing solutions for elite engineering teams",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Mangaluru",
+                "addressRegion": "Karnataka",
+                "addressCountry": "IN"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-9876543210",
+                "contactType": "customer service",
+                "areaServed": "IN",
+                "availableLanguage": "English"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/thinkify",
+                "https://twitter.com/thinkify"
+              ]
+            })
+          }}
+        />
+        
+        {/* Local Business Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Thinkify",
+              "image": "https://www.thinkify.io/logo.png",
+              "description": "Contingent hiring and staffing solutions for engineering teams",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Thinkify Technologies",
+                "addressLocality": "Mangaluru",
+                "addressRegion": "Karnataka",
+                "postalCode": "575001",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 12.9716,
+                "longitude": 77.5946
+              },
+              "url": "https://www.thinkify.io",
+              "telephone": "+91-9876543210",
+              "priceRange": "$$",
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday", 
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+              }
+            })
+          }}
+        />
       </head>
       <body className="font-nunito-sans antialiased bg-white text-neutral-900">
         <ThemeProvider>
