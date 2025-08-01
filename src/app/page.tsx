@@ -103,13 +103,13 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Hire {' '}
-            <span className="inline-block ">
-              Thoughtfully
+            Contingent {' '}
+            <span className="inline-block theme-text-primary">
+              Hiring
             </span>
             <br />
-            <span className="theme-text-body">Scale </span>{' '}
-            <span className="theme-text-body">Instantly</span>
+            <span className="theme-text-body">Made </span>{' '}
+            <span className="theme-text-secondary">Simple</span>
           </motion.h1>
           
           <motion.p 
@@ -118,8 +118,8 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            With Thinkify, get vetted Engineering talent on-demand. Experience the 
-            <strong className="theme-text-primary"> freedom and flexibility of modern contingent hiring.</strong>
+            Leading contingent hiring and staffing solutions for elite engineering teams. Deploy pre-vetted talent in 72 hours with 
+            <strong className="theme-text-primary"> zero risk hiring and flexible contract staffing.</strong>
           </motion.p>
           
           <motion.div 
@@ -1217,28 +1217,28 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-8">
             {[
               {
-                question: "How quickly can Thinkify deploy engineering teams?",
-                answer: "Thinkify specializes in rapid deployment, typically delivering pre-vetted engineering teams within 72 hours of project initiation. Our streamlined process includes immediate strategic alignment, same-day talent matching, and seamless onboarding to ensure your project starts without delays. This rapid deployment capability is made possible by our extensive network of pre-vetted elite engineers and our proprietary matching algorithm."
+                question: "What is contingent hiring and how does it benefit my business?",
+                answer: "Contingent hiring is a flexible staffing solution where companies hire talent on a temporary or contract basis without long-term commitments. Thinkify's contingent hiring model provides immediate access to elite engineering talent with 72-hour deployment, zero upfront costs, and flexible scaling. This approach reduces hiring risks, lowers costs by 40-60%, and enables rapid project execution without the overhead of permanent hiring."
               },
               {
-                question: "What makes Thinkify's engineering talent elite?",
-                answer: "Our elite talent network consists of engineers with proven track records from top-tier companies including FAANG (Facebook, Amazon, Apple, Netflix, Google) and leading unicorn startups. Each engineer undergoes a rigorous 5-stage vetting process that evaluates technical expertise, cultural fit, communication skills, and delivery capability. We maintain a 15% acceptance rate to ensure only the top 1% of engineering talent joins our network."
+                question: "How does Thinkify's contingent staffing differ from traditional recruitment?",
+                answer: "Thinkify's contingent staffing eliminates traditional recruitment bottlenecks by providing pre-vetted, elite engineering talent within 72 hours. Unlike traditional hiring that takes months, our contingent staffing model offers immediate deployment, flexible contracts, 2-week trial periods, and pay-only-for-active-work pricing. We handle all sourcing, vetting, and onboarding while you focus on project delivery and business growth."
               },
               {
-                question: "How does Thinkify's contingent staffing model work?",
-                answer: "Thinkify's contingent staffing model provides maximum flexibility and cost efficiency. Companies pay only for active contribution with no upfront recruitment costs, long-term commitments, or hidden fees. Our model includes flexible contracts that allow scaling up or down based on project needs, 2-week trial periods to ensure perfect fit, and transparent pricing with clear ROI. This approach eliminates traditional hiring risks while providing access to world-class engineering talent."
+                question: "What contingent hiring services does Thinkify offer in Karnataka and India?",
+                answer: "Thinkify provides comprehensive contingent hiring services across Karnataka and India, including temporary staffing solutions, contract hiring for engineering teams, contingent workforce management, and specialized IT contingent staffing. Our services cover all major cities including Mangaluru, Bangalore, and Mumbai, with rapid deployment capabilities and local market expertise for optimal talent matching."
               },
               {
-                question: "What industries and project types does Thinkify serve?",
-                answer: "Thinkify serves a diverse range of industries including fintech, e-commerce, healthcare technology, artificial intelligence, and enterprise software. Our engineering teams excel in building new products, accelerating development roadmaps, modernizing legacy tech stacks, and implementing cutting-edge technologies. We've successfully supported startups, scale-ups, and enterprise companies across various technical domains and project complexities."
+                question: "How does contingent recruitment work for engineering projects?",
+                answer: "Our contingent recruitment process for engineering projects starts with understanding your specific technical requirements and project timeline. We then match you with pre-vetted engineers from our elite network, typically within 72 hours. The contingent recruitment model includes flexible contracts, trial periods, and ongoing support to ensure project success while maintaining cost efficiency and risk mitigation."
               },
               {
-                question: "How does Thinkify ensure quality and project success?",
-                answer: "Thinkify maintains a 95% success rate through our comprehensive quality assurance process. This includes rigorous pre-vetting of all engineers, continuous performance monitoring, regular client feedback loops, and dedicated project success managers. Our engineers are backed by Thinkify's guarantee, and we provide ongoing support throughout the engagement to ensure optimal project outcomes and client satisfaction."
+                question: "What are the advantages of temporary staffing solutions for tech companies?",
+                answer: "Temporary staffing solutions offer tech companies immediate access to specialized skills, reduced hiring risks, and cost flexibility. Thinkify's temporary staffing solutions provide elite engineering talent on-demand, allowing companies to scale teams based on project needs, access specialized expertise without long-term commitments, and maintain competitive advantage through rapid talent deployment and flexible resource management."
               },
               {
-                question: "What are the cost benefits of Thinkify's model?",
-                answer: "Thinkify's contingent staffing model delivers significant cost advantages compared to traditional hiring. Companies save 40-60% on total talent costs by eliminating recruitment fees, reducing overhead, and paying only for active work. Additional benefits include faster time-to-market, reduced risk through trial periods, and the ability to scale resources based on actual project needs rather than maintaining full-time staff for variable workloads."
+                question: "How does Thinkify ensure quality in contingent workforce management?",
+                answer: "Thinkify ensures quality in contingent workforce management through our rigorous 5-stage vetting process, continuous performance monitoring, and dedicated success managers. Our contingent workforce management includes comprehensive quality assurance, regular feedback loops, and ongoing support to maintain high standards while providing the flexibility and cost benefits of contingent hiring solutions."
               }
             ].map((faq, index) => (
               <motion.div

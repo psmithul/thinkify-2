@@ -5,4 +5,30 @@ Allow: /
 Sitemap: https://www.thinkify.io/sitemap.xml
 
 # Crawl-delay to prevent server overload
-Crawl-delay: 1 
+Crawl-delay: 1
+
+# Allow specific directories
+Allow: /developers/
+Allow: /ppt/
+Allow: /contingent-hiring/
+Allow: /temporary-staffing/
+Allow: /contract-hiring/
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2 
