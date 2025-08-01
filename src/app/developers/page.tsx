@@ -1,0 +1,1459 @@
+'use client';
+
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import Link from 'next/link';
+import Navigation from '@/components/Navigation';
+
+import CompanyCarousel from '@/components/CompanyCarousel';
+import CompanyCarouselMini from '@/components/CompanyCarouselMini';
+
+import { CheckIcon, StarIcon, ArrowRightIcon, PlayIcon, SparklesIcon, RocketLaunchIcon, BoltIcon, TrophyIcon, UserGroupIcon, CurrencyDollarIcon, ChartBarIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
+
+export default function DevelopersPage() {
+  const heroRef = useRef<HTMLElement>(null);
+  const alumnisRef = useRef<HTMLElement>(null);
+  const problemRef = useRef<HTMLElement>(null);
+  const solutionRef = useRef<HTMLElement>(null);
+  const workRef = useRef<HTMLElement>(null);
+  const testimonialsRef = useRef<HTMLElement>(null);
+  
+  const [selectedCandidate, setSelectedCandidate] = useState(0);
+  
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 300], [0, 100]);
+  const y2 = useTransform(scrollY, [0, 300], [0, -100]);
+
+  const heroInView = useInView(heroRef, { once: true });
+  const alumnisInView = useInView(alumnisRef, { once: true });
+  const problemInView = useInView(problemRef, { once: true });
+  const solutionInView = useInView(solutionRef, { once: true });
+  const workInView = useInView(workRef, { once: true });
+  const testimonialsInView = useInView(testimonialsRef, { once: true });
+
+  const candidates = [
+    {
+      name: 'Sagar Giri',
+      title: 'Software Development Engineer',
+      company: '@ Uber',
+      image: '/Sagargiri.jpeg',
+      testimonial: "I've shipped products used by millions of users. Thinkify connected me with companies where I can make real impact—not just maintain legacy systems. The projects here actually matter.",
+      timeToBigTech: '4 months',
+      journey: 'Read Epic Journey',
+      linkedin: 'https://www.linkedin.com/in/sagargiri07/'
+    },
+    {
+      name: 'Sulabh Biswas',
+      title: 'Software Development Engineer',
+      company: '@ Flipkart',
+      image: '/SulabhBiswas.jpeg',
+      testimonial: "Working on Flipkart's core infrastructure has been incredible. Thinkify matched me with the perfect role where I can architect systems at scale. The technical challenges here are exactly what I was looking for.",
+      timeToBigTech: '6 months',
+      journey: 'Read Success Story',
+      linkedin: 'https://www.linkedin.com/in/sulabh-biswas/'
+    },
+    {
+      name: 'Purvaja Khatod',
+      title: 'Quality Assurance Engineer',
+      company: '@ Amazon',
+      image: '/Purvajakhatod.jpeg',
+      testimonial: "Building systems that serve millions of customers is intense. Thinkify found me a role where I can work on cutting-edge technology while maintaining work-life balance. Perfect match.",
+      timeToBigTech: '3 months',
+      journey: 'Read Journey',
+      linkedin: 'https://www.linkedin.com/in/purvaja-khatod/'
+    },
+    {
+      name: 'Asharani M.R.',
+      title: 'Software Development Engineer in Test',
+      company: '@ ThoughtSpot',
+      image: '/AsharaniMR.jpeg',
+      testimonial: "Building AI-powered analytics that help businesses make better decisions. Thinkify connected me with ThoughtSpot where I can push the boundaries of ML at scale. The impact here is massive.",
+      timeToBigTech: '5 months',
+      journey: 'Read Story',
+      linkedin: 'https://www.linkedin.com/in/asharani-m-r-34888760/'
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Navigation />
+      
+      
+      {/* Hero Section */}
+      <motion.section
+        ref={heroRef}
+        className="relative flex items-center justify-center bg-white overflow-hidden pt-20 pb-8"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="mb-8"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
+                <span className="font-semibold theme-text-primary">Elite Developer Network</span>
+              </div>
+            </motion.div>
+
+            <motion.h1 
+              initial={{ opacity: 0, y: 50 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="font-display text-5xl md:text-7xl text-black leading-tight mb-8 text-balance"
+            >
+              Ship impactful products
+              <br />
+              Solve real problems
+              <br />
+              <span className="theme-text-primary font-bold">
+                Seize new opportunities
+              </span>
+            </motion.h1>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="font-body text-xl theme-text-muted max-w-3xl mx-auto mb-8 text-balance"
+            >
+              Tackle ambitious challenges that stretch your abilities—from scaling AI systems to architecting platforms used by millions. 
+              We connect you to missions that matter.
+            </motion.p>
+
+            {/* Work with Top Companies */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="mb-12"
+            >
+              <CompanyCarousel 
+                title="These Companies Want to Hire You"
+                subtitle="They're all on Thinkify, actively looking for talent like yours"
+              />
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, delay: 0.6 }}
+            >
+              <Link href="#contact">
+                <motion.button
+                  className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
+                >
+                  Join the Elite Squad
+                  <ArrowRightIcon className="w-5 h-5 ml-2 inline-block" />
+                </motion.button>
+              </Link>
+            </motion.div>
+          </div>
+
+
+        </div>
+      </motion.section>
+
+      {/* Revolutionary Alumni Showcase */}
+      <motion.section
+        ref={alumnisRef}
+        className="py-32 bg-gradient-to-br from-slate-50 via-white to-gray-50 relative overflow-hidden"
+      >
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-72 h-72 theme-bg-primary opacity-5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 theme-bg-secondary opacity-5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 theme-bg-accent opacity-3 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Header Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1 }}
+            className="text-center mb-20"
+          >
+                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
+               <span className="dm-serif-text-regular theme-text-primary font-medium">Plot Twist Stories</span>
+             </div>
+            
+            <h2 className="dm-serif-text-regular text-5xl md:text-7xl theme-text-body mb-8 leading-tight">
+              Shape the Future with a Network of{' '}
+              <span className="theme-gradient-text">Proven Innovators</span>
+            </h2>
+            
+            <p className="font-body text-xl theme-text-muted max-w-4xl mx-auto text-balance leading-relaxed">
+              Join a curated community of senior engineers, product managers, and AI experts. 
+              Engage in professional guilds, exchange knowledge, and collaborate with peers who push you to grow.
+            </p>
+          </motion.div>
+
+
+
+          {/* Alumni Spotlight Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-20">
+            {/* Featured Story */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={alumnisInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="lg:col-span-2"
+            >
+              <div className="bg-white rounded-3xl p-8 relative overflow-hidden h-full border theme-border-surface shadow-xl">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32"></div>
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-24 -translate-x-24"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-8">
+                    <div className="flex items-center gap-4">
+                      <div className="w-20 h-20 rounded-2xl overflow-hidden ring-4 ring-white/30">
+                        <img 
+                          src={candidates[selectedCandidate].image} 
+                          alt={candidates[selectedCandidate].name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="dm-serif-text-regular text-2xl mb-1">{candidates[selectedCandidate].name}</h3>
+                        <p className="theme-text-muted">{candidates[selectedCandidate].title}</p>
+                        <p className="theme-text-primary font-semibold">{candidates[selectedCandidate].company}</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <blockquote className="dm-serif-text-regular-italic text-xl mb-6 leading-relaxed theme-text-body">
+                    "{candidates[selectedCandidate].testimonial}"
+                  </blockquote>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex gap-4">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Success Metrics */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={alumnisInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="space-y-6"
+            >
+              {candidates.map((candidate, index) => (
+                <motion.div
+                  key={candidate.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+                  className={`bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-white/40 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group ${
+                    selectedCandidate === index ? 'ring-2 ring-purple-500 shadow-xl' : ''
+                  }`}
+                  onClick={() => setSelectedCandidate(index)}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-xl overflow-hidden ring-2 ring-gray-100 group-hover:ring-gray-200 transition-all">
+                      <img src={candidate.image} alt={candidate.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="dm-serif-text-regular text-lg theme-text-body mb-1">{candidate.name}</h4>
+                      <p className="text-sm theme-text-muted">{candidate.company}</p>
+                    </div>
+                    {selectedCandidate === index && (
+                      <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={alumnisInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-center"
+          >
+                         <div className="bg-white rounded-3xl p-12 border theme-border-surface shadow-xl relative overflow-hidden max-w-4xl mx-auto">
+              <div className="absolute top-0 left-0 w-full h-full opacity-10">
+                <div className="absolute top-8 left-8 w-24 h-24 border-2 border-white rounded-full"></div>
+                <div className="absolute bottom-8 right-8 w-32 h-32 border-2 border-white rounded-full"></div>
+                <div className="absolute top-1/2 left-1/4 w-16 h-16 border-2 border-white rounded-full"></div>
+              </div>
+              
+              <div className="relative z-10">
+                <h3 className="dm-serif-text-regular text-4xl mb-6 theme-text-body">Ready to join the elite network?</h3>
+                <p className="text-xl theme-text-muted mb-8 max-w-2xl mx-auto">
+                  <strong>800+ developers</strong> are already building impactful products and solving real problems. 
+                  They're working on cutting-edge technology and driving innovation. 
+                  <strong className="theme-text-primary">Your next project awaits.</strong>
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
+                  >
+                    Join the Revolution
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="border-2 theme-border-primary theme-text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:theme-bg-primary hover:theme-text-body transition-all duration-300"
+                    onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
+                  >
+                    See If You Qualify
+                  </motion.button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+
+
+
+      {/* Revolutionary Problem Section - "Finding it impossible to stand out" */}
+      <motion.section
+        ref={problemRef}
+        className="py-32 bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50 relative overflow-hidden"
+      >
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-20 left-20 w-64 h-64 bg-red-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Header */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={problemInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-emerald-200 shadow-lg mb-8">
+              <span className="font-semibold text-emerald-700">What You Get</span>
+            </div>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              animate={problemInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-5xl md:text-7xl font-bold theme-text-body mb-8 leading-tight">
+                Collaborate directly with{' '}
+                <span className="text-emerald-600 font-extrabold">product leaders</span>
+                <br />
+                <span className="theme-text-body">on core initiatives</span>
+                <br />
+                <span className="text-2xl theme-text-muted">
+                  Not just bug fixes.
+                </span>
+              </h2>
+              
+              <p className="text-xl theme-text-muted mb-8 leading-relaxed">
+                Work on the projects that matter—building new features, architecting systems, and making product decisions. 
+                No more maintaining legacy code or fixing edge cases.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={problemInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative"
+            >
+              {/* Pain Points Grid */}
+              <div className="relative">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-6">
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={problemInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.6, delay: 0.5 }}
+                      className="bg-emerald-100 border-2 border-emerald-300 rounded-2xl p-6 text-center relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/50 to-emerald-300/30"></div>
+                      <div className="relative z-10">
+                        <div className="text-3xl mb-3">🚀</div>
+                        <div className="text-sm font-bold text-emerald-800">Full Autonomy</div>
+                        <div className="text-xs text-emerald-600 mt-2">Own your decisions</div>
+                      </div>
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={problemInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.6, delay: 0.7 }}
+                      className="bg-blue-100 border-2 border-blue-300 rounded-2xl p-6 text-center relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-200/50 to-blue-300/30"></div>
+                      <div className="relative z-10">
+                        <div className="text-3xl mb-3">⚡</div>
+                        <div className="text-sm font-bold text-blue-800">Complete Flexibility</div>
+                        <div className="text-xs text-blue-600 mt-2">Work-life harmony</div>
+                      </div>
+                    </motion.div>
+                  </div>
+                  <div className="space-y-6 mt-8">
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={problemInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.6, delay: 0.9 }}
+                      className="bg-purple-100 border-2 border-purple-300 rounded-2xl p-6 text-center relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-200/50 to-purple-300/30"></div>
+                      <div className="relative z-10">
+                        <div className="text-3xl mb-3">💎</div>
+                        <div className="text-sm font-bold text-purple-800">Cutting-Edge Tech</div>
+                        <div className="text-xs text-purple-600 mt-2">Latest technologies</div>
+                      </div>
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={problemInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.6, delay: 1.1 }}
+                      className="theme-bg-surface border-2 theme-border-surface rounded-2xl p-6 text-center relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-200/50 to-gray-300/30"></div>
+                      <div className="relative z-10">
+                        <div className="text-3xl mb-3">📈</div>
+                        <div className="text-sm font-bold theme-text-body">Rapid Growth</div>
+                        <div className="text-xs theme-text-muted mt-2">Clear advancement path</div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+
+                {/* Floating Pain Indicators */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={problemInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 1.3 }}
+                  className="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-emerald-200"
+                >
+                  <div className="text-xs font-bold text-emerald-700">Success Rate</div>
+                  <div className="text-2xl font-bold text-emerald-600">91%</div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Revolutionary Solution Section - "What if such a platform exists?" */}
+      <motion.section
+        ref={solutionRef}
+        className="py-32 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative overflow-hidden"
+      >
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-50">
+          <div className="absolute top-20 right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-1/3 left-1/3 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={solutionInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="relative mb-20"
+          >
+            {/* Background Elements */}
+            <div className="absolute inset-0 -z-10">
+              <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-orange-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            </div>
+
+            {/* Main Content */}
+            <div className="max-w-6xl mx-auto">
+              {/* Badge */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={solutionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-center mb-12"
+              >
+                <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/10 to-orange-500/10 backdrop-blur-md border border-purple-200/50 shadow-lg">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full animate-pulse"></div>
+                  <span className="font-semibold text-purple-700">Your Success Partner</span>
+                  <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                </div>
+              </motion.div>
+
+              {/* Hero Heading */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={solutionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-center mb-12"
+              >
+                <h2 className="text-6xl md:text-8xl font-black mb-6 leading-none">
+                  <span className="text-gray-800">Your</span>
+                  <br />
+                  <span className="theme-gradient-text">
+                    success
+                  </span>
+                  <br />
+                  <span className="theme-gradient-text">
+                    accelerator
+                  </span>
+                </h2>
+                <div className="text-3xl md:text-4xl font-bold text-gray-600">
+                  platform
+                </div>
+              </motion.div>
+
+              {/* Description */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={solutionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-center mb-16"
+              >
+                <p className="text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed mb-8">
+                  <strong className="text-gray-900">Here's how we transform careers:</strong> We don't just find you jobs—we position you as the developer 
+                  companies actively pursue.
+                </p>
+                
+                {/* Feature Highlights */}
+                <div className="flex flex-wrap justify-center gap-6 mb-8">
+                  {[
+                    { text: 'Strategic positioning', icon: '🎯' },
+                    { text: 'Career acceleration', icon: '🚀' },
+                    { text: 'Direct opportunities', icon: '⚡' }
+                  ].map((item, index) => (
+                    <motion.div
+                      key={item.text}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={solutionInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                      className="flex items-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      <span className="text-2xl">{item.icon}</span>
+                      <span className="font-semibold text-gray-800">{item.text}</span>
+                      <span className="text-green-500 text-xl">✓</span>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className="text-2xl font-bold">
+                  <span className="theme-gradient-text">
+                    All completely free.
+                  </span>
+                  <span className="text-gray-600 ml-2">(Yes, really.)</span>
+                </div>
+              </motion.div>
+
+              {/* Feature Pills */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={solutionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex flex-wrap justify-center gap-4"
+              >
+                {['100% Free Platform', 'Strategic Positioning', 'Direct Opportunities', 'Perfect Job Matching', 'Career Acceleration'].map((feature, index) => (
+                  <motion.div
+                    key={feature}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={solutionInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
+                    className="px-6 py-3 bg-gradient-to-r from-purple-500/10 to-orange-500/10 backdrop-blur-sm rounded-full border border-purple-200/50 font-semibold text-purple-700 hover:from-purple-500/20 hover:to-orange-500/20 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  >
+                    {feature}
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Enhanced Solution Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                title: 'Perfect Job Matching',
+                subtitle: 'AI-powered precision',
+                description: 'Our advanced algorithms analyze 500+ data points to match you with companies that align perfectly with your skills, values, and career aspirations.',
+                color: 'from-blue-500 to-purple-500',
+                features: ['Skills alignment', 'Culture fit analysis', 'Career path mapping', 'Opportunity benchmarking'],
+                stats: { value: '95%', label: 'Match Accuracy' }
+              },
+              {
+                title: 'Accelerated Hiring',
+                subtitle: '3x faster than traditional methods',
+                description: 'Skip the endless applications and waiting. Our proven process connects you directly with hiring managers actively seeking your expertise.',
+                color: 'from-emerald-500 to-teal-500',
+                features: ['Direct hiring manager access', 'Fast-track assessments', 'Skip initial screenings', 'Priority consideration'],
+                stats: { value: '21', label: 'Days Average' }
+              },
+              {
+                title: 'Elite Negotiation Support',
+                subtitle: 'Maximize your opportunity impact',
+                description: 'Our expert negotiators secure roles with strategic alignment to your goals. We advocate for your next big leap — not just a job, but your ideal opportunity.',
+                color: 'from-green-500 to-emerald-500',
+                features: ['Role benchmarking', 'Opportunity optimization', 'Expert negotiators', 'Strategic fit analysis'],
+                stats: { value: 'Career Acceleration', label: 'Unlocked' }
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={solutionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="group relative bg-white/80 backdrop-blur-lg rounded-3xl p-8 border border-white/50 shadow-2xl hover:shadow-3xl transition-all duration-700 overflow-hidden"
+              >
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-3 transition-opacity duration-700`}></div>
+                
+                {/* Floating Elements */}
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute bottom-6 left-6 w-8 h-8 bg-emerald-400/20 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
+                
+                <div className="relative z-10">
+                  {/* Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${item.color} rounded-2xl flex items-center justify-center text-3xl shadow-lg`}>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold theme-text-primary">{item.stats.value}</div>
+                      <div className="text-xs theme-text-muted">{item.stats.label}</div>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-2xl font-bold theme-text-body mb-2">{item.title}</h3>
+                  <p className="text-sm font-medium text-emerald-600 mb-4">{item.subtitle}</p>
+                  <p className="theme-text-muted mb-6 leading-relaxed">{item.description}</p>
+
+                  {/* Features List */}
+                  <div className="space-y-3 mb-6">
+                    {item.features.map((feature, featureIndex) => (
+                      <motion.div
+                        key={feature}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={solutionInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.4, delay: index * 0.2 + featureIndex * 0.1 }}
+                        className="flex items-center gap-3"
+                      >
+                        <div className={`w-2 h-2 bg-gradient-to-r ${item.color} rounded-full`}></div>
+                        <span className="text-sm theme-text-muted">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* CTA Button */}
+                  <button className="w-full py-3 px-6 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl font-semibold theme-text-muted opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 hover:from-emerald-100 hover:to-teal-100 hover:text-emerald-700">
+                    Learn More →
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={solutionInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-center"
+          >
+            <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-12 border border-white/40 shadow-2xl max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold theme-text-body mb-6">Ready to Transform Your Career?</h3>
+              <p className="theme-text-muted mb-8 text-lg">
+                <strong>10,000+ developers</strong> have already accelerated their careers through Thinkify. 
+                They're working with cutting-edge technology, earning competitive salaries, and building fulfilling careers. 
+                <strong className="theme-text-primary">Your success story starts today.</strong>
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl"
+                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
+                >
+                  Let's Do This!
+                </motion.button>
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white/80 theme-text-muted border-2 theme-border-surface px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white transition-all duration-300"
+                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
+                >
+                  Just Show Me How
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Revolutionary Target Audience Section - "Thinkify is for developers who:" */}
+      <motion.section className="py-32 bg-white relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-pink-600/10"></div>
+          <div className="absolute top-20 right-20 w-72 h-72 theme-bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 theme-bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 theme-bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border theme-border-primary shadow-lg mb-8">
+              <div className="w-2 h-2 theme-bg-primary rounded-full animate-pulse"></div>
+              <span className="font-semibold theme-text-primary">Elite Developer Criteria</span>
+            </div>
+
+            <h2 className="text-5xl md:text-7xl font-bold theme-text-body mb-8 leading-tight">
+              <span className="theme-text-primary">Thinkify</span>
+              <span className="theme-text-body"> is for </span>
+              <br />
+              <span className="relative inline-block">
+                <span className="theme-text-body">elite developers</span>
+                <motion.div 
+                  className="absolute -bottom-2 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full shadow-lg"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 1.2, delay: 0.5 }}
+                />
+              </span>
+              <span className="theme-text-body"> who:</span>
+            </h2>
+            
+            <p className="text-xl theme-text-muted max-w-4xl mx-auto leading-relaxed">
+              We're extremely selective. Only the top-tier developers who meet our rigorous standards 
+              gain access to our exclusive network of premium opportunities.
+            </p>
+          </motion.div>
+
+          {/* Enhanced Criteria Grid */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            {[
+              {
+                title: 'Proven Technical Excellence',
+                subtitle: 'Minimum 4+ years of hands-on experience',
+                description: 'You have deep expertise in full-stack development, MERN stack, frontend, or backend technologies. Your code speaks for itself.',
+                requirements: ['4+ years experience', 'Full-stack or specialized expertise', 'Strong portfolio/GitHub', 'Production-level projects'],
+                gradient: 'from-yellow-500 to-orange-500',
+                stats: { value: '4+', label: 'Years Required' }
+              },
+              {
+                title: 'Value-Driven Partnership',
+                subtitle: '100% free platform for developers',
+                description: 'You understand that the best platforms invest in talent, not exploit it. We charge hiring partners, never developers.',
+                requirements: ['Zero platform fees', 'No hidden costs', 'Revenue from companies', 'Developer-first approach'],
+                gradient: 'from-emerald-500 to-teal-500',
+                stats: { value: '0%', label: 'Developer Fees' }
+              },
+              {
+                title: 'Time-Conscious Professional',
+                subtitle: 'Skip the negotiation hassles',
+                description: 'You value your time and want expert negotiators fighting for your worth, not wasting months in back-and-forth discussions.',
+                requirements: ['Expert negotiation support', 'Market-rate opportunities', 'Time-efficient process', 'Professional representation'],
+                gradient: 'from-blue-500 to-purple-500',
+                stats: { value: 'Fast-Tracked', label: 'Career Moves' }
+              },
+              {
+                title: 'Career-Focused Mindset',
+                subtitle: 'Lifelong growth partner',
+                description: 'You\'re not just looking for a job - you want a career transformation partner invested in making you a top-tier, marketable talent.',
+                requirements: ['Long-term career planning', 'Skill development support', 'Market positioning', 'Growth mentorship'],
+                gradient: 'from-purple-500 to-pink-500',
+                stats: { value: '5x', label: 'Career Growth' }
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="group relative bg-white/90 backdrop-blur-lg rounded-3xl p-8 border theme-border-surface shadow-2xl hover:shadow-3xl transition-all duration-700 overflow-hidden hover:bg-white"
+              >
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-3 transition-opacity duration-700`}></div>
+                
+                {/* Floating Elements */}
+                <div className="absolute top-4 right-4 w-8 h-8 theme-bg-primary/10 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute bottom-6 left-6 w-6 h-6 theme-bg-secondary/10 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
+                
+                <div className="relative z-10">
+                  {/* Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center text-3xl shadow-lg`}>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold theme-text-primary">{item.stats.value}</div>
+                      <div className="text-xs theme-text-muted">{item.stats.label}</div>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-2xl font-bold theme-text-body mb-2">{item.title}</h3>
+                  <p className="text-sm font-medium theme-text-primary mb-4">{item.subtitle}</p>
+                  <p className="theme-text-muted mb-6 leading-relaxed">{item.description}</p>
+
+                  {/* Requirements List */}
+                  <div className="space-y-3">
+                    {item.requirements.map((req, reqIndex) => (
+                      <motion.div
+                        key={req}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: index * 0.2 + reqIndex * 0.1 }}
+                        className="flex items-center gap-3"
+                      >
+                        <div className={`w-2 h-2 bg-gradient-to-r ${item.gradient} rounded-full`}></div>
+                        <span className="text-sm theme-text-muted">{req}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-center"
+          >
+            <div className="bg-white/90 backdrop-blur-lg rounded-3xl p-12 border theme-border-surface shadow-2xl max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold theme-text-body mb-6">Think You're Elite Material?</h3>
+              <p className="theme-text-muted mb-8 text-lg">
+              Only 15% of applicants make it through our vetting process. Join the exclusive network of top-tier developers working on industry-defining projects and accelerating their careers…
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
+                >
+                  Apply for Elite Status
+                </motion.button>
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white theme-text-body border-2 theme-border-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/90 transition-all duration-300"
+                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
+                >
+                  Learn About Vetting
+                </motion.button>
+              </div>
+              
+              {/* Stats Footer */}
+              <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t theme-border-surface">
+                {[
+                  { stat: '15%', label: 'Acceptance Rate' },
+                  { stat: '10x', label: 'Oppurtunity Access' },
+                  { stat: '95%', label: 'Satisfaction Rate' }
+                ].map((item, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-2xl font-bold theme-text-primary">{item.stat}</div>
+                    <div className="text-xs theme-text-muted">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Why developers love Thinkify - Completely Reimagined */}
+      <motion.section className="py-32 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 theme-bg-primary opacity-5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 theme-bg-secondary opacity-5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 theme-bg-accent opacity-3 rounded-full blur-3xl animate-pulse delay-2000"></div>
+          
+          {/* Floating Code Snippets */}
+          <div className="absolute top-20 right-20 opacity-10 text-xs theme-text-muted font-mono transform rotate-12">
+            <div className="bg-slate-900 rounded-lg p-3">
+              <div className="text-green-400">const career = await thinkify.transform();</div>
+            </div>
+          </div>
+          <div className="absolute bottom-32 left-20 opacity-10 text-xs theme-text-muted font-mono transform -rotate-12">
+            <div className="bg-slate-900 rounded-lg p-3">
+              <div className="theme-text-primary-80">{"{ success: true, growth: '2x' }"}</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Revolutionary Header */}
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-center mb-20"
+          >
+            {/* Floating Badge */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-white to-gray-50 border theme-border-surface shadow-xl mb-8 backdrop-blur-sm"
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 theme-bg-secondary rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 theme-bg-primary rounded-full animate-pulse delay-200"></div>
+                <div className="w-2 h-2 theme-bg-primary rounded-full animate-pulse delay-400"></div>
+              </div>
+              <span className="font-bold theme-text-primary">Why 10K+ Developers Choose Us</span>
+              <SparklesIcon className="w-6 h-6 theme-text-primary animate-pulse" />
+            </motion.div>
+            
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-5xl md:text-7xl font-bold theme-text-body mb-8 leading-tight"
+            >
+              <span className="theme-text-primary">Thinkify</span>
+              <span className="theme-text-body"> is for </span>
+              <br />
+              <span className="relative inline-block">
+                <span className="theme-text-body">elite developers</span>
+                <motion.div 
+                  className="absolute -bottom-2 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full shadow-lg"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 1.2, delay: 0.5 }}
+                />
+              </span>
+              <span className="theme-text-body"> who:</span>
+            </motion.h2>
+            
+            <p className="text-xl theme-text-muted max-w-4xl mx-auto leading-relaxed">
+              We're extremely selective. Only the top-tier developers who meet our rigorous standards 
+              gain access to our exclusive network of premium opportunities.
+            </p>
+          </motion.div>
+
+          {/* Enhanced Criteria Grid */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            {[
+              {
+                title: 'Proven Technical Excellence',
+                subtitle: 'Minimum 4+ years of hands-on experience',
+                description: 'You have deep expertise in full-stack development, MERN stack, frontend, or backend technologies. Your code speaks for itself.',
+                requirements: ['4+ years experience', 'Full-stack or specialized expertise', 'Strong portfolio/GitHub', 'Production-level projects'],
+                gradient: 'from-yellow-500 to-orange-500',
+                stats: { value: '4+', label: 'Years Required' }
+              },
+              {
+                title: 'Value-Driven Partnership',
+                subtitle: '100% free platform for developers',
+                description: 'You understand that the best platforms invest in talent, not exploit it. We charge hiring partners, never developers.',
+                requirements: ['Zero platform fees', 'No hidden costs', 'Revenue from companies', 'Developer-first approach'],
+                gradient: 'from-emerald-500 to-teal-500',
+                stats: { value: '0%', label: 'Developer Fees' }
+              },
+              {
+                title: 'Time-Conscious Professional',
+                subtitle: 'Skip the negotiation hassles',
+                description: 'You value your time and want expert negotiators fighting for your worth, not wasting months in back-and-forth discussions.',
+                requirements: ['Expert negotiation support', 'Market-rate opportunities', 'Time-efficient process', 'Professional representation'],
+                gradient: 'from-blue-500 to-purple-500',
+                stats: { value: 'Fast-Tracked', label: 'Career Moves' }
+              },
+              {
+                title: 'Career-Focused Mindset',
+                subtitle: 'Lifelong growth partner',
+                description: 'You\'re not just looking for a job - you want a career transformation partner invested in making you a top-tier, marketable talent.',
+                requirements: ['Long-term career planning', 'Skill development support', 'Market positioning', 'Growth mentorship'],
+                gradient: 'from-purple-500 to-pink-500',
+                stats: { value: '5x', label: 'Career Growth' }
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="group relative bg-white/90 backdrop-blur-lg rounded-3xl p-8 border theme-border-surface shadow-2xl hover:shadow-3xl transition-all duration-700 overflow-hidden hover:bg-white"
+              >
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-3 transition-opacity duration-700`}></div>
+                
+                {/* Floating Elements */}
+                <div className="absolute top-4 right-4 w-8 h-8 theme-bg-primary/10 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute bottom-6 left-6 w-6 h-6 theme-bg-secondary/10 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-500" style={{ animationDelay: '1s' }}></div>
+                
+                <div className="relative z-10">
+                  {/* Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center text-3xl shadow-lg`}>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold theme-text-primary">{item.stats.value}</div>
+                      <div className="text-xs theme-text-muted">{item.stats.label}</div>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-2xl font-bold theme-text-body mb-2">{item.title}</h3>
+                  <p className="text-sm font-medium theme-text-primary mb-4">{item.subtitle}</p>
+                  <p className="theme-text-muted mb-6 leading-relaxed">{item.description}</p>
+
+                  {/* Requirements List */}
+                  <div className="space-y-3">
+                    {item.requirements.map((req, reqIndex) => (
+                      <motion.div
+                        key={req}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: index * 0.2 + reqIndex * 0.1 }}
+                        className="flex items-center gap-3"
+                      >
+                        <div className={`w-2 h-2 bg-gradient-to-r ${item.gradient} rounded-full`}></div>
+                        <span className="text-sm theme-text-muted">{req}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-center"
+          >
+            <div className="bg-white/90 backdrop-blur-lg rounded-3xl p-12 border theme-border-surface shadow-2xl max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold theme-text-body mb-6">Think You're Elite Material?</h3>
+              <p className="theme-text-muted mb-8 text-lg">
+              Only 15% of applicants make it through our vetting process. Join the exclusive network of top-tier developers working on industry-defining projects and accelerating their careers…
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
+                >
+                  Apply for Elite Status
+                </motion.button>
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white theme-text-body border-2 theme-border-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/90 transition-all duration-300"
+                  onClick={() => window.open('https://connect.thinkify.io', '_blank', 'noopener,noreferrer')}
+                >
+                  Learn About Vetting
+                </motion.button>
+              </div>
+              
+              {/* Stats Footer */}
+              <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t theme-border-surface">
+                {[
+                  { stat: '15%', label: 'Acceptance Rate' },
+                  { stat: '10x', label: 'Oppurtunity Access' },
+                  { stat: '95%', label: 'Satisfaction Rate' }
+                ].map((item, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-2xl font-bold theme-text-primary">{item.stat}</div>
+                    <div className="text-xs theme-text-muted">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Why developers love Thinkify - Completely Reimagined */}
+      <motion.section className="py-32 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 theme-bg-primary opacity-5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 theme-bg-secondary opacity-5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 theme-bg-accent opacity-3 rounded-full blur-3xl animate-pulse delay-2000"></div>
+          
+          {/* Floating Code Snippets */}
+          <div className="absolute top-20 right-20 opacity-10 text-xs theme-text-muted font-mono transform rotate-12">
+            <div className="bg-slate-900 rounded-lg p-3">
+              <div className="text-green-400">const career = await thinkify.transform();</div>
+            </div>
+          </div>
+          <div className="absolute bottom-32 left-20 opacity-10 text-xs theme-text-muted font-mono transform -rotate-12">
+            <div className="bg-slate-900 rounded-lg p-3">
+              <div className="theme-text-primary-80">{"{ success: true, growth: '2x' }"}</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Revolutionary Header */}
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-center mb-20"
+          >
+            {/* Floating Badge */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-white to-gray-50 border theme-border-surface shadow-xl mb-8 backdrop-blur-sm"
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 theme-bg-secondary rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 theme-bg-primary rounded-full animate-pulse delay-200"></div>
+                <div className="w-2 h-2 theme-bg-primary rounded-full animate-pulse delay-400"></div>
+              </div>
+              <span className="font-bold theme-text-primary">Why 10K+ Developers Choose Us</span>
+              <SparklesIcon className="w-6 h-6 theme-text-primary animate-pulse" />
+            </motion.div>
+            
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-5xl md:text-7xl font-bold theme-text-body mb-8 leading-tight"
+            >
+              <span className="theme-gradient-text">Elite developers</span> don't just{' '}
+              work here
+              <br />
+              <span className="theme-text-body">They</span>{' '}
+              <span className="theme-gradient-text">thrive here</span>
+            </motion.h2>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-xl theme-text-muted max-w-4xl mx-auto mb-4 leading-relaxed"
+            >
+              We don't just find you jobs. We architect careers, build futures, and create legends. 
+              Here's how we're revolutionizing the developer experience.
+            </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="flex items-center justify-center gap-4 text-lg"
+            >
+              <div className="flex items-center gap-2 theme-text-primary font-semibold">
+                <BoltIcon className="w-5 h-5" />
+                <span>Game-changing</span>
+              </div>
+              <div className="w-2 h-2 bg-slate-400 rounded-full"></div>
+              <div className="flex items-center gap-2 theme-text-primary font-semibold">
+                <RocketLaunchIcon className="w-5 h-5" />
+                <span>Career-defining</span>
+              </div>
+              <div className="w-2 h-2 bg-slate-400 rounded-full"></div>
+              <div className="flex items-center gap-2 theme-text-primary font-semibold">
+                <TrophyIcon className="w-5 h-5" />
+                <span>Life-changing</span>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Interactive Feature Grid */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-20">
+            {[
+              {
+                id: 'security',
+                title: 'Total Career Protection',
+                subtitle: 'Your success is our guarantee',
+                description: 'Full-spectrum career insurance including health benefits, legal support, and contract negotiation. We fight for your rights every step of the way.',
+                features: ['Comprehensive health insurance', 'Legal contract review', 'Strategic positioning support', '24/7 career guidance'],
+                image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&h=400&fit=crop',
+                gradient: 'from-emerald-500 to-teal-600',
+                stats: { value: '100%', label: 'Protection Rate' }
+              },
+              {
+                id: 'global',
+                title: 'Global Elite Network',
+                subtitle: 'Join the world\'s top 1%',
+                description: 'Exclusive access to a curated community of world-class developers. Network with industry leaders, share knowledge, and grow together.',
+                features: ['Vetted global developer pool', 'Exclusive networking events', 'Mentorship programs', 'Industry insider access'],
+                image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=400&fit=crop',
+                gradient: 'from-blue-500 to-purple-600',
+                stats: { value: '50K+', label: 'Elite Developers' }
+              },
+              {
+                id: 'growth',
+                title: 'Exponential Growth Engine',
+                subtitle: 'Your career, supercharged',
+                description: 'Personalized career acceleration with AI-powered matching, skill development, and strategic positioning for maximum growth potential.',
+                features: ['AI-powered career matching', 'Skill gap analysis', 'Growth trajectory planning', 'Performance optimization'],
+                image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
+                gradient: 'from-orange-500 to-red-500',
+                stats: { value: '3.2x', label: 'Career Growth Rate' }
+              },
+              {
+                id: 'events',
+                title: 'Exclusive Access Hub',
+                subtitle: 'Learn from the legends',
+                description: 'Private events with tech titans, exclusive workshops, and insider sessions. Get direct access to the minds shaping the future of technology.',
+                features: ['Monthly tech titan talks', 'Exclusive workshops', 'Beta product access', 'Industry trend insights'],
+                image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop',
+                gradient: 'from-pink-500 to-rose-500',
+                stats: { value: '200+', label: 'Annual Events' }
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="group relative"
+              >
+                <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
+                  {/* Gradient Header */}
+                  <div className={`h-2 bg-gradient-to-r ${feature.gradient}`}></div>
+                  
+                  {/* Main Content */}
+                  <div className="p-8">
+                    {/* Header Section */}
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="flex items-center gap-4">
+                        <div className={`w-16 h-16 bg-gradient-to-r ${feature.gradient} rounded-2xl flex items-center justify-center text-2xl shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+                        </div>
+                        <div>
+                          <h3 className="text-2xl font-bold theme-text-body mb-1">{feature.title}</h3>
+                          <p className="text-sm theme-text-primary font-medium">{feature.subtitle}</p>
+                        </div>
+                      </div>
+                      
+                      {/* Stats Badge */}
+                      <div className="text-right">
+                        <div className="text-2xl font-bold theme-text-primary">
+                          {feature.stats.value}
+                        </div>
+                        <div className="text-xs theme-text-muted">{feature.stats.label}</div>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="theme-text-muted mb-6 leading-relaxed">{feature.description}</p>
+
+                    {/* Feature List */}
+                    <div className="space-y-3 mb-6">
+                      {feature.features.map((item, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.4, delay: index * 0.2 + idx * 0.1 }}
+                          className="flex items-center gap-3"
+                        >
+                          <div className={`w-2 h-2 bg-gradient-to-r ${feature.gradient} rounded-full`}></div>
+                          <span className="text-sm theme-text-muted">{item}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    {/* Image with Overlay */}
+                    <div className="relative rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                      <img 
+                        src={feature.image} 
+                        alt={feature.title}
+                        className="w-full h-48 object-cover"
+                      />
+                      <div className={`absolute inset-0 bg-gradient-to-t ${feature.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300`}></div>
+                      
+                      {/* Floating Action Button */}
+                      <motion.div 
+                        className="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <ArrowRightIcon className="w-5 h-5 theme-text-muted" />
+                      </motion.div>
+                    </div>
+                  </div>
+
+                  {/* Hover Effect Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Success Metrics Dashboard */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-white rounded-3xl p-8 md:p-12 theme-text-body border theme-border-surface shadow-xl relative overflow-hidden"
+          >
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-3">
+              <div className="absolute top-0 left-0 w-full h-full" style={{
+                backgroundImage: `radial-gradient(circle at 25% 25%, rgba(0,0,0,0.05) 0%, transparent 50%),
+                                 radial-gradient(circle at 75% 75%, rgba(0,0,0,0.05) 0%, transparent 50%)`
+              }}></div>
+            </div>
+
+            <div className="relative z-10">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl md:text-4xl font-bold mb-4 theme-text-body">
+                  The Numbers Don't Lie
+                </h3>
+                <p className="theme-text-muted text-lg max-w-2xl mx-auto">
+                  Real results from real developers who chose to level up with Thinkify
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-4 gap-8">
+                {[
+                  { value: '98.7%', label: 'Success Rate' },
+                  { value: '15 days', label: 'Avg. Hire Time' },
+                  { value: 'Strategic', label: 'Role Matching' },
+                  { value: '10K+', label: 'Happy Developers' }
+                ].map((metric, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="text-center group"
+                  >
+                    <div className="mb-2">
+                    </div>
+                    <div className="text-3xl md:text-4xl font-bold theme-text-primary mb-2">
+                      {metric.value}
+                    </div>
+                    <div className="theme-text-muted text-sm">{metric.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Comprehensive Developer FAQ Section */}
+      <section className="py-32 bg-gradient-to-br from-white via-gray-50 to-white relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold theme-text-body mb-6">
+              Developer FAQ
+            </h2>
+            <p className="text-xl theme-text-muted max-w-3xl mx-auto">
+              Everything elite developers need to know about joining Thinkify's exclusive network and accelerating their careers.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {[
+              {
+                question: "What are the requirements to join Thinkify's elite network?",
+                answer: "Thinkify maintains rigorous standards for our elite developer network. Requirements include minimum 4+ years of hands-on experience, proven technical expertise in full-stack development or specialized domains, strong portfolio with production-level projects, excellent communication skills, and a track record of successful project delivery. Our acceptance rate is 15% to ensure only the top 1% of engineering talent joins our network."
+              },
+              {
+                question: "How does Thinkify's vetting process work?",
+                answer: "Our comprehensive 5-stage vetting process evaluates technical skills, cultural fit, communication abilities, and delivery capability. This includes technical assessments, portfolio reviews, behavioral interviews, reference checks, and trial project evaluations. The process typically takes 2-3 weeks and ensures that only developers who meet our elite standards join the Thinkify network."
+              },
+              {
+                question: "What career benefits do Thinkify developers receive?",
+                answer: "Thinkify developers enjoy exclusive access to premium opportunities, higher compensation rates, comprehensive health insurance, legal support, career guidance, and networking with industry leaders. We provide strategic positioning, contract negotiation support, and ongoing career development resources. Our developers typically see 2-3x salary increases and accelerated career growth compared to traditional employment."
+              },
+              {
+                question: "How does Thinkify handle project matching and opportunities?",
+                answer: "Thinkify uses advanced AI-powered matching to connect developers with projects that align with their skills, interests, and career goals. Our platform considers technical requirements, company culture, project scope, and developer preferences to ensure optimal matches. We provide detailed project information upfront and support throughout the engagement to ensure successful outcomes."
+              },
+              {
+                question: "What support does Thinkify provide during projects?",
+                answer: "Thinkify provides comprehensive support throughout project engagements including dedicated success managers, technical guidance, conflict resolution, performance optimization, and career development resources. We offer 24/7 support, regular check-ins, feedback loops, and ongoing professional development opportunities to ensure our developers thrive in every project."
+              },
+              {
+                question: "How does Thinkify's revenue model work for developers?",
+                answer: "Thinkify operates on a developer-first model where we charge hiring partners, never developers. Our developers receive 100% of their negotiated rates with no platform fees, hidden costs, or commission deductions. We invest in our developer network through comprehensive benefits, career support, and exclusive opportunities rather than taking fees from developer earnings."
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+              >
+                <h3 className="text-xl font-bold theme-text-body mb-4">{faq.question}</h3>
+                <p className="theme-text-muted leading-relaxed">{faq.answer}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
+            <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-3xl p-8 border border-purple-100">
+              <h3 className="text-2xl font-bold theme-text-body mb-4">
+                Ready to Join the Elite Developer Network?
+              </h3>
+              <p className="text-lg theme-text-muted mb-6 max-w-2xl mx-auto">
+                Join thousands of elite developers who have accelerated their careers with Thinkify. 
+                Experience the future of professional development today.
+              </p>
+              <Link href="https://connect.thinkify.io" className="btn-cosmic-primary px-8 py-4 text-lg">
+                Apply for Elite Status
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="relative bg-gradient-to-br from-slate-50 via-white to-gray-50 py-8 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-center md:text-left mb-4 md:mb-0">
+            <div className="theme-text-muted text-sm mb-1">
+              © 2024 Thinkify Technologies Pvt Ltd. All rights reserved.
+            </div>
+            <div className="theme-text-muted font-semibold text-sm">
+              Elite Tech Talent, Delivered.
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-center md:justify-end gap-4">
+            <a href="#" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Privacy Policy</a>
+            <a href="#" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Terms</a>
+            <a href="#" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Contact</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+} 

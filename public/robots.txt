@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.thinkify.io/sitemap.xml
+
+# Crawl-delay to prevent server overload
+Crawl-delay: 1 
