@@ -81,10 +81,10 @@ export default function RootLayout({
                 "addressRegion": "Karnataka",
                 "addressCountry": "IN"
               },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91-9876543210",
-                "contactType": "customer service",
+                      "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "kulkarni.karthik@thinkify.io",
+          "contactType": "customer service",
                 "areaServed": "IN",
                 "availableLanguage": "English"
               },
@@ -120,7 +120,7 @@ export default function RootLayout({
                 "longitude": 77.5946
               },
               "url": "https://www.thinkify.io",
-              "telephone": "+91-9876543210",
+              "email": "kulkarni.karthik@thinkify.io",
               "priceRange": "$$",
               "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",

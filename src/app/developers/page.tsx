@@ -140,7 +140,7 @@ export default function DevelopersPage() {
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.6 }}
             >
-              <Link href="#contact">
+              <Link href="mailto:kulkarni.karthik@thinkify.io">
                 <motion.button
                   className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
@@ -1450,7 +1450,7 @@ export default function DevelopersPage() {
           <div className="flex flex-wrap justify-center md:justify-end gap-4">
             <a href="#" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Privacy Policy</a>
             <a href="#" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Terms</a>
-            <a href="#" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Contact</a>
+            <a href="mailto:kulkarni.karthik@thinkify.io" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Contact</a>
           </div>
         </div>
       </footer>

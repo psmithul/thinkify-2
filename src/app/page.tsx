@@ -809,7 +809,7 @@ export default function HomePage() {
                 <Link href="https://connect.thinkify.io" className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
                   Start Your Transformation
                 </Link>
-                <Link href="https://connect.thinkify.io/case-studies" className="bg-white theme-text-primary border-2 theme-border-primary px-8 py-4 rounded-xl font-semibold text-lg hover:theme-bg-primary hover:theme-text-body transition-all duration-300">
+                <Link href="https://connect.thinkify.io" className="bg-white theme-text-primary border-2 theme-border-primary px-8 py-4 rounded-xl font-semibold text-lg hover:theme-bg-primary hover:theme-text-body transition-all duration-300">
                   View All Case Studies
                 </Link>
               </div>
@@ -1104,7 +1104,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 theme-gradient-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </motion.button>
               </Link>
-              <Link href="tel:+919876543210" className="group relative">
+              <Link href="mailto:kulkarni.karthik@thinkify.io" className="group relative">
                 <motion.button 
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
@@ -1292,7 +1292,7 @@ export default function HomePage() {
           <div className="flex flex-wrap justify-center md:justify-end gap-4">
             <a href="#" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Privacy Policy</a>
             <a href="#" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Terms</a>
-            <a href="#" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Contact</a>
+            <a href="mailto:kulkarni.karthik@thinkify.io" className="theme-text-muted hover:theme-text-primary text-sm font-medium transition-colors duration-300 px-3 py-2 rounded-lg">Contact</a>
           </div>
         </div>
       </footer>
