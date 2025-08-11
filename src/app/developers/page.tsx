@@ -1107,73 +1107,7 @@ export default function DevelopersPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Revolutionary Header */}
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-center mb-20"
-          >
-            {/* Floating Badge */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-white to-gray-50 border theme-border-surface shadow-xl mb-8 backdrop-blur-sm"
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 theme-bg-secondary rounded-full animate-pulse"></div>
-                <div className="w-2 h-2 theme-bg-primary rounded-full animate-pulse delay-200"></div>
-                <div className="w-2 h-2 theme-bg-primary rounded-full animate-pulse delay-400"></div>
-              </div>
-              <span className="font-bold theme-text-primary">Why 10K+ Developers Choose Us</span>
-              <SparklesIcon className="w-6 h-6 theme-text-primary animate-pulse" />
-            </motion.div>
-            
-            <motion.h2 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-5xl md:text-7xl font-bold theme-text-body mb-8 leading-tight"
-            >
-              <span className="theme-gradient-text">Elite developers</span> don't just{' '}
-              work here
-              <br />
-              <span className="theme-text-body">They</span>{' '}
-              <span className="theme-gradient-text">thrive here</span>
-            </motion.h2>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-xl theme-text-muted max-w-4xl mx-auto mb-4 leading-relaxed"
-            >
-              We don't just find you jobs. We architect careers, build futures, and create legends. 
-              Here's how we're revolutionizing the developer experience.
-            </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="flex items-center justify-center gap-4 text-lg"
-            >
-              <div className="flex items-center gap-2 theme-text-primary font-semibold">
-                <BoltIcon className="w-5 h-5" />
-                <span>Game-changing</span>
-              </div>
-              <div className="w-2 h-2 bg-slate-400 rounded-full"></div>
-              <div className="flex items-center gap-2 theme-text-primary font-semibold">
-                <RocketLaunchIcon className="w-5 h-5" />
-                <span>Career-defining</span>
-              </div>
-              <div className="w-2 h-2 bg-slate-400 rounded-full"></div>
-              <div className="flex items-center gap-2 theme-text-primary font-semibold">
-                <TrophyIcon className="w-5 h-5" />
-                <span>Life-changing</span>
-              </div>
-            </motion.div>
-          </motion.div>
+
 
           {/* Interactive Feature Grid */}
           <div className="grid lg:grid-cols-2 gap-12 mb-20">
