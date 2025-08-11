@@ -931,25 +931,22 @@ export default function DevelopersPage() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-5xl md:text-7xl font-bold theme-text-body mb-8 leading-tight"
             >
-              <span className="theme-text-primary">Thinkify</span>
-              <span className="theme-text-body"> is for </span>
+              <span className="theme-gradient-text">Elite developers</span> don't just{' '}
+              work here
               <br />
-              <span className="relative inline-block">
-                <span className="theme-text-body">elite developers</span>
-                <motion.div 
-                  className="absolute -bottom-2 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full shadow-lg"
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  transition={{ duration: 1.2, delay: 0.5 }}
-                />
-              </span>
-              <span className="theme-text-body"> who:</span>
+              <span className="theme-text-body">They</span>{' '}
+              <span className="theme-gradient-text">thrive here</span>
             </motion.h2>
             
-            <p className="text-xl theme-text-muted max-w-4xl mx-auto leading-relaxed">
-              We're extremely selective. Only the top-tier developers who meet our rigorous standards 
-              gain access to our exclusive network of premium opportunities.
-            </p>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-xl theme-text-muted max-w-4xl mx-auto mb-4 leading-relaxed"
+            >
+              We don't just find you jobs. We architect careers, build futures, and create legends. 
+              Here's how we're revolutionizing the developer experience.
+            </motion.p>
           </motion.div>
 
           {/* Enhanced Criteria Grid */}
