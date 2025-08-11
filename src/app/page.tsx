@@ -618,24 +618,7 @@ export default function HomePage() {
                 </motion.div>
               ))}
               
-              {/* Enhanced CTA */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                viewport={{ once: true }}
-                className="relative pt-4"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-20"></div>
-                <Link href="https://connect.thinkify.io" className="relative block w-full btn-cosmic-primary px-8 py-5 rounded-2xl font-bold text-lg text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600">
-                  <span className="flex items-center justify-center gap-2">
-                    Start Hiring Elite Talent
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </span>
-                </Link>
-              </motion.div>
+
             </div>
           </div>
         </div>
@@ -805,11 +788,6 @@ export default function HomePage() {
             <div className="bg-white backdrop-blur-lg rounded-3xl p-12 border theme-border-surface max-w-4xl mx-auto shadow-2xl">
               <h3 className="text-3xl font-bold theme-text-body mb-6">Ready to Write Your Success Story?</h3>
               <p className="theme-text-muted mb-8 text-lg">Join 500+ companies who've scaled their teams with Thinkify's elite engineering talent.</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="https://connect.thinkify.io" className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                  Start Your Transformation
-                </Link>
-              </div>
             </div>
           </motion.div>
         </div>
@@ -991,9 +969,6 @@ export default function HomePage() {
                   <strong>The choice is clear:</strong> While others struggle with outdated processes, 
                   we deliver revolutionary results that transform how companies build their engineering teams.
                 </p>
-                <Link href="https://connect.thinkify.io" className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300">
-                  Experience the Difference →
-                </Link>
               </motion.div>
             </div>
           </motion.div>
@@ -1267,9 +1242,6 @@ export default function HomePage() {
                 Join hundreds of companies that have accelerated their growth with Thinkify's elite engineering talent. 
                 Experience the future of contingent staffing today.
               </p>
-              <Link href="https://connect.thinkify.io" className="btn-cosmic-primary px-8 py-4 text-lg">
-                Start Your Journey
-              </Link>
             </div>
           </motion.div>
         </div>
