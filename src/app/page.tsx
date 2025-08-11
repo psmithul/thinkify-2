@@ -809,9 +809,6 @@ export default function HomePage() {
                 <Link href="https://connect.thinkify.io" className="btn-cosmic-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
                   Start Your Transformation
                 </Link>
-                <Link href="https://connect.thinkify.io" className="bg-white theme-text-primary border-2 theme-border-primary px-8 py-4 rounded-xl font-semibold text-lg hover:theme-bg-primary hover:theme-text-body transition-all duration-300">
-                  View All Case Studies
-                </Link>
               </div>
             </div>
           </motion.div>
